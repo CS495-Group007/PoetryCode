@@ -11,18 +11,19 @@ class SimplyScansion extends React.Component{
         super(props);
         this.state = {
             poems: POEMS,
-            currentPoem: ''
+            currentPoemNumber: 0,
+            currentPoemName: ''
         };
         this.changePoem = this.changePoem.bind(this);
     }
 
-    changePoem(poem){
-        this.setState({currentPoem: poem});
+    changePoem(poemID){
+        this.setState({currentPoemNumber: poemID});
     }
 
     render(){
         return(
-            <PoemSelector poems = {this.state.poems} changePoem = {this.changePoem} currentPoem = {this.state.currentPoem}/>
+            <PoemSelector poems = {this.state.poems} changePoem = {this.changePoem} currentPoemNumber = {this.state.currentPoemNumber} currentPoemName = {this.currentPoemName}/>
         );
     }
 }
