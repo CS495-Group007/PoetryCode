@@ -4,11 +4,6 @@ import './App.css';
 
 class GameBoard extends React.Component {
     render(){
-        let colors = ['yellow','blue','red','gray','black','green'];
-        let draggableBlocks = [];
-        colors.forEach((color) =>
-            draggableBlocks.push(<DragDropContainer>{color}</DragDropContainer>)
-        );
         return(
             <div>
                 <div>
