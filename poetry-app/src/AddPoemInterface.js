@@ -1,27 +1,51 @@
 /* eslint-disable react/jsx-no-undef */
 /* eslint-disable no-undef */
+
+import React from 'react';
+// import PoemSelector from './PoemSelector.js';
+import GameBoard from './GameBoard.js';
+import './Styling/GamePage.css'
+
 // Adding a poem is going to look similar to how a student would scan a poem, BUT this is more of a blank canvas
+
 
 class AddPoemInterface extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            poems: POEMS,
-            currentPoemNumber: 0,
-            currentPoemName: ''
+            lines: [],
+            numLines: 0,
+            poemName: "",
+            author: ""
         };
-        this.changePoem = this.changePoem.bind(this);
+        this.processLines = this.processLines.bind(this);
+        this.textChange = this.textChange.bind(this);
     }
 
-    changePoem(poemID){
-        this.setState({currentPoemNumber: poemID});
+    processLines(event){
+        event.preventDefault();
+        console.log(event);
+        // this.setState({currentPoemNumber: poemID});
+    }
+
+    textChange(event) {
+        var ls = event.target.value.split('\n');
+        this.setState({
+            lines: ls,
+            numLines : ls.length
+        });
+        console.log(this.state.numLines);
     }
 
     render(){
         return(
             <div>
-                <PoemSelector poems = {this.state.poems} changePoem = {this.changePoem} currentPoemNumber = {this.state.currentPoemNumber} currentPoemName = {this.currentPoemName}/>
-                <GameBoard/>
+                <form onSubmit={this.processLines}>
+                    <label className="InputLabel">Poem Text:</label>
+                    <textarea className="poemInput" id="thePoemText" onChange={this.textChange}/>
+                    <GameBoard/>
+                    <button type="submit">Submit</button>
+                </form>
             </div>
         );
     }

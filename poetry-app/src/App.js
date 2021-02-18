@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
-import SimplyScansion from './SimplyScansion.js'
+// import SimplyScansion from './SimplyScansion.js'
+import AddPoemInterface from './AddPoemInterface'
 
 class App extends React.Component {
   render(){
@@ -10,7 +11,7 @@ class App extends React.Component {
           <h3 className = "Title">
             Simply Scansion
           </h3>
-          <SimplyScansion/>
+          <AddPoemInterface/>
         </header>
       </div>
     );
