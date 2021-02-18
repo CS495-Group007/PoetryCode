@@ -1,0 +1,37 @@
+#yellowRectangle{
+    width:200px;
+    height:100px;
+    background:rgba(245, 245, 2, 0.767);
+    font-weight: bold;
+  }
+  #blueRectangle{
+    width:200px;
+    height:100px;
+    background:rgb(5, 5, 80);
+    font-weight: bold;
+  }
+  #redRectangle{
+    width:200px;
+    height:100px;
+    background:red;
+    font-weight: bold;
+  }
+  #grayRectangle{
+    width:200px;
+    height:100px;
+    background:gray;
+    font-weight: bold;
+  }
+  #blackRectangle{
+    width:200px;
+    height:100px;
+    background:black;
+    font-weight: bold;
+  }
+  #greenRectangle{
+    width:200px;
+    height:100px;
+    background:green;
+    font-weight: bold;
+  }
+  

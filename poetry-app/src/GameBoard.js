@@ -1,6 +1,6 @@
 import React from 'react';
 import { DragDropContainer, DropTarget } from 'react-drag-drop-container';
-import './App.css';
+import './gameboard.css';
 
 class GameBoard extends React.Component {
     render(){
