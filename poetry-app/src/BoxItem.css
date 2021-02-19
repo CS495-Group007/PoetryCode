@@ -1,0 +1,68 @@
+.box_item_component .outer {
+    border-top: none;
+    min-width: 140px;
+    max-width: 140px;
+    overflow: hidden;
+}
+
+.box_item_component .highlighted .outer {
+    border-top: 40px solid #ddd;
+}
+
+.box_item_component .yellow {
+    color: white;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 3px;
+    background-color: rgba(255, 255, 0, 0.541);
+    font-weight: bold;
+}
+.box_item_component .blue {
+    color: white;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 3px;
+    background-color: blue;
+    font-weight: bold;
+}
+
+.box_item_component .red {
+    color: white;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 3px;
+    background-color: red;
+    font-weight: bold;
+}
+
+.box_item_component .gray {
+    color: white;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 3px;
+    background-color:gray;
+    font-weight: bold;
+}
+
+.box_item_component .black {
+    color: white;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 3px;
+    background-color: black;
+    font-weight: bold;
+}
+
+.box_item_component .green {
+    color: white;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 3px;
+    background-color: green;
+    font-weight: bold;
+}
+
+.box_item_component .grabber {
+    font-weight: bold;
+    padding-right: 6px;
+}
