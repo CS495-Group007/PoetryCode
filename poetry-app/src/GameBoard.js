@@ -1,37 +1,31 @@
 import React from 'react';
-import { DragDropContainer, DropTarget } from 'react-drag-drop-container';
-import './App.css';
+import Boxable from './Boxable';
+import Box from './Box';
+import './GameBoard.css';
 
-class GameBoard extends React.Component {
-    render(){
-        return(
-            <div>
-                <div>
-                    <DropTarget targetKey = "gameBoard"></DropTarget>
-                </div>
-                <div>
-                    <DragDropContainer dragData = {{label: 'Yellow'}} targetKey = "gameBoard" dragClone = {true}>
-                        <span id = "yellowRectangle">' -</span>
-                    </DragDropContainer>
-                    <DragDropContainer dragData = {{label: 'Blue'}} targetKey = "gameBoard" dragClone = {true}>
-                        <span id = "blueRectangle">- '</span>
-                    </DragDropContainer>
-                    <DragDropContainer dragData = {{label: 'Red'}} targetKey = "gameBoard" dragClone = {true}>
-                        <span id = "redRectangle">' - -</span>
-                    </DragDropContainer>
-                    <DragDropContainer dragData = {{label: 'Gray'}} targetKey = "gameBoard" dragClone = {true}>
-                        <span id = "grayRectangle">- - '</span>
-                    </DragDropContainer>
-                    <DragDropContainer dragData = {{label: 'Black'}} targetKey = "gameBoard" dragClone = {true}>
-                        <span id = "blackRectangle">' '</span>
-                    </DragDropContainer>
-                    <DragDropContainer dragData = {{label: 'Green'}} targetKey = "gameBoard" dragClone = {true}>
-                        <span id = "greenRectangle">- -</span>
-                    </DragDropContainer>
-                </div>
-            </div>
-        );
+
+export default class GameBoard extends React.Component {
+  render() {
+    var i;
+    let boxes = [];
+    for(i=0; i < 3; i++){
+      boxes.push(<Box targetKey="box"/>);
     }
+    return (
+      <div className="drag_things_to_boxes">
+        <div className="boxes">
+          {boxes}
+        </div>
+        <div style={{clear: 'both'}}>&nbsp;</div>
+        <div className="things_to_drag">
+          <Boxable targetKey="box" label="' -" color="yellow"/>
+          <Boxable targetKey="box" label="- '" color="blue"/>
+          <Boxable targetKey="box" label="' - -" color="red"/>
+          <Boxable targetKey="box" label="- - '" color="gray"/>
+          <Boxable targetKey="box" label="' '" color="black"/>
+          <Boxable targetKey="box" label="- -" color="green"/>
+        </div>
+      </div>
+    );
+  }
 }
-
-export default GameBoard;
