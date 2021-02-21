@@ -1,5 +1,5 @@
 import React from 'react';
-//var shortid = require('shortid');
+//var sortid = require('shortid');
 import { DragDropContainer } from 'react-drag-drop-container';
 
 /*
@@ -20,7 +20,7 @@ export default class Boxable extends React.Component {
             onDrop={(e)=>(console.log(e))}
             dragClone = {true}
           >
-            <div className = "outer">
+            <div className = "outside">
                 <div className = {this.props.color}>
                     {this.props.label}
                 </div>

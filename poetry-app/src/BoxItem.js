@@ -42,7 +42,7 @@ export default class BoxItem extends React.Component {
                 onHit={this.handleDrop}
                 targetKey="boxItem"
               >
-                <div className="outer">
+                <div className="outside">
                   <div className={this.props.color}>
                     <span className="grabber">{this.props.children}</span>
                   </div>

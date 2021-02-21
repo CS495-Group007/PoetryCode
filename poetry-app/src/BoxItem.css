@@ -1,11 +1,11 @@
-.box_item_component .outer {
+.box_item_component .outside {
     border-top: none;
     min-width: 140px;
     max-width: 140px;
     overflow: hidden;
 }
 
-.box_item_component .highlighted .outer {
+.box_item_component .highlighted .outside {
     border-top: 40px solid #ddd;
 }
 
