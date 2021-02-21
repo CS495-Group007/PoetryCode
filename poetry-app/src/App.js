@@ -5,8 +5,8 @@ import './SimplyScansion.css';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Nav, Navbar } from "react-bootstrap"
 
-import Login from "./components/login.component";
-import SignUp from "./components/signup.component";
+import Login from "./Login";
+import SignUp from "./SignUp";
 import SimplyScansion from "./SimplyScansion";
 import AddPoemInterface from "./AddPoemInterface";
 
