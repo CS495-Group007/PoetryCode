@@ -1,0 +1,16 @@
+.InputLabel {
+    font-size: min(5vh, 5vw);
+    text-align: left;
+
+    width: 100vw;
+}
+
+.poemInput {
+    --inputHeight: 60vh;
+    height: var(--inputHeight); 
+    width: 20vw;
+
+    font-size: calc(var(--inputHeight) * 0.05);
+
+
+}

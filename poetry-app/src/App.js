@@ -8,6 +8,7 @@ import { Nav, Navbar } from "react-bootstrap"
 import Login from "./components/login.component";
 import SignUp from "./components/signup.component";
 import SimplyScansion from "./SimplyScansion";
+import AddPoemInterface from "./AddPoemInterface";
 
 function App() {
   return (<Router>
@@ -20,7 +21,7 @@ function App() {
             <Nav.Link href="/sign-in">Log In</Nav.Link>
             <Nav.Link href="/sign-up">Sign Up</Nav.Link>
             <Nav.Link href="/simply-scansion">Scan a Poem</Nav.Link>
-            <Nav.Link href="#">Add a Poem</Nav.Link>
+            <Nav.Link href="/add-poem">Add a Poem</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
@@ -32,6 +33,7 @@ function App() {
             <Route path="/sign-in" component={Login} />
             <Route path="/sign-up" component={SignUp} />
             <Route path='/simply-scansion' component={SimplyScansion} />
+            <Route path='/add-poem' component={AddPoemInterface} />
           </Switch>
         </div>
       </div>
