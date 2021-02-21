@@ -23,7 +23,8 @@ export default class Box extends React.Component {
       let items = this.state.items.slice();
       const item = {label: dragData.label, uid: shortid.generate(), color: dragData.color};
       items.splice(toIndex, 0, item);
-      this.setState({items: items});
+      if(items.length <= 5)
+        this.setState({items: items});
     };
   
     kill = (uid) => {
