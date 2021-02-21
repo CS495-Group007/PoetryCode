@@ -2,7 +2,6 @@
 /* eslint-disable no-undef */
 
 import React from 'react';
-// import PoemSelector from './PoemSelector.js';
 import GameBoard from './GameBoard.js';
 import './Styling/GamePage.css'
 
@@ -36,10 +35,10 @@ class AddPoemInterface extends React.Component{
         });
         console.log(this.state.numLines);
     }
-
+ 
     render(){
         return(
-            <div>
+            <div id="gameInner" itemID="gameInner">
                 <form onSubmit={this.processLines}>
                     <label className="InputLabel">Poem Text:</label>
                     <textarea className="poemInput" id="thePoemText" onChange={this.textChange}/>
