@@ -14,8 +14,9 @@
     border-radius: 5px;
     padding: 10px;
     margin: 3px;
-    background-color: rgba(255, 255, 0, 0.541);
+    background-color: rgb(228, 228, 18);
     font-weight: bold;
+    text-align: center;
 }
 .box_item_component .blue {
     color: white;
@@ -24,6 +25,7 @@
     margin: 3px;
     background-color: blue;
     font-weight: bold;
+    text-align: center;
 }
 
 .box_item_component .red {
@@ -33,6 +35,7 @@
     margin: 3px;
     background-color: red;
     font-weight: bold;
+    text-align: center;
 }
 
 .box_item_component .gray {
@@ -42,6 +45,7 @@
     margin: 3px;
     background-color:gray;
     font-weight: bold;
+    text-align: center;
 }
 
 .box_item_component .black {
@@ -51,6 +55,7 @@
     margin: 3px;
     background-color: black;
     font-weight: bold;
+    text-align: center;
 }
 
 .box_item_component .green {
@@ -60,6 +65,7 @@
     margin: 3px;
     background-color: green;
     font-weight: bold;
+    text-align: center;
 }
 
 .box_item_component .grabber {
