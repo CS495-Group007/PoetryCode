@@ -30,7 +30,7 @@ export default class SignUp extends Component {
                 <div class="d-grid gap-2">
                     <button type="submit" className="btn btn-dark btn-lg">Register</button>
                     <p className="forgot-password text-right">
-                        Already registered <a href="sign-in">log in?</a>
+                        Already registered? <a href="sign-in">Log in</a>
                     </p>
                 </div>
             </form>
