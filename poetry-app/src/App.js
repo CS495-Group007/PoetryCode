@@ -8,12 +8,13 @@ import Login from "./Components/Login";
 import SignUp from "./Components/SignUp";
 import SimplyScansion from "./Components/SimplyScansion";
 import AddPoemInterface from "./Components/AddPoemInterface";
+import Home from "./Components/Home";
 
 function App() {
   return (<Router>
     <div className="App">
       <Navbar bg="light" expand="lg">
-        <Navbar.Brand href="/sign-in">Simply Scansion</Navbar.Brand>
+        <Navbar.Brand href="/">Simply Scansion</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav>
@@ -28,7 +29,7 @@ function App() {
       <div className="outer">
         <div className="inner">
           <Switch>
-            <Route exact path='/' component={Login} />
+            <Route exact path='/' component={Home} />
             <Route path="/sign-in" component={Login} />
             <Route path="/sign-up" component={SignUp} />
             <Route path='/simply-scansion' component={SimplyScansion} />
