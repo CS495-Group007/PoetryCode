@@ -1,14 +1,13 @@
 import React from 'react';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
-import './SimplyScansion.css';
+import './Styling/App.css';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Nav, Navbar } from "react-bootstrap"
 
-import Login from "./Login";
-import SignUp from "./SignUp";
-import SimplyScansion from "./SimplyScansion";
-import AddPoemInterface from "./AddPoemInterface";
+import Login from "./Components/Login";
+import SignUp from "./Components/SignUp";
+import SimplyScansion from "./Components/SimplyScansion";
+import AddPoemInterface from "./Components/AddPoemInterface";
 
 function App() {
   return (<Router>
