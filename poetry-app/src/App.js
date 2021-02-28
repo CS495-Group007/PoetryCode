@@ -20,9 +20,9 @@ function App() {
           <Nav>
             <Nav.Link href="/sign-in">Log In</Nav.Link>
             <Nav.Link href="/sign-up">Sign Up</Nav.Link>
+            <Nav.Link href="/how-to">How To</Nav.Link>
             <Nav.Link href="/simply-scansion">Scan a Poem</Nav.Link>
             <Nav.Link href="/add-poem">Add a Poem</Nav.Link>
-            <Nav.Link href="/how-to">How To</Nav.Link>
             <NavDropdown title="Legend" id="basic-nav-dropdown">
               <NavDropdown.Item>Yellow - Iamb</NavDropdown.Item>
               <NavDropdown.Item>Blue - Trochee</NavDropdown.Item>
