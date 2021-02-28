@@ -2,7 +2,7 @@ import React from 'react';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './Styling/App.css';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { Nav, Navbar } from "react-bootstrap"
+import { Nav, Navbar, NavDropdown } from "react-bootstrap"
 
 import Login from "./Components/Login";
 import SignUp from "./Components/SignUp";
@@ -23,6 +23,14 @@ function App() {
             <Nav.Link href="/simply-scansion">Scan a Poem</Nav.Link>
             <Nav.Link href="/add-poem">Add a Poem</Nav.Link>
             <Nav.Link href="/how-to">How To</Nav.Link>
+            <NavDropdown title="Legend" id="basic-nav-dropdown">
+              <NavDropdown.Item>Yellow - Iamb</NavDropdown.Item>
+              <NavDropdown.Item>Blue - Trochee</NavDropdown.Item>
+              <NavDropdown.Item>Red - Dactyl</NavDropdown.Item>
+              <NavDropdown.Item>Grey - Anapest</NavDropdown.Item>
+              <NavDropdown.Item>Black - Spondee</NavDropdown.Item>
+              <NavDropdown.Item>Green - Pyrrhic</NavDropdown.Item>
+            </NavDropdown>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
