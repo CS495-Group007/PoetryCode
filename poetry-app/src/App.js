@@ -22,6 +22,7 @@ function App() {
             <Nav.Link href="/sign-up">Sign Up</Nav.Link>
             <Nav.Link href="/simply-scansion">Scan a Poem</Nav.Link>
             <Nav.Link href="/add-poem">Add a Poem</Nav.Link>
+            <Nav.Link href="/how-to">How To</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
@@ -34,6 +35,7 @@ function App() {
             <Route path="/sign-up" component={SignUp} />
             <Route path='/simply-scansion' component={SimplyScansion} />
             <Route path='/add-poem' component={AddPoemInterface} />
+            <Route path='/how-to' component={Home} />
           </Switch>
         </div>
       </div>
