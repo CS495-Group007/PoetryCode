@@ -2,4 +2,4 @@ runtime: nodejs
 
 service: api
 
-env: flex
+env: standard
