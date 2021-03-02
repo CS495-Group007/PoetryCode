@@ -5,26 +5,49 @@ import '../Styling/GameBoard.css';
 
 
 export default class GameBoard extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      gameBoard: []
+    };
+    this.checkIfCorrect = this.checkIfCorrect.bind(this);
+    this.updateGameBoard = this.updateGameBoard.bind(this);
+  }
+
+  updateGameBoard(items, index){
+    let gameBoard = this.state.gameBoard.slice();
+    gameBoard[index] = items;
+    this.setState({gameBoard: gameBoard});
+    alert(this.state.gameBoard);
+  }
+
+  checkIfCorrect(){
+    alert("yes");
+  }
+  
   render() {
     var i;
     let boxes = [];
     for(i=0; i < 3; i++){
-      boxes.push(<Box targetKey="box"/>);
+      boxes.push(<Box targetKey="box" index={i} updateGameBoard={this.updateGameBoard}/>);
     }
     return (
-      <div className="drag_things_to_boxes">
-        <div className="boxes">
-          {boxes}
+      <div>
+        <div className="drag_things_to_boxes">
+          <div className="boxes">
+            {boxes}
+          </div>
+          <div style={{clear: 'both'}}>&nbsp;</div>
+          <div className="things_to_drag">
+            <Boxable targetKey="box" label="' -" color="yellow"/>
+            <Boxable targetKey="box" label="- '" color="blue"/>
+            <Boxable targetKey="box" label="' - -" color="red"/>
+            <Boxable targetKey="box" label="- - '" color="gray"/>
+            <Boxable targetKey="box" label="' '" color="black"/>
+            <Boxable targetKey="box" label="- -" color="green"/>
+          </div>
         </div>
-        <div style={{clear: 'both'}}>&nbsp;</div>
-        <div className="things_to_drag">
-          <Boxable targetKey="box" label="' -" color="yellow"/>
-          <Boxable targetKey="box" label="- '" color="blue"/>
-          <Boxable targetKey="box" label="' - -" color="red"/>
-          <Boxable targetKey="box" label="- - '" color="gray"/>
-          <Boxable targetKey="box" label="' '" color="black"/>
-          <Boxable targetKey="box" label="- -" color="green"/>
-        </div>
+        <button onclick = "checkIfCorrect()">Submit</button>
       </div>
     );
   }

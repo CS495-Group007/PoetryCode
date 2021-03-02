@@ -6,36 +6,44 @@ export default class Box extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
-        items: []
+        items: [],
+        colors: []
       };
     }
   
     handleDrop = (e) => {
       let items = this.state.items.slice();
+      let colors = this.state.colors.slice();
       if(items.length < 5){
         items.push({label: e.dragData.label, uid: shortid.generate(), color: e.dragData.color});
-        this.setState({items: items});
+        colors.push(e.dragData.color);
+        this.setState({items: items, colors: colors});
+        this.props.updateGameBoard(colors, this.props.index);
       }
       //e.containerElem.style.visibility="hidden";
     };
   
     swap = (fromIndex, toIndex, dragData) => {
       let items = this.state.items.slice();
+      let colors = this.state.colors.slice();
       const item = {label: dragData.label, uid: shortid.generate(), color: dragData.color};
       items.splice(toIndex, 0, item);
+      colors.splice(toIndex, 0, dragData.color);
       if(items.length <= 5)
-        this.setState({items: items});
+        this.setState({items: items, colors: colors});
     };
   
     kill = (uid) => {
       let items = this.state.items.slice();
+      let colors = this.state.colors.slice();
       const index = items.findIndex((item) => {
         return item.uid == uid
       });
       if (index !== -1) {
         items.splice(index, 1);
+        colors.splice(index, 1);
       }
-      this.setState({items: items});
+      this.setState({items: items, colors: colors});
     };
   
     render() {
