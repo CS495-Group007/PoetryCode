@@ -1,0 +1,10 @@
+.DashboardTitle {
+    position: relative;
+    left: 0;
+    right: 0;
+
+    text-align: center;
+
+    font-size: min(4.5vh, 5vw);
+}
+

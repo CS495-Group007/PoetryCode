@@ -1,15 +1,25 @@
 import React from 'react';
-import DOMPurify from 'dompurify';
+import '../../Styling/DashboardStyling.css';
+// import SortChooser from './SortChooser'
 
-function PoemStatusInfo(props) {
 
-}
+var studentPoems = {
+    "Shakespeare" : {
+        "Sonnet One": {
+            "status": "c"
+        },
+        "Sonnet Two": {
+            "status": "i",
+            "currentResponse": "dactyl spondee iamb iamb trochee"
+        }
+    }
+};
+
+var studentName = "Connor";
+var role = "s";
 
 
 class StudentDashboard extends React.Component {
-    // constructor(props){
-    //     super(props);
-    // }
 
     translateStatus(status) {
         switch(status) {
@@ -22,28 +32,28 @@ class StudentDashboard extends React.Component {
         }
     }
 
+    translateRole(role) {
+        switch(role){
+            case('s'):
+                return "Student";
+            case('i'):
+                return "Instructor";
+            default:
+                return ""
+        }
+    }
+
     render() {
-        var poems = {
-            "Shakespeare" : {
-                "Sonnet One": {
-                    "status": "c"
-                },
-                "Sonnet Two": {
-                    "status": "i",
-                    "currentResponse": "dactyl spondee iamb iamb trochee"
-                }
-            }
-        };
 
         var poemsList = [];
 
-        for (var poet in poems) {
-            for (var p in poems[poet]) {
+        for (var poet in studentPoems) {
+            for (var p in studentPoems[poet]) {
                 console.log(p)
                 poemsList.push(
-                    <div class="listedPoem">
-                        <div class="listedPoemTitle"> {p} </div>
-                        <div class="listedPoemProgress"> {this.translateStatus(poems[poet][p]["status"])} </div>
+                    <div className="listedPoem">
+                        <div className="listedPoemTitle"> {p} </div>
+                        <div className="listedPoemProgress"> { this.translateStatus(studentPoems[poet][p]["status"]) } </div>
                     </div>
                 );
             }
@@ -51,15 +61,12 @@ class StudentDashboard extends React.Component {
 
         return ( 
             <div id = "studentDashboard" >
-                <div class="DashboardTitle">
-                    NAME's Dashboard
-                </div>
-                <div id="userDashboardLabel">
-                    Student
+                <div className="DashboardTitle">
+                    { studentName }'s { this.translateRole(role) } Dashboard
                 </div>
 
-                <div class="regularDashboardLabel">
-                    Poems in Progress
+                <div className="regularDashboardLabel">
+                    My Poems
                 </div>
                 
                 {poemsList}
