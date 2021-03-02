@@ -1,6 +1,10 @@
 import React from 'react';
 import PoemSelector from './PoemSelector.js';
 import GameBoard from './GameBoard.js';
+import Legend from './Legend.js';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 var POEMS = {
     '1': {id: 1, poet: 'Shakespeare', name: 'Sonnet 29', text: 'When, in disgrace with fortune and men’s eyes,\nI all alone beweep my outcast state,\nAnd trouble deaf heaven with my bootless cries,\nAnd look upon myself and curse my fate,\nWishing me like to one more rich in hope,\nFeatured like him, like him with friends possessed,\nDesiring this man’s art and that man’s scope,\nWith what I most enjoy contented least;\nYet in these thoughts myself almost despising,\nHaply I think on thee, and then my state,\n(Like to the lark at break of day arising\nFrom sullen earth) sings hymns at heaven’s gate;\nFor thy sweet love remembered such wealth brings\nThat then I scorn to change my state with kings.'},
@@ -22,9 +26,16 @@ class SimplyScansion extends React.Component{
         this.setState({currentPoemNumber: poemID});
     }
 
+
     render(){
         return(
             <div>
+                <Container>
+                    <Row>
+                        <Col xs={9}></Col>
+                        <Col><Legend/></Col>
+                    </Row>
+                </Container>
                 <PoemSelector poems = {this.state.poems} changePoem = {this.changePoem} currentPoemNumber = {this.state.currentPoemNumber} currentPoemName = {this.currentPoemName}/>
                 <GameBoard/>
             </div>

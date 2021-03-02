@@ -23,14 +23,6 @@ function App() {
             <Nav.Link href="/how-to">How To</Nav.Link>
             <Nav.Link href="/simply-scansion">Scan a Poem</Nav.Link>
             <Nav.Link href="/add-poem">Add a Poem</Nav.Link>
-            <NavDropdown title="Legend" id="basic-nav-dropdown">
-              <NavDropdown.Item>Yellow - Iamb</NavDropdown.Item>
-              <NavDropdown.Item>Blue - Trochee</NavDropdown.Item>
-              <NavDropdown.Item>Red - Dactyl</NavDropdown.Item>
-              <NavDropdown.Item>Grey - Anapest</NavDropdown.Item>
-              <NavDropdown.Item>Black - Spondee</NavDropdown.Item>
-              <NavDropdown.Item>Green - Pyrrhic</NavDropdown.Item>
-            </NavDropdown>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

@@ -4,6 +4,10 @@
 import React from 'react';
 import GameBoard from './GameBoard.js';
 import '../Styling/GamePage.css'
+import Legend from './Legend.js';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 // Adding a poem is going to look similar to how a student would scan a poem, BUT this is more of a blank canvas
 
@@ -39,6 +43,12 @@ class AddPoemInterface extends React.Component{
     render(){
         return(
             <div id="gameInner" itemID="gameInner">
+                <Container>
+                    <Row>
+                        <Col xs={9}></Col>
+                        <Col><Legend/></Col>
+                    </Row>
+                </Container>
                 <form onSubmit={this.processLines}>
                     <label className="InputLabel">Poem Text:</label>
                     <textarea className="poemInput" id="thePoemText" onChange={this.textChange}/>
