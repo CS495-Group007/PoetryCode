@@ -18,17 +18,28 @@ export default class GameBoard extends React.Component {
     let gameBoard = this.state.gameBoard.slice();
     gameBoard[index] = items;
     this.setState({gameBoard: gameBoard});
-    alert(this.state.gameBoard);
   }
 
   checkIfCorrect(){
-    alert("yes");
+    let poemsAsArray = Object.keys(this.props.poems).map((pid) => this.props.poems[pid]);
+    poemsAsArray.unshift("");
+    let colorsKey = poemsAsArray[this.props.currentPoemNumber].colors;
+    var i, j;
+    for(i=0; i < colorsKey.length; i++){
+      for(j=0; j < colorsKey[i].length; j++){
+        if(this.state.gameBoard[i][j] != colorsKey[i][j]){
+          alert("Incorrect");
+          return;
+        }
+      }
+    }
+    alert("Correct!");
   }
   
   render() {
     var i;
     let boxes = [];
-    for(i=0; i < 3; i++){
+    for(i=0; i < this.props.currentPoemLines; i++){
       boxes.push(<Box targetKey="box" index={i} updateGameBoard={this.updateGameBoard}/>);
     }
     return (
@@ -47,7 +58,7 @@ export default class GameBoard extends React.Component {
             <Boxable targetKey="box" label="- -" color="green"/>
           </div>
         </div>
-        <button onclick = "checkIfCorrect()">Submit</button>
+        <button onClick = {this.checkIfCorrect}>Submit</button>
       </div>
     );
   }
