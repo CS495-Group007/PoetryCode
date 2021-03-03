@@ -2,6 +2,10 @@ import React from 'react';
 import PoemSelector from './PoemSelector.js';
 import GameBoard from './GameBoard.js';
 import '../Styling/SimplyScansion.css';
+import Legend from './Legend.js';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 var POEMS = {
     '1': {id: 1, 
@@ -36,9 +40,16 @@ class SimplyScansion extends React.Component{
         this.setState({currentPoemNumber: poemID, currentPoemLines: poemLines});
     }
 
+
     render(){
         return(
             <div>
+                <Container>
+                    <Row>
+                        <Col xs={9}></Col>
+                        <Col><Legend/></Col>
+                    </Row>
+                </Container>
                 <PoemSelector poems = {this.state.poems} changePoem = {this.changePoem} currentPoemNumber = {this.state.currentPoemNumber} currentPoemName = {this.currentPoemName}/>
                 <GameBoard poems = {this.state.poems} currentPoemNumber = {this.state.currentPoemNumber} currentPoemLines = {this.state.currentPoemLines}/>
             </div>
