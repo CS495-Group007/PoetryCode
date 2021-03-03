@@ -29,8 +29,10 @@ export default class Box extends React.Component {
       const item = {label: dragData.label, uid: shortid.generate(), color: dragData.color};
       items.splice(toIndex, 0, item);
       colors.splice(toIndex, 0, dragData.color);
-      if(items.length <= 5)
+      if(items.length <= 5) {
         this.setState({items: items, colors: colors});
+        this.props.updateGameBoard(colors, this.props.index);
+      }
     };
   
     kill = (uid) => {
@@ -44,6 +46,7 @@ export default class Box extends React.Component {
         colors.splice(index, 1);
       }
       this.setState({items: items, colors: colors});
+      this.props.updateGameBoard(colors, this.props.index);
     };
   
     render() {
