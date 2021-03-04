@@ -8,3 +8,46 @@
     font-size: min(4.5vh, 5vw);
 }
 
+
+
+.poemTable {
+    display: table;
+    width: 100%;
+}
+
+.poemTableRow {
+    display: table-row;
+    width: 100%;
+}
+
+.poemTableCell {
+    display: table-cell;
+    width: 100%;
+}
+
+.singlePoemTable {
+    display: table;
+    width: 100%;
+}
+
+.singlePoemTableRow{
+    display: table-row;
+    width: 100%;
+}
+
+.singlePoemTableCell {
+    display: table-cell;
+    width: 50%;
+}
+
+.incompletePoem {
+    background-color: red;
+}
+
+.completePoem {
+    background-color: green;
+}
+
+.unstartedPoem {
+    background-color: blue;
+}
