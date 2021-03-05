@@ -5,7 +5,8 @@
 .drag_things_to_boxes .box {
 	border: 2px solid black;
 	border-radius: 4px;
-	width: 720px;
+	min-width: 60vw;
+	max-width: 140px;
 	height: 60px;
 	margin: 10px 80px 0 0;
 	position: relative;

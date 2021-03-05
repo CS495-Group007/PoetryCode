@@ -1,7 +1,7 @@
 .box_item_component .outside {
     border-top: none;
-    min-width: 140px;
-    max-width: 140px;
+    min-width: 10vw;
+    max-width: 50vw;
     overflow: hidden;
 }
 
