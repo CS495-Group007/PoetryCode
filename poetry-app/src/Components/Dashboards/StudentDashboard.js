@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../../Styling/DashboardStyling.css';
 // import SortChooser from './SortChooser'
 
@@ -106,55 +107,119 @@ class StudentDashboard extends React.Component {
 
         var poemsTable = [];
 
+        var incompletePoems = [], 
+            completePoems = [], 
+            unstartedPoems = [];
+
+        var completionStatus = "";
+
+        var newTableCell;
+
         for (var poet in studentPoems) {
             for (var p in studentPoems[poet]) {
                 var classnameList = ["poemTableCell"];
                 switch(studentPoems[poet][p]["status"]){
                     case incompletePoem:
+                        completionStatus = "Incomplete";
                         classnameList.push("incompletePoem");
                         break;
                     case completePoem:
+                        completionStatus = "Complete";
                         classnameList.push("completePoem");
                         break;
                     default:
+                        completionStatus = "Not Started";
                         classnameList.push("unstartedPoem");
                         break;
                 }
 
-                poemsTable.push(
+                newTableCell = (
                     <div className="poemTableRow">
                         <div className={classnameList.join(' ')}>
-                            <div className="singlePoemTable">
+                            <Link to="/simply-scansion" className="reactLink" >
+                                <div className="singlePoemTable">
                                     <div className="singlePoemTableRow">
                                         <div className="singlePoemTableCell listedPoemTitle"> {p} </div>
-                                        <div className="singlePoemTableCell listedPoemAuthor"> {poet} </div>
+                                        <div className="singlePoemTableCell listedPoemAuthor">  {poet} </div>
+                                        <div className="singlePoemTableCell listedPoemStatus"> {completionStatus} </div>
                                     </div>
                                 </div>
-                            </div>
+                            </Link>
                         </div>
+                    </div>
                 );
+
+                switch(studentPoems[poet][p]["status"]){
+                    case incompletePoem:
+                        incompletePoems.push(newTableCell);
+                        break;
+                    case completePoem:
+                        completePoems.push(newTableCell);
+                        break;
+                    default:
+                        unstartedPoems.push(newTableCell);
+                        break;
+                }
             }
         }
+
+        // An empty div to break things up
+
+        // if(incompletePoems.length > 0)
+        //     incompletePoems.push(
+        //         <div className="poemTableRow">
+        //                 <div className="blankRow">
+        //                     <div className="singlePoemTable">
+        //                         <div className="singlePoemTableRow">
+        //                             <div className="singlePoemTableCell listedPoemTitle"> </div>
+        //                             <div className="singlePoemTableCell listedPoemAuthor"> &nbsp; </div>
+        //                             <div className="singlePoemTableCell listedPoemStatus"> </div>
+        //                         </div>
+        //                     </div>
+        //                 </div>
+        //             </div>
+        //     );
 
         for (poet in allPoems) {
             for (p in allPoems[poet]) {
                 if(studentPoems[poet] && studentPoems[poet][p]) {
                     continue
                 }
-                poemsTable.push(
+                unstartedPoems.push(
                     <div className="poemTableRow">
-                        <div className="poemTableCell">
-                            <div className="singlePoemTable">
-                                <div className="singlePoemTableRow">
-                                    <div className="singlePoemTableCell listedPoemTitle"> {p} </div>
-                                    <div className="singlePoemTableCell listedPoemAuthor"> {poet} </div>
+                        <div className="poemTableCell unstartedPoem">
+                            <Link to="/simply-scansion" className="reactLink" >
+                                <div className="singlePoemTable">
+                                    <div className="singlePoemTableRow">
+                                        <div className="singlePoemTableCell listedPoemTitle"> {p} </div>
+                                        <div className="singlePoemTableCell listedPoemAuthor"> {poet} </div>
+                                            <div className="singlePoemTableCell listedPoemStatus"> Not Started </div>
+                                    </div>
                                 </div>
-                            </div>
+                            </Link>
                         </div>
                     </div>
                 );
             }
         }
+
+        // An empty div to break things up
+        // if(unstartedPoems.length > 0)
+        //     unstartedPoems.push(
+        //         <div className="poemTableRow">
+        //                 <div className="blankRow">
+        //                     <div className="singlePoemTable">
+        //                         <div className="singlePoemTableRow">
+        //                             <div className="singlePoemTableCell listedPoemTitle">  </div>
+        //                             <div className="singlePoemTableCell listedPoemAuthor"> &nbsp;</div>
+        //                             <div className="singlePoemTableCell listedPoemStatus"> </div>
+        //                         </div>
+        //                     </div>
+        //                 </div>
+        //             </div>
+        //     );
+
+        poemsTable.push(incompletePoems, unstartedPoems, completePoems);
 
         return ( 
             <div id = "studentDashboard" >
@@ -162,11 +227,22 @@ class StudentDashboard extends React.Component {
                     { studentName }'s { this.translateRole(role) } Dashboard
                 </div>
 
-                <div className="regularDashboardLabel">
+                {/* <div className="regularDashboardLabel">
                     My Poems
-                </div>
+                </div> */}
 
                 <div className="poemTable">
+                    <div className="poemTableRow">
+                             <div className="TitleRow">
+                                 <div className="singlePoemTable">
+                                     <div className="singlePoemTableRow">
+                                         <div className="singlePoemTableCell TitleRow"> Title </div>
+                                         <div className="singlePoemTableCell TitleRow"> Author </div>
+                                         <div className="singlePoemTableCell TitleRow"> Status </div>
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
                     { poemsTable }
                 </div>
 

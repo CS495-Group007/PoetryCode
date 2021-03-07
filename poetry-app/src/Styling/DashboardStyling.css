@@ -6,13 +6,37 @@
     text-align: center;
 
     font-size: min(4.5vh, 5vw);
+
+    font-family: nexa;
+    text-transform: uppercase;
 }
 
+.regularDashboardLabel {
+    position: relative;
+    left: 0;
+    right: 0;
+    top: min(2vh, 2vw);
 
+    text-align: Left;
+    font-size: min(3vh, 3.5vw);
+
+    text-decoration: underline;
+
+    padding-left: min(0.3vw, 0.3vh);
+}
 
 .poemTable {
     display: table;
     width: 100%;
+    position: relative;
+    left: 0;
+    right: 0;
+    top: min(3vh, 3vw);
+
+    margin-bottom: 5vh;
+
+    border-collapse: separate;
+    border-spacing: .2vh;
 }
 
 .poemTableRow {
@@ -23,6 +47,14 @@
 .poemTableCell {
     display: table-cell;
     width: 100%;
+    border-radius: 2vw;
+}
+
+.poemTableCell:hover {
+    /* border-right: .1vh solid black;
+    border-bottom: .1vh solid black; */
+    box-shadow: .1vh;
+    transform: translate3d(1px, -1px, 0);
 }
 
 .singlePoemTable {
@@ -37,17 +69,59 @@
 
 .singlePoemTableCell {
     display: table-cell;
-    width: 50%;
+    width: 33%;
+
+    /* Top Right Bottom Left */
+    padding: min(0.5vh, 0.5vw) min(0.75vh, 0.75vw) min(0.55vh, 0.55vw) min(0.75vh, 0.75vw);
+
 }
 
 .incompletePoem {
-    background-color: red;
+    background-color: #bfb3e9;
+    /* background-color: #ccffd7; */
+    color: #42347c;
 }
 
 .completePoem {
-    background-color: green;
+    background-color: #42347c;
+    color: white;
 }
 
 .unstartedPoem {
-    background-color: blue;
+    background-color: #8674c4;
+    color: white;
+}
+
+.listedPoemTitle {
+    font-size: min(2.05vh, 2.55vw);
+    text-align: center;
+}
+
+.listedPoemStatus, .listedPoemAuthor {
+    text-align: center;
+    font-size: min(2.05vh, 2.55vw);
+}
+
+.reactLink {
+    color: inherit;
+    text-decoration: none;
+}
+
+.reactLink:hover {
+    color: inherit;
+    text-decoration: none;
+}
+
+.blankRow {
+    background-color: inherit;
+    color: white;
+    padding: 0;
+    font-size: 0;
+}
+
+.TitleRow {
+    text-decoration: underline;
+    font-size: min(2.5vh, 3vw);
+
+    text-align: center;
 }
