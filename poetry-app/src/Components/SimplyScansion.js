@@ -28,9 +28,34 @@ class SimplyScansion extends React.Component{
             poems: POEMS,
             currentPoemNumber: 0,
             currentPoemName: '',
-            currentPoemLines: 0
+            currentPoemLines: 0,
+            gameBoard: []
         };
         this.changePoem = this.changePoem.bind(this);
+        this.updateGameBoard = this.updateGameBoard.bind(this);
+        this.checkIfCorrect = this.checkIfCorrect.bind(this);
+    }
+
+    updateGameBoard(items, index){
+        let gameBoard = this.state.gameBoard.slice();
+        gameBoard[index] = items;
+        this.setState({gameBoard: gameBoard});
+    }
+
+    checkIfCorrect(){
+        let poemsAsArray = Object.keys(this.state.poems).map((pid) => this.state.poems[pid]);
+        poemsAsArray.unshift("");
+        let colorsKey = poemsAsArray[this.state.currentPoemNumber].colors;
+        var i, j;
+        for(i=0; i < colorsKey.length; i++){
+            for(j=0; j < colorsKey[i].length; j++){
+                if(this.state.gameBoard[i][j] != colorsKey[i][j]){
+                alert("Incorrect");
+                return;
+                }
+            }
+        }
+        alert("Correct!");
     }
 
     changePoem(poemID){
@@ -51,7 +76,8 @@ class SimplyScansion extends React.Component{
                     </Row>
                 </Container>
                 <PoemSelector poems = {this.state.poems} changePoem = {this.changePoem} currentPoemNumber = {this.state.currentPoemNumber} currentPoemName = {this.currentPoemName}/>
-                <GameBoard poems = {this.state.poems} currentPoemNumber = {this.state.currentPoemNumber} currentPoemLines = {this.state.currentPoemLines}/>
+                <GameBoard poems = {this.state.poems} currentPoemNumber = {this.state.currentPoemNumber} currentPoemLines = {this.state.currentPoemLines} updateGameBoard = {this.updateGameBoard}/>
+                <button onClick = {this.checkIfCorrect}>Submit</button>
             </div>
         );
     }

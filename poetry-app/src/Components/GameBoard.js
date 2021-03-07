@@ -7,33 +7,11 @@ import '../Styling/GameBoard.css';
 export default class GameBoard extends React.Component {
   constructor(props){
     super(props);
-    this.state = {
-      gameBoard: []
-    };
-    this.checkIfCorrect = this.checkIfCorrect.bind(this);
     this.updateGameBoard = this.updateGameBoard.bind(this);
   }
 
   updateGameBoard(items, index){
-    let gameBoard = this.state.gameBoard.slice();
-    gameBoard[index] = items;
-    this.setState({gameBoard: gameBoard});
-  }
-
-  checkIfCorrect(){
-    let poemsAsArray = Object.keys(this.props.poems).map((pid) => this.props.poems[pid]);
-    poemsAsArray.unshift("");
-    let colorsKey = poemsAsArray[this.props.currentPoemNumber].colors;
-    var i, j;
-    for(i=0; i < colorsKey.length; i++){
-      for(j=0; j < colorsKey[i].length; j++){
-        if(this.state.gameBoard[i][j] != colorsKey[i][j]){
-          alert("Incorrect");
-          return;
-        }
-      }
-    }
-    alert("Correct!");
+    this.props.updateGameBoard(items, index);
   }
   
   render() {
@@ -58,7 +36,6 @@ export default class GameBoard extends React.Component {
             <Boxable targetKey="box" label="- -" color="green"/>
           </div>
         </div>
-        <button onClick = {this.checkIfCorrect}>Submit</button>
       </div>
     );
   }
