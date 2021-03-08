@@ -2,7 +2,7 @@ import React from 'react';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './Styling/App.css';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { Nav, Navbar, NavDropdown } from "react-bootstrap"
+import { Nav, Navbar } from "react-bootstrap";
 
 import Login from "./Components/Login";
 import SignUp from "./Components/SignUp";
