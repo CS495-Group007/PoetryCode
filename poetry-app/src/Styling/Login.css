@@ -1,65 +1,95 @@
 * {
-    box-sizing: border-box;
-  }
-  
-  .body {
-    min-height: 100vh;
-    display: flex;
-    font-weight: 400;
-    font-family: sans-serif;
-    background: #280A7C;
-  }
-  
-  body, html, #root, .outer {
-    width: 100%;
-    height: 100%;
-  }
-  
-  .outer {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    text-align: left;
-    background: #280A7C;
-  }
-  
+  box-sizing: border-box;
+}
+
+.body {
+  min-height: 100vh;
+  display: flex;
+  font-weight: 400;
+  font-family: sans-serif;
+  background: #280A7C;
+}
+
+body, html, #root, .outer {
+  width: 100%;
+  height: 100%;
+}
+
+.outer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: left;
+  background: #280A7C;
+}
+
+@media (max-width: 500px) {
   .inner {
-    width: 55%;
+    width: 95vw;
     overflow-y: auto;
     margin: auto;
     margin-top: 2%;
     margin-bottom: 2%;
     background: #ffffff;
-    padding: 40px 55px 45px 55px;
+    padding: 2% 5% 2% 5%;
     border-radius: 15px;
     transition: all .3s;
   }
-  
-  .outer .form-control:focus {
-    border-color: #167bff;
-    box-shadow: none;
+}
+
+@media (min-width: 500px) and (max-width: 900px) {
+  .inner {
+    width: 90vw;
+    overflow-y: auto;
+    margin: auto;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    background: #ffffff;
+    padding: 2% 5% 2% 5%;
+    border-radius: 15px;
+    transition: all .3s;
   }
-  
-  .outer h3 {
-    text-align: center;
-    margin: 0;
-    line-height: 1;
-    padding-bottom: 20px;
+}
+
+@media (min-width: 900px) {
+  .inner {
+    width: 75vw;
+    overflow-y: auto;
+    margin: auto;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    background: #ffffff;
+    padding: 2% 5% 2% 5%;
+    border-radius: 15px;
+    transition: all .3s;
   }
-  
-  .custom-control-label {
-    font-weight: 400;
-  }
-  
-  .forgot-password,
-  .forgot-password a {
-    text-align: right;
-    font-size: 14px;
-    padding-top: 10px;
-    color: #7f7d7d;
-    margin: 0;
-  }
-  
-  .forgot-password a {
-    color: #167bff;
-  }
+}
+
+.outer .form-control:focus {
+  border-color: #167bff;
+  box-shadow: none;
+}
+
+.outer h3 {
+  text-align: center;
+  margin: 0;
+  line-height: 1;
+  padding-bottom: 20px;
+}
+
+.custom-control-label {
+  font-weight: 400;
+}
+
+.forgot-password,
+.forgot-password a {
+  text-align: right;
+  font-size: 14px;
+  padding-top: 10px;
+  color: #7f7d7d;
+  margin: 0;
+}
+
+.forgot-password a {
+  color: #167bff;
+}

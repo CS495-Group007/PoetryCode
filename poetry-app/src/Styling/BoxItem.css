@@ -1,8 +1,24 @@
-.box_item_component .outside {
-    border-top: none;
-    min-width: 140px;
-    max-width: 140px;
-    overflow: hidden;
+@media (max-width: 500px) {
+    .box_item_component .outside {
+        border-top: none;
+        overflow: hidden;
+    }
+}
+
+@media (min-width: 500px) and (max-width: 900px) {
+    .box_item_component .outside {
+        border-top: none;
+        width: 12vw;
+        overflow: hidden;
+    }
+}
+
+@media (min-width: 900px) {
+    .box_item_component .outside {
+        border-top: none;
+        width: 10vw;
+        overflow: hidden;
+    }
 }
 
 .box_item_component .highlighted .outside {
