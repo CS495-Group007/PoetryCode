@@ -1,4 +1,5 @@
 import React from 'react';
+import '../Styling/SimplyScansion.css';
 
 class PoemSelector extends React.Component{
     constructor(props){
@@ -21,7 +22,7 @@ class PoemSelector extends React.Component{
         poemsAsArray.unshift("");
         if(this.props.currentPoemNumber > 0){
             poemsAsArray[this.props.currentPoemNumber].text.forEach((poem) => {
-                poemLines.push(<div>{poem}</div>);
+                poemLines.push(<div className = "poem">{poem}</div>);
             });
         }
         return(
