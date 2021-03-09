@@ -1,4 +1,14 @@
 .rowC {
     display: flex;
     flex-direction: row;
+    white-space: nowrap;
 }
+
+.poem {
+    font-size: 14px;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;

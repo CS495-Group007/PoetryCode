@@ -11,13 +11,13 @@ var POEMS = {
     '1': {id: 1, 
           poet: 'Shakespeare', 
           name: 'Sonnet 29', 
-          text: 'When, in disgrace with fortune and men’s eyes,\nI all alone beweep my outcast state,\nAnd trouble deaf heaven with my bootless cries,\nAnd look upon myself and curse my fate,\nWishing me like to one more rich in hope,\nFeatured like him, like him with friends possessed,\nDesiring this man’s art and that man’s scope,\nWith what I most enjoy contented least;\nYet in these thoughts myself almost despising,\nHaply I think on thee, and then my state,\n(Like to the lark at break of day arising\nFrom sullen earth) sings hymns at heaven’s gate;\nFor thy sweet love remembered such wealth brings\nThat then I scorn to change my state with kings.',
+          text: ['When, in disgrace with fortune and men’s eyes,','I all alone beweep my outcast state,','And trouble deaf heaven with my bootless cries,','And look upon myself and curse my fate,','Wishing me like to one more rich in hope,','Featured like him, like him with friends possessed,','Desiring this man’s art and that man’s scope,','With what I most enjoy contented least;','Yet in these thoughts myself almost despising,','Haply I think on thee, and then my state,','(Like to the lark at break of day arising','From sullen earth) sings hymns at heaven’s gate;','For thy sweet love remembered such wealth brings','That then I scorn to change my state with kings.'],
           colors: [["red", "blue", "red", "blue", "red"],["blue", "red", "blue", "red", "blue"],["red", "blue","red", "blue","red"]],
           lines: 3},    
     '2': {id: 2, 
           poet: 'Shakespeare', 
           name: 'Sonnet 30', 
-          text: 'When to the sessions of sweet silent thought\nI summon up remembrance of things past,\nI sigh the lack of many a thing I sought,\nAnd with old woes new wail my dear times waste:\nThen can I drown an eye, unusd to flow,\nFor precious friends hid in deaths dateless night,\nAnd weep afresh loves long since cancelld woe,\nAnd moan th expense of many a vanishd sight;\nThen can I grieve at grievances foregone,\nAnd heavily from woe to woe tell oer\nThe sad account of fore-bemoaned moan,\nWhich I new pay as if not paid before.\nBut if the while I think on thee, dear friend,\nAll losses are restord, and sorrows end.',
+          text: ['When to the sessions of sweet silent thought','I summon up remembrance of things past,','I sigh the lack of many a thing I sought,','And with old woes new wail my dear times waste:','Then can I drown an eye, unusd to flow,','For precious friends hid in deaths dateless night,','And weep afresh loves long since cancelld woe,','And moan th expense of many a vanishd sight;','Then can I grieve at grievances foregone,','And heavily from woe to woe tell oer','The sad account of fore-bemoaned moan,','Which I new pay as if not paid before.','But if the while I think on thee, dear friend,','All losses are restord, and sorrows end.'],
           lines: 12}
 };
 
@@ -75,9 +75,13 @@ class SimplyScansion extends React.Component{
                         <Col><Legend/></Col>
                     </Row>
                 </Container>
-                <PoemSelector poems = {this.state.poems} changePoem = {this.changePoem} currentPoemNumber = {this.state.currentPoemNumber} currentPoemName = {this.currentPoemName}/>
-                <GameBoard poems = {this.state.poems} currentPoemNumber = {this.state.currentPoemNumber} currentPoemLines = {this.state.currentPoemLines} updateGameBoard = {this.updateGameBoard}/>
-                <button onClick = {this.checkIfCorrect}>Submit</button>
+                <div className = "rowC">
+                    <PoemSelector poems = {this.state.poems} changePoem = {this.changePoem} currentPoemNumber = {this.state.currentPoemNumber} currentPoemName = {this.currentPoemName}/>
+                    <GameBoard poems = {this.state.poems} currentPoemNumber = {this.state.currentPoemNumber} currentPoemLines = {this.state.currentPoemLines} updateGameBoard = {this.updateGameBoard}/>
+                </div>
+                <div className = "button">
+                    <button onClick = {this.checkIfCorrect}>Submit</button>
+                </div>
             </div>
         );
     }

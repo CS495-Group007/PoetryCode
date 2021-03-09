@@ -16,24 +16,28 @@ export default class GameBoard extends React.Component {
   
   render() {
     var i;
-    let boxes = [];
+    let lines = [];
+    let boxes = []
     for(i=0; i < this.props.currentPoemLines; i++){
-      boxes.push(<Box targetKey="box" index={i} updateGameBoard={this.updateGameBoard}/>);
+      lines.push(<Box targetKey="box" index={i} updateGameBoard={this.updateGameBoard}/>);
+    }
+    if(this.props.currentPoemLines > 0){
+      boxes.push(<Boxable targetKey="box" label="' -" color="yellow"/>);
+      boxes.push(<Boxable targetKey="box" label="- '" color="blue"/>);
+      boxes.push(<Boxable targetKey="box" label="' - -" color="red"/>);
+      boxes.push(<Boxable targetKey="box" label="- - '" color="gray"/>);
+      boxes.push(<Boxable targetKey="box" label="' '" color="black"/>);
+      boxes.push(<Boxable targetKey="box" label="- -" color="green"/>);
     }
     return (
       <div>
         <div className="drag_things_to_boxes">
           <div className="boxes">
-            {boxes}
+            {lines}
           </div>
           <div style={{clear: 'both'}}>&nbsp;</div>
           <div className="things_to_drag">
-            <Boxable targetKey="box" label="' -" color="yellow"/>
-            <Boxable targetKey="box" label="- '" color="blue"/>
-            <Boxable targetKey="box" label="' - -" color="red"/>
-            <Boxable targetKey="box" label="- - '" color="gray"/>
-            <Boxable targetKey="box" label="' '" color="black"/>
-            <Boxable targetKey="box" label="- -" color="green"/>
+            {boxes}
           </div>
         </div>
       </div>
