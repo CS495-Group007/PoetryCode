@@ -19,27 +19,56 @@ class AddPoemInterface extends React.Component{
             lines: [],
             numLines: 0,
             poemName: "",
-            author: ""
+            poet: "",
+            gameBoard: []
         };
         this.processLines = this.processLines.bind(this);
         this.textChange = this.textChange.bind(this);
+        this.updateGameBoard = this.updateGameBoard.bind(this);
+        this.handlePoetChange = this.handlePoetChange.bind(this);
+        this.handlePoemNameChange = this.handlePoemNameChange.bind(this);
     }
 
     processLines(event){
         event.preventDefault();
-        console.log(event);
+        console.log(this.state.lines);
+        alert(this.state.poet);
+        alert(this.state.poemName);
+        alert(this.state.lines);
+        alert(this.state.gameBoard);
+        //SEND DATA TO DATABASE HERE (lines and num of lines)
         // this.setState({currentPoemNumber: poemID});
     }
 
     textChange(event) {
         var ls = event.target.value.split('\n');
+        var i;
+        let numOfLines = 0;
+        for(i=0; i<ls.length; i++){
+            if(ls[i].length > 0)
+                numOfLines++;
+        }
         this.setState({
             lines: ls,
-            numLines : ls.length
+            numLines: numOfLines
         });
         console.log(this.state.numLines);
     }
+
+    handlePoetChange(event){
+        this.setState({poet: event.target.value});
+    }
+
+    handlePoemNameChange(event){
+        this.setState({poemName: event.target.value});
+    }
  
+    updateGameBoard(items, index){
+        let gameBoard = this.state.gameBoard.slice();
+        gameBoard[index] = items;
+        this.setState({gameBoard: gameBoard});
+    }
+    
     render(){
         return(
             <div id="gameInner" itemID="gameInner">
@@ -50,9 +79,22 @@ class AddPoemInterface extends React.Component{
                     </Row>
                 </Container>
                 <form onSubmit={this.processLines}>
-                    <label className="InputLabel">Poem Text:</label>
-                    <textarea className="poemInput" id="thePoemText" onChange={this.textChange}/>
-                    <GameBoard/>
+                    <label>
+                        Poet:
+                        <br/>
+                        <input type="text" value = {this.state.poet} onChange = {this.handlePoetChange} />
+                    </label><br/>
+                    <label>
+                        Poem Name:
+                        <br/>
+                        <input type="text" value = {this.state.poemName} onChange = {this.handlePoemNameChange} />
+                    </label><br/>
+                    <label>
+                        Poem Text:
+                        <br/>
+                        <textarea className="poemInput" id="thePoemText" onChange={this.textChange}/>
+                    </label><br/>
+                    <GameBoard currentPoemLines = {this.state.numLines} updateGameBoard = {this.updateGameBoard}/>
                     <button type="submit">Submit</button>
                 </form>
             </div>

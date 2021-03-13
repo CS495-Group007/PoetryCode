@@ -77,7 +77,7 @@ class SimplyScansion extends React.Component{
                 </Container>
                 <div className = "rowC">
                     <PoemSelector poems = {this.state.poems} changePoem = {this.changePoem} currentPoemNumber = {this.state.currentPoemNumber} currentPoemName = {this.currentPoemName}/>
-                    <GameBoard poems = {this.state.poems} currentPoemNumber = {this.state.currentPoemNumber} currentPoemLines = {this.state.currentPoemLines} updateGameBoard = {this.updateGameBoard}/>
+                    <GameBoard currentPoemLines = {this.state.currentPoemLines} updateGameBoard = {this.updateGameBoard}/>
                 </div>
                 <div className = "button">
                     <button onClick = {this.checkIfCorrect}>Submit</button>
