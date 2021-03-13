@@ -7,7 +7,7 @@
   display: flex;
   font-weight: 400;
   font-family: sans-serif;
-  background: #280A7C;
+  background: #8987d1;
 }
 
 body, html, #root, .outer {
@@ -18,9 +18,9 @@ body, html, #root, .outer {
 .outer {
   display: flex;
   justify-content: center;
-  flex-direction: column;
+  height: calc(100% - 56px);
   text-align: left;
-  background: #280A7C;
+  background: #8987d1;
 }
 
 @media (max-width: 500px) {

@@ -1,3 +1,5 @@
+//Login page to access the account
+//Will be connected to the database, not yet set up
 import React, { Component } from "react";
 import '../Styling/Login.css';
 
@@ -5,7 +7,7 @@ export default class Login extends Component {
     render() {
         return (
             <form>
-
+                {/*Submit the required information to access your account, will be accessed in the database*/}
                 <h3>Log In</h3>
 
                 <div className="mb-3">

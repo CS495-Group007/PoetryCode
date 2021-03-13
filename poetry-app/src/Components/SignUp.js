@@ -1,3 +1,5 @@
+//Sign Up to create an account
+//Information to be connected to the database, not yet set up
 import React, { Component } from "react";
 import '../Styling/Login.css'
 
@@ -5,6 +7,7 @@ export default class SignUp extends Component {
     render() {
         return (
             <form>
+                {/*Submit the required information to create an account, will be stored in the database*/}
                 <h3>Register</h3>
 
                 <div className="mb-3">

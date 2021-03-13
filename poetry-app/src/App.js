@@ -4,6 +4,7 @@ import './Styling/App.css';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Nav, Navbar } from "react-bootstrap";
 
+//Import the components to set up the navigation bar
 import Login from "./Components/Login";
 import SignUp from "./Components/SignUp";
 import SimplyScansion from "./Components/SimplyScansion";
@@ -13,6 +14,7 @@ import Home from "./Components/Home";
 function App() {
   return (<Router>
     <div className="App">
+      {/*Navigation Bar*/}
       <Navbar bg="light" expand="lg">
         <Navbar.Brand href="/">Simply Scansion</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -27,6 +29,7 @@ function App() {
         </Navbar.Collapse>
       </Navbar>
 
+      {/*Styling the components within the inner & outer containers*/}
       <div className="outer">
         <div className="inner">
           <Switch>

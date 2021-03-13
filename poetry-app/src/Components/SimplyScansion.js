@@ -71,7 +71,7 @@ class SimplyScansion extends React.Component{
             <div>
                 <Container>
                     <Row>
-                        <Col xs={9}></Col>
+                        <Col xs={0} md={9}></Col>
                         <Col><Legend/></Col>
                     </Row>
                 </Container>
