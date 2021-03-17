@@ -19,7 +19,11 @@ export default class GameBoard extends React.Component {
     let lines = [];
     let boxes = []
     for(i=0; i < this.props.currentPoemLines; i++){
-      lines.push(<Box targetKey="box" index={i} updateGameBoard={this.updateGameBoard}/>);
+      lines.push(<Box 
+                  targetKey="box" 
+                  index={i} 
+                  updateGameBoard={this.updateGameBoard} 
+                />);
     }
     if(this.props.currentPoemLines > 0){
       boxes.push(<Boxable targetKey="box" label="' -" color="yellow"/>);
