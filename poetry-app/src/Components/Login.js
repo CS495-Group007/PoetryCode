@@ -27,7 +27,7 @@ export default class Login extends Component {
                     </div>
                 </div>
                 <div class="d-grid gap-2">
-                    <a class="btn btn-dark btn-lg" href="/simply-scansion" role="button">Sign in</a>
+                    <a class="btn btn-dark btn-lg" href="/StudentDashboard" role="button">Sign in</a>
                     <p className="forgot-password text-right">
                         Forgot <a href="/sign-in">password?</a>
                     </p>

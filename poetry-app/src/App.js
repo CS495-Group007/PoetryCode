@@ -10,6 +10,8 @@ import SignUp from "./Components/SignUp";
 import SimplyScansion from "./Components/SimplyScansion";
 import AddPoemInterface from "./Components/AddPoemInterface";
 import Home from "./Components/Home";
+import StudentDashboard from "./Components/Dashboards/StudentDashboard";
+import InstructorDashboard from "./Components/Dashboards/InstructorDashboard";
 
 function App() {
   return (<Router>
@@ -24,6 +26,7 @@ function App() {
             <Nav.Link href="/sign-up">Sign Up</Nav.Link>
             <Nav.Link href="/how-to">How To</Nav.Link>
             <Nav.Link href="/simply-scansion">Scan a Poem</Nav.Link>
+            <Nav.Link href="/student-dashboard">Dashboard</Nav.Link>
             <Nav.Link href="/add-poem">Add a Poem</Nav.Link>
           </Nav>
         </Navbar.Collapse>
@@ -37,6 +40,8 @@ function App() {
             <Route path="/sign-in" component={Login} />
             <Route path="/sign-up" component={SignUp} />
             <Route path='/simply-scansion' component={SimplyScansion} />
+            <Route path='/student-dashboard' component={StudentDashboard} />
+            <Route path='/instructor-dashboard' component={InstructorDashboard} />
             <Route path='/add-poem' component={AddPoemInterface} />
             <Route path='/how-to' component={Home} />
           </Switch>
