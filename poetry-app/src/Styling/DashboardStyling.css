@@ -7,8 +7,22 @@
 
     font-size: min(4.5vh, 5vw);
 
-    font-family: nexa;
-    text-transform: uppercase;
+    /* font-family: nexa; */
+    font-family: Didot;
+    /* text-transform: uppercase; */
+}
+
+.viewSelector {
+    font-size: min(2vh, 2.5vw);
+    position: relative;
+    left: 0;
+    right: 0;
+    top: 1.5vh;
+    text-align: center;
+}
+
+.currentViewSpan {
+    color: #ab98ec;
 }
 
 .regularDashboardLabel {
@@ -27,16 +41,16 @@
 
 .poemTable {
     display: table;
-    width: 100%;
     position: relative;
     left: 0;
     right: 0;
+    width: 100%;
     top: min(3vh, 3vw);
 
     margin-bottom: 5vh;
 
     border-collapse: separate;
-    border-spacing: .2vh;
+    border-spacing: .5vh;
 }
 
 .poemTableRow {
@@ -92,14 +106,9 @@
     color: white;
 }
 
-.listedPoemTitle {
-    font-size: min(2.05vh, 2.55vw);
+.listedPoemTitle, .listedPoemStatus, .listedPoemAuthor {
+    font-size: min(1.85vh, 2.25vw);
     text-align: center;
-}
-
-.listedPoemStatus, .listedPoemAuthor {
-    text-align: center;
-    font-size: min(2.05vh, 2.55vw);
 }
 
 .reactLink {

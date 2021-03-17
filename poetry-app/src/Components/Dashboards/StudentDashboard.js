@@ -163,23 +163,6 @@ class StudentDashboard extends React.Component {
             }
         }
 
-        // An empty div to break things up
-
-        // if(incompletePoems.length > 0)
-        //     incompletePoems.push(
-        //         <div className="poemTableRow">
-        //                 <div className="blankRow">
-        //                     <div className="singlePoemTable">
-        //                         <div className="singlePoemTableRow">
-        //                             <div className="singlePoemTableCell listedPoemTitle"> </div>
-        //                             <div className="singlePoemTableCell listedPoemAuthor"> &nbsp; </div>
-        //                             <div className="singlePoemTableCell listedPoemStatus"> </div>
-        //                         </div>
-        //                     </div>
-        //                 </div>
-        //             </div>
-        //     );
-
         for (poet in allPoems) {
             for (p in allPoems[poet]) {
                 if(studentPoems[poet] && studentPoems[poet][p]) {
@@ -203,22 +186,6 @@ class StudentDashboard extends React.Component {
             }
         }
 
-        // An empty div to break things up
-        // if(unstartedPoems.length > 0)
-        //     unstartedPoems.push(
-        //         <div className="poemTableRow">
-        //                 <div className="blankRow">
-        //                     <div className="singlePoemTable">
-        //                         <div className="singlePoemTableRow">
-        //                             <div className="singlePoemTableCell listedPoemTitle">  </div>
-        //                             <div className="singlePoemTableCell listedPoemAuthor"> &nbsp;</div>
-        //                             <div className="singlePoemTableCell listedPoemStatus"> </div>
-        //                         </div>
-        //                     </div>
-        //                 </div>
-        //             </div>
-        //     );
-
         poemsTable.push(incompletePoems, unstartedPoems, completePoems);
 
         return ( 
@@ -226,10 +193,6 @@ class StudentDashboard extends React.Component {
                 <div className="DashboardTitle">
                     { studentName }'s { this.translateRole(role) } Dashboard
                 </div>
-
-                {/* <div className="regularDashboardLabel">
-                    My Poems
-                </div> */}
 
                 <div className="poemTable">
                     <div className="poemTableRow">
