@@ -1,5 +1,29 @@
-.poem {
-    font-size: 14px;
+@media (max-width: 400px) {
+    .poem {
+        font-size: 10.75px;
+        line-height: 45px;
+    }
+}
+
+@media (min-width: 400px) and (max-width: 500px) {
+    .poem {
+        font-size: 12.75px;
+        line-height: 45px;
+    }
+}
+
+@media (min-width: 500px) and (max-width: 1100px) {
+    .poem {
+        font-size: 12px;
+        line-height: 70px;
+    }
+}
+
+@media (min-width: 1100px) {
+    .poem {
+        font-size: 14px;
+        line-height: 70px;
+    }
 }
 
 .button {
