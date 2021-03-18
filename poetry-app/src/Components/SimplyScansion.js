@@ -6,6 +6,7 @@ import Legend from './Legend.js';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Button from 'react-bootstrap/Button';
 
 class SimplyScansion extends React.Component{
     constructor(props){
@@ -49,22 +50,22 @@ class SimplyScansion extends React.Component{
         return(
             <div>
                 <Container>
-                    <Row>
-                        <Col xs={0} md={9}></Col>
+                    <Row className="text-center">
+                        <Col md={8} lg={9} xl={10}><h1 class="text-center">{this.props.location.state.poemName}</h1></Col>
                         <Col><Legend/></Col>
                     </Row>
+                    <Row>
+                        <Col md={6} lg={6} xl={5}>{poemLines}</Col>
+                        <Col md={5} lg={5} xl={7}><GameBoard 
+                            currentPoemLines = {this.props.location.state.currentPoemLines} 
+                            updateGameBoard = {this.updateGameBoard} 
+                        />
+                        </Col>
+                    </Row>
+                    <Row className="text-center">
+                        <Col><Button variant="secondary" onClick = {this.checkIfCorrect}>Submit</Button></Col>
+                    </Row>
                 </Container>
-                <h1 class="text-center">{this.props.location.state.poemName}</h1>
-                <div>
-                    {poemLines}
-                    <GameBoard 
-                        currentPoemLines = {this.props.location.state.currentPoemLines} 
-                        updateGameBoard = {this.updateGameBoard} 
-                    />
-                </div>
-                <div className = "button">
-                    <button onClick = {this.checkIfCorrect}>Submit</button>
-                </div>
             </div>
         );
     }

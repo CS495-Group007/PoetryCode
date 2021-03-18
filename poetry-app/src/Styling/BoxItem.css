@@ -8,15 +8,23 @@
 @media (min-width: 500px) and (max-width: 900px) {
     .box_item_component .outside {
         border-top: none;
-        width: 12vw;
+        width: 8vw;
         overflow: hidden;
     }
 }
 
-@media (min-width: 900px) {
+@media (min-width: 900px) and (max-width: 1100px) {
     .box_item_component .outside {
         border-top: none;
-        width: 10vw;
+        width: 6vw;
+        overflow: hidden;
+    }
+}
+
+@media (min-width: 1100px) {
+    .box_item_component .outside {
+        border-top: none;
+        width: 7vw;
         overflow: hidden;
     }
 }
