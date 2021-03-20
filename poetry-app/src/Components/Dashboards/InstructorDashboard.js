@@ -31,31 +31,35 @@ class InstructorDashboard extends React.Component {
     }
 
     render() {
-        return ( 
-            <div id = "studentDashboard" >
-                <div className="DashboardTitle">
-                { instructorTitle }{ instructorName }'s Instructor Dashboard
-                </div>
-    
-                <div className="viewSelector">
-                    Currently Viewing: <span className="currentViewSpan">{ this.viewTranslation(this.currentView) }</span><br/>
-                    &#40;Click to change&#41;
-                </div>
+        return (
+            <div className = "outer">
+                <div className = "inner">
+                    <div id = "studentDashboard" >
+                        <div className="DashboardTitle">
+                        { instructorTitle }{ instructorName }'s Instructor Dashboard
+                        </div>
+            
+                        <div className="viewSelector">
+                            Currently Viewing: <span className="currentViewSpan">{ this.viewTranslation(this.currentView) }</span><br/>
+                            &#40;Click to change&#41;
+                        </div>
 
-                <div className="poemTable">
-                    <div className="poemTableRow">
-                             <div className="TitleRow">
-                                 <div className="singlePoemTable">
-                                     <div className="singlePoemTableRow">
-                                         <div className="singlePoemTableCell TitleRow"> Title </div>
-                                         <div className="singlePoemTableCell TitleRow"> Author </div>
-                                         <div className="singlePoemTableCell TitleRow"> Status </div>
-                                     </div>
-                                 </div>
-                             </div>
-                         </div>
+                        <div className="poemTable">
+                            <div className="poemTableRow">
+                                    <div className="TitleRow">
+                                        <div className="singlePoemTable">
+                                            <div className="singlePoemTableRow">
+                                                <div className="singlePoemTableCell TitleRow"> Title </div>
+                                                <div className="singlePoemTableCell TitleRow"> Author </div>
+                                                <div className="singlePoemTableCell TitleRow"> Status </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+            
+                    </div>
                 </div>
-    
             </div>
         );
     }

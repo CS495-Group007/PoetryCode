@@ -24,7 +24,7 @@
 @media (min-width: 1100px) {
     .box_item_component .outside {
         border-top: none;
-        width: 7vw;
+        width: 5vw;
         overflow: hidden;
     }
 }
@@ -95,4 +95,8 @@
 .box_item_component .grabber {
     font-weight: bold;
     padding-right: 6px;
+}
+
+img {
+    margin-top: 3vh;
 }

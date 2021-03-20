@@ -14,8 +14,8 @@
 
 @media (min-width: 500px) and (max-width: 1100px) {
     .poem {
-        font-size: 12px;
-        line-height: 70px;
+        font-size: 11px;
+        line-height: 50px;
     }
 }
 
@@ -30,4 +30,69 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.column {
+    display: inline-block;
+    padding: 20px;
+    text-align: center;
+}
+
+.flex-container {
+    display: flex;
+    background: #8987d1;
+    height: calc(100% - 56px);
+    text-align: left;
+}
+
+@media (min-width: 500px) and (max-width: 900px) {
+    .main {
+        flex: 100%;
+        width: 75vw;
+        background: white;
+        overflow-y: auto;
+        margin: 2% 1%;
+        background: #ffffff;
+        padding: 2% 5% 2% 5%;
+        border-radius: 15px;
+        transition: all .3s;
+    }
+}
+
+@media (min-width: 900px) {
+    .main {
+        flex: 100%;
+        width: 75vw;
+        background: white;
+        overflow-y: auto;
+        margin: 2% 1%;
+        background: #ffffff;
+        padding: 2% 5% 2% 5%;
+        border-radius: 15px;
+        transition: all .3s;
+    }
+}
+
+@media (min-width: 500px) and (max-width: 900px) {
+    .pieces {
+        flex: 0 15vw;
+        background: white;
+        margin: 25% 1%;
+        padding: 5% 5%;
+        background: #ffffff;
+        border-radius: 15px;
+        transition: all .3s;
+    }
+}
+
+@media (min-width: 900px) {
+    .pieces {
+        flex: 0 25vw;
+        background: white;
+        margin: 10% 1%;
+        padding: 10% 10%;
+        background: #ffffff;
+        border-radius: 15px;
+        transition: all .3s;
+    }
 }

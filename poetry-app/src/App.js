@@ -14,39 +14,41 @@ import StudentDashboard from "./Components/Dashboards/StudentDashboard";
 import InstructorDashboard from "./Components/Dashboards/InstructorDashboard";
 
 function App() {
-  return (<Router>
-    <div className="App">
-      {/*Navigation Bar*/}
-      <Navbar bg="light" expand="lg">
-        <Navbar.Brand href="/">Simply Scansion</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav>
-            <Nav.Link href="/sign-in">Log In</Nav.Link>
-            <Nav.Link href="/sign-up">Sign Up</Nav.Link>
-            <Nav.Link href="/how-to">How To</Nav.Link>
-            <Nav.Link href="/student-dashboard">Dashboard</Nav.Link>
-            <Nav.Link href="/add-poem">Add a Poem</Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
+  return (
+    <Router>
+      <div className="App">
+        {/*Navigation Bar*/}
+        <Navbar bg="light" expand="lg">
+          <Navbar.Brand href="/">Simply Scansion</Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav">
+            <Nav>
+              <Nav.Link href="/sign-in">Log In</Nav.Link>
+              <Nav.Link href="/sign-up">Sign Up</Nav.Link>
+              <Nav.Link href="/how-to">How To</Nav.Link>
+              <Nav.Link href="/student-dashboard">Dashboard</Nav.Link>
+              <Nav.Link href="/add-poem">Add a Poem</Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Navbar>
 
-      {/*Styling the components within the inner & outer containers*/}
-      <div className="outer">
-        <div className="inner">
-          <Switch>
-            <Route exact path='/' component={Home} />
-            <Route path="/sign-in" component={Login} />
-            <Route path="/sign-up" component={SignUp} />
-            <Route path='/simply-scansion' component={SimplyScansion} />
-            <Route path='/student-dashboard' component={StudentDashboard} />
-            <Route path='/instructor-dashboard' component={InstructorDashboard} />
-            <Route path='/add-poem' component={AddPoemInterface} />
-            <Route path='/how-to' component={Home} />
-          </Switch>
-        </div>
+        {/*Styling the components within the inner & outer containers*/}
+        {/*<div className="outer">
+          <div className="inner">*/}
+            <Switch>
+              <Route exact path='/' component={Home} />
+              <Route path="/sign-in" component={Login} />
+              <Route path="/sign-up" component={SignUp} />
+              <Route path='/simply-scansion' component={SimplyScansion} />
+              <Route path='/student-dashboard' component={StudentDashboard} />
+              <Route path='/instructor-dashboard' component={InstructorDashboard} />
+              <Route path='/add-poem' component={AddPoemInterface} />
+              <Route path='/how-to' component={Home} />
+            </Switch>
+        {/*  </div>
+        </div>*/}
       </div>
-    </div></Router>
+    </Router>
   );
 }
 
