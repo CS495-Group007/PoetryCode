@@ -48,8 +48,8 @@ class SimplyScansion extends React.Component{
             poemLines.push(<div className = "poem">{line}</div>);
         });
         return(
-            <div class="flex-container">
-                <div class="main">
+            <div class="parent">
+                <div class="child">
                     <Container>
                         <Row className="text-center">
                             <Col md={8} lg={9}>
@@ -58,8 +58,8 @@ class SimplyScansion extends React.Component{
                             <Col><Legend/></Col>
                         </Row>
                         <Row>
-                            <Col md={5} lg={5}>{poemLines}</Col>
-                            <Col md={7} lg={7}><GameBoard 
+                            <Col sm={6} lg={5} xl={5}>{poemLines}</Col>
+                            <Col sm={6} lg={7} xl={7}><GameBoard 
                                 currentPoemLines = {this.props.location.state.currentPoemLines} 
                                 updateGameBoard = {this.updateGameBoard} 
                             /></Col>
