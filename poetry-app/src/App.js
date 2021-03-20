@@ -7,6 +7,7 @@ import { Nav, Navbar } from "react-bootstrap";
 //Import the components to set up the navigation bar
 import Login from "./Components/Login";
 import SignUp from "./Components/SignUp";
+import SimplyScansion from "./Components/SimplyScansion";
 import AddPoemInterface from "./Components/AddPoemInterface";
 import Home from "./Components/Home";
 import StudentDashboard from "./Components/Dashboards/StudentDashboard";
@@ -37,6 +38,7 @@ function App() {
             <Route exact path='/' component={Home} />
             <Route path="/sign-in" component={Login} />
             <Route path="/sign-up" component={SignUp} />
+            <Route path='/simply-scansion' component={SimplyScansion} />
             <Route path='/student-dashboard' component={StudentDashboard} />
             <Route path='/instructor-dashboard' component={InstructorDashboard} />
             <Route path='/add-poem' component={AddPoemInterface} />

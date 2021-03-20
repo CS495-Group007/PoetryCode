@@ -1,7 +1,10 @@
 import React from 'react';
 import { DragDropContainer, DropTarget } from 'react-drag-drop-container';
 import BoxItem from './BoxItem';
+import trashcan from '../Images/trashcan.png';
+
 var shortid = require('short-id');
+
 export default class Box extends React.Component {
     constructor(props) {
       super(props);
@@ -9,8 +12,14 @@ export default class Box extends React.Component {
         items: [],
         colors: []
       };
+      this.deleteRow = this.deleteRow.bind(this);
     }
   
+    deleteRow(){
+      this.setState({items: [], colors: []});
+      this.props.updateGameBoard([], this.props.index);      
+    }
+
     handleDrop = (e) => {
       let items = this.state.items.slice();
       let colors = this.state.colors.slice();
@@ -56,26 +65,29 @@ export default class Box extends React.Component {
           outside AND items dragged between boxes.
       */
       return (
-        <div className="component_box">
-          <DropTarget onHit={this.handleDrop} targetKey={this.props.targetKey} dropData={{name: this.props.name}}>
-            <DropTarget onHit={this.handleDrop} targetKey="boxItem" dropData={{name: this.props.name}}>
-              <div className="box">
-                <table>
-                  <tr>
-                    {this.state.items.map((item, index) => {
-                      return (
-                        <td>
-                          <BoxItem key={item.uid} uid={item.uid} kill={this.kill} index={index} swap={this.swap} color={item.color}>
-                            {item.label}
-                          </BoxItem>
-                        </td>
-                      )
-                    })}
-                  </tr>
-                </table>
-              </div>
+        <div>
+          <div className="component_box">
+            <DropTarget onHit={this.handleDrop} targetKey={this.props.targetKey} dropData={{name: this.props.name}}>
+              <DropTarget onHit={this.handleDrop} targetKey="boxItem" dropData={{name: this.props.name}}>
+                <div className="box">
+                  <table>
+                    <tr>
+                      {this.state.items.map((item, index) => {
+                        return (
+                          <td>
+                            <BoxItem key={item.uid} uid={item.uid} kill={this.kill} index={index} swap={this.swap} color={item.color}>
+                              {item.label}
+                            </BoxItem>
+                          </td>
+                        )
+                      })}
+                    </tr>
+                  </table>
+                </div>
+              </DropTarget>
             </DropTarget>
-          </DropTarget>
+          </div>
+          <img src={trashcan} height = {20} width = {20} onClick = {this.deleteRow}/>
         </div>
       );
     }

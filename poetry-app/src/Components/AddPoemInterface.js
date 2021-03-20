@@ -29,15 +29,33 @@ class AddPoemInterface extends React.Component{
         this.handlePoemNameChange = this.handlePoemNameChange.bind(this);
     }
 
+    convertArrayToString(array){
+        let returnString = "";
+        var i;
+        for(i = 0; i < array.length - 1; i++){
+            returnString += array[i] + "|~|";
+        }
+        returnString += array[array.length - 1];
+        return returnString;
+    }
+
+    convertGameBoardToString(array){
+        let returnString = "";
+        var i;
+        for(i = 0; i < array.length - 1; i++){
+            returnString += this.convertArrayToString(array[i]) + "|*|";
+        }
+        returnString += this.convertArrayToString(array[array.length - 1]);
+        return returnString;
+    }
+
     processLines(event){
         event.preventDefault();
-        console.log(this.state.lines);
         alert(this.state.poet);
         alert(this.state.poemName);
-        alert(this.state.lines);
-        alert(this.state.gameBoard);
-        //SEND DATA TO DATABASE HERE (lines and num of lines)
-        // this.setState({currentPoemNumber: poemID});
+        alert(this.convertArrayToString(this.state.lines));
+        alert(this.convertGameBoardToString(this.state.gameBoard));
+        //SEND DATA TO DATABASE HERE
     }
 
     textChange(event) {
