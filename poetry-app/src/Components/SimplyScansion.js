@@ -48,24 +48,30 @@ class SimplyScansion extends React.Component{
             poemLines.push(<div className = "poem">{line}</div>);
         });
         return(
-            <div>
-                <Container>
-                    <Row className="text-center">
-                        <Col md={8} lg={9} xl={10}><h1 class="text-center">{this.props.location.state.poemName}</h1></Col>
-                        <Col><Legend/></Col>
-                    </Row>
-                    <Row>
-                        <Col md={6} lg={6} xl={5}>{poemLines}</Col>
-                        <Col md={5} lg={5} xl={7}><GameBoard 
-                            currentPoemLines = {this.props.location.state.currentPoemLines} 
-                            updateGameBoard = {this.updateGameBoard} 
-                        />
-                        </Col>
-                    </Row>
-                    <Row className="text-center">
-                        <Col><Button variant="secondary" onClick = {this.checkIfCorrect}>Submit</Button></Col>
-                    </Row>
-                </Container>
+            <div class="flex-container">
+                <div class="main">
+                    <Container>
+                        <Row className="text-center">
+                            <Col md={8} lg={9}>
+                                <h1 class="text-class">{this.props.location.state.poemName}</h1>
+                            </Col>
+                            <Col><Legend/></Col>
+                        </Row>
+                        <Row>
+                            <Col md={5} lg={5}>{poemLines}</Col>
+                            <Col md={7} lg={7}><GameBoard 
+                                currentPoemLines = {this.props.location.state.currentPoemLines} 
+                                updateGameBoard = {this.updateGameBoard} 
+                            /></Col>
+                        </Row>
+                        <Row className="text-center">
+                            <Button variant="secondary" onClick = {this.checkIfCorrect}>Submit</Button>
+                        </Row>
+                    </Container>
+                </div>
+                <div class="pieces">
+                    <p>Game pieces here</p>
+                </div>
             </div>
         );
     }

@@ -3,7 +3,6 @@ import Boxable from './Boxable';
 import Box from './Box';
 import '../Styling/GameBoard.css';
 
-
 export default class GameBoard extends React.Component {
   constructor(props){
     super(props);
