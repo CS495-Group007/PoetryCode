@@ -188,23 +188,24 @@
 .instructorDetailTable {
     display: table;
     width: 100%;
-    background-color: #bbbdba;
+    background-color: #d1d1d1;
     color: #41234d;
+
+    border-collapse: collapse;
+
+    border-radius: min(2vw, 2vh);
+
+    --PaddingFromSide: min(2vw, 2vh);
+    --ExtraPaddingFromSide: min(3vw, 3vh);
 }
 
-.instructorDetailTable:hover .instructorDetailRowDetail {
-    display: table-row;
-}
-
-.instructorDetailTable .instructorDetailRowDetail {
+.instructorDetailTable .instructorDetailRowDetailCollapsed {
     display: none;
-    transition: 0s display;
-    transition-delay: 1s;
 }
 
-.instructorDetailRowPrimary, .instructorDetailRowDetail{
+.instructorDetailRowPrimary, .instructorDetailRowDetailExpanded{
     width: 100%;
-    border-radius: 0.2vw;
+    border-radius: 1.2vw;
 }
 
 .instructorDetailRowPrimary {
@@ -212,7 +213,7 @@
     font-size: min(2.05vh, 2.5vw);
 }
 
-.instructorDetailTable:hover {
+.instructorDetailTable:hover :nth-child(1){
     background-color: #8ac94b;
     color: #41234d;
 }
@@ -225,21 +226,21 @@
 .instructorDetailCell {
     display: table-cell;
 
-    padding-left: min(1vh, 1vw);
+    padding-left: var(--PaddingFromSide);
 }
 
-.instructorDetailRowDetail .instructorDetailCell:nth-child(1) {
-    padding-left: min(3vw, 3vh);
+.instructorDetailRowDetailExpanded:nth-child(1) {
+    padding-left: var(--PaddingFromSide);
 }
 
-.instructorDetailRowDetail .instructorDetailCell:nth-child(2) {
+.instructorDetailRowDetailExpanded:nth-child(2) {
     text-align: right;
-    padding-right: min(3vw, 3vh);
+    padding-right: var(--ExtraPaddingFromSide);
 }
 
 .classCell {
     text-align: right;
-    padding-right: min(1vh, 1vw);
+    padding-right: var(--PaddingFromSide);
 }
 
 @keyframes expand {

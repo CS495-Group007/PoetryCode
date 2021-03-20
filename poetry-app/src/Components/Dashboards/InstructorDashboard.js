@@ -1,6 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import '../../Styling/DashboardStyling.css';
+import IDetails from "./IDetails"
+
+// Constants
+const detailPrimaryKey = "detailPrimary",
+      detailSecondaryKey = "detailSecondary";
 
 // Variable declarations
 var instructorTitle = "";
@@ -30,7 +34,75 @@ class InstructorDashboard extends React.Component {
         }
     }
 
+
+
     render() {
+
+        var details = [
+            [
+                {
+                    "detailPrimary" : "Sonnet 1",
+                    "detailSecondary" : "In Progress"
+                },
+                {
+                    "detailPrimary" : "Sonnet 5",
+                    "detailSecondary" : "In Progress"
+                },
+                {
+                    "detailPrimary" : "Sonnet 10",
+                    "detailSecondary" : "Complete"
+                }
+            ],
+            [
+                {
+                    "detailPrimary" : "Sonnet 1",
+                    "detailSecondary" : "In Progress"
+                },
+                {
+                    "detailPrimary" : "Sonnet 5",
+                    "detailSecondary" : "In Progress"
+                },
+                {
+                    "detailPrimary" : "Sonnet 10",
+                    "detailSecondary" : "Complete"
+                }
+            ],
+            [
+                {
+                    "detailPrimary" : "Sonnet 5",
+                    "detailSecondary" : "In Progress"
+                },
+                {
+                    "detailPrimary" : "Sonnet 10",
+                    "detailSecondary" : "Complete"
+                }
+            ],
+            [
+                {
+                    "detailPrimary" : "Sonnet 1",
+                    "detailSecondary" : "In Progress"
+                },
+                {
+                    "detailPrimary" : "Sonnet 5",
+                    "detailSecondary" : "In Progress"
+                }
+            ],
+            [
+                {
+                    "detailPrimary" : "Sonnet 10",
+                    "detailSecondary" : "Complete"
+                },
+                {
+                    "detailPrimary" : "Sonnet 15",
+                    "detailSecondary" : "In Progress"
+                },
+                {
+                    "detailPrimary" : "Sonnet 23",
+                    "detailSecondary" : "Complete"
+                }
+            ]
+        ]
+
         return ( 
             <div id = "studentDashboard" >
                 <div className="DashboardTitle">
@@ -45,192 +117,35 @@ class InstructorDashboard extends React.Component {
                 <div className="instructorTable">
                     <div className="instructorTableRow">
                         <div className="instructorTableCell">
-                            <div className="instructorDetailTable">
-                                <div className="instructorDetailRowPrimary">
-                                    <div className="instructorDetailCell">
-                                        Connor
-                                    </div>
-                                    <div className="instructorDetailCell classCell">
-                                        Shakespeare 201
-                                    </div>
-                                </div>
-                                <div className="instructorDetailRowDetail">
-                                    <div className="instructorDetailCell">
-                                        Sonnet 1
-                                    </div>
-                                    <div className="instructorDetailCell">
-                                        Complete
-                                    </div>
-                                </div>
-                                <div className="instructorDetailRowDetail">
-                                    <div className="instructorDetailCell">
-                                        Sonnet 2
-                                    </div>
-                                    <div className="instructorDetailCell">
-                                        In Progress
-                                    </div>
-                                </div>
-                            </div>
+                            <IDetails primaryName = "Connor" secondaryName = "Shakespeare 210" details = { details[0] }></IDetails>
                         </div>
                     </div>
 
                     <div className="instructorTableRow">
                         <div className="instructorTableCell">
-                            <div className="instructorDetailTable">
-                                <div className="instructorDetailRowPrimary">
-                                    <div className="instructorDetailCell">
-                                        Nash
-                                    </div>
-                                    <div className="instructorDetailCell classCell">
-                                        Shakespeare 101
-                                    </div>
-                                </div>
-                                <div className="instructorDetailRowDetail">
-                                    <div className="instructorDetailCell">
-                                        Sonnet 1
-                                    </div>
-                                    <div className="instructorDetailCell">
-                                    In Progress
-                                    </div>
-                                </div>
-                                <div className="instructorDetailRowDetail">
-                                    <div className="instructorDetailCell">
-                                        Sonnet 2
-                                    </div>
-                                    <div className="instructorDetailCell">
-                                        In Progress
-                                    </div>
-                                </div>
-                            </div>
+                            <IDetails primaryName = "Nash" secondaryName = "Shakespeare 101" details = { details[1] }></IDetails>
                         </div>
                     </div>
 
                     <div className="instructorTableRow">
                         <div className="instructorTableCell">
-                            <div className="instructorDetailTable">
-                                <div className="instructorDetailRowPrimary">
-                                    <div className="instructorDetailCell">
-                                        Gerome
-                                    </div>
-                                    <div className="instructorDetailCell classCell">
-                                        Shakespeare 101
-                                    </div>
-                                </div>
-                                <div className="instructorDetailRowDetail">
-                                    <div className="instructorDetailCell">
-                                        Sonnet 1
-                                    </div>
-                                    <div className="instructorDetailCell">
-                                    In Progress
-                                    </div>
-                                </div>
-                                <div className="instructorDetailRowDetail">
-                                    <div className="instructorDetailCell">
-                                        Sonnet 12
-                                    </div>
-                                    <div className="instructorDetailCell">
-                                        In Progress
-                                    </div>
-                                </div>
-                            </div>
+                            <IDetails primaryName = "Gerome" secondaryName = "Shakespeare 201" details = { details[2] }></IDetails>
                         </div>
                     </div>
 
                     <div className="instructorTableRow">
                         <div className="instructorTableCell">
-                            <div className="instructorDetailTable">
-                                <div className="instructorDetailRowPrimary">
-                                    <div className="instructorDetailCell">
-                                        Maddie
-                                    </div>
-                                    <div className="instructorDetailCell classCell">
-                                        Shakespeare 401
-                                    </div>
-                                </div>
-                                <div className="instructorDetailRowDetail">
-                                    <div className="instructorDetailCell">
-                                        Sonnet 100
-                                    </div>
-                                    <div className="instructorDetailCell">
-                                    In Progress
-                                    </div>
-                                </div>
-                                <div className="instructorDetailRowDetail">
-                                    <div className="instructorDetailCell">
-                                        Sonnet 2
-                                    </div>
-                                    <div className="instructorDetailCell">
-                                        In Progress
-                                    </div>
-                                </div>
-                                <div className="instructorDetailRowDetail">
-                                    <div className="instructorDetailCell">
-                                        Sonnet 22
-                                    </div>
-                                    <div className="instructorDetailCell">
-                                        Complete
-                                    </div>
-                                </div>
-                                <div className="instructorDetailRowDetail">
-                                    <div className="instructorDetailCell">
-                                        Sonnet 12
-                                    </div>
-                                    <div className="instructorDetailCell">
-                                        Complete
-                                    </div>
-                                </div>
-                            </div>
+                            <IDetails primaryName = "Maddie" secondaryName = "Shakespeare 10" details = { details[3] }></IDetails>
                         </div>
                     </div>
 
                     <div className="instructorTableRow">
                         <div className="instructorTableCell">
-                            <div className="instructorDetailTable">
-                                <div className="instructorDetailRowPrimary">
-                                    <div className="instructorDetailCell">
-                                        Jeremy
-                                    </div>
-                                    <div className="instructorDetailCell classCell">
-                                        Shakespeare 101
-                                    </div>
-                                </div>
-                                <div className="instructorDetailRowDetail">
-                                    <div className="instructorDetailCell">
-                                        Sonnet 100
-                                    </div>
-                                    <div className="instructorDetailCell">
-                                    In Progress
-                                    </div>
-                                </div>
-                                <div className="instructorDetailRowDetail">
-                                    <div className="instructorDetailCell">
-                                        Sonnet 2
-                                    </div>
-                                    <div className="instructorDetailCell">
-                                        In Progress
-                                    </div>
-                                </div>
-                                <div className="instructorDetailRowDetail">
-                                    <div className="instructorDetailCell">
-                                        Sonnet 22
-                                    </div>
-                                    <div className="instructorDetailCell">
-                                        Complete
-                                    </div>
-                                </div>
-                                <div className="instructorDetailRowDetail">
-                                    <div className="instructorDetailCell">
-                                        Sonnet 12
-                                    </div>
-                                    <div className="instructorDetailCell">
-                                        Complete
-                                    </div>
-                                </div>
-                            </div>
+                            <IDetails primaryName = "Jeremy" secondaryName = "Shakespeare 401" details = { details[4] }></IDetails>
                         </div>
                     </div>
                 </div>
-    
+
             </div>
         );
     }
