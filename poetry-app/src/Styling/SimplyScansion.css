@@ -1,28 +1,187 @@
+.parent {
+    background: #8987d1;
+    height: calc(100% - 56px);
+    text-align: left;
+    padding: 10px;
+}
+
 @media (max-width: 400px) {
     .poem {
-        font-size: 10.75px;
+        font-size: 10px;
         line-height: 45px;
+    }
+
+    .child {
+        background: #ffffff;
+        height: 70vh;
+        width: 80vw;
+        margin: 20px;
+        overflow-y: auto;
+        margin: 2% 10%;
+        padding: 2% 5% 2% 5%;
+        border-radius: 15px;
+        transition: all .3s;
+    }
+
+    .pieces {
+        background: #ffffff;
+        height: 15vh;
+        width: 80vw;
+        margin: 1% 10%;
+        padding-top: 2.5%;
+        text-align: center;
+        border-radius: 15px;
+        transition: all .3s;
     }
 }
 
 @media (min-width: 400px) and (max-width: 500px) {
     .poem {
-        font-size: 12.75px;
+        font-size: 11px;
         line-height: 45px;
+    }
+
+    .child {
+        background: #ffffff;
+        height: 70vh;
+        width: 80vw;
+        margin: 20px;
+        overflow-y: auto;
+        margin: 2% 10%;
+        padding: 2% 5% 2% 5%;
+        border-radius: 15px;
+        transition: all .3s;
+    }
+
+    .pieces {
+        background: #ffffff;
+        height: 15vh;
+        width: 80vw;
+        margin: 1% 10%;
+        padding-top: 2.5%;
+        text-align: center;
+        border-radius: 15px;
+        transition: all .3s;
     }
 }
 
-@media (min-width: 500px) and (max-width: 1100px) {
+@media (min-width: 500px) and (max-width: 700px) {
     .poem {
-        font-size: 11px;
-        line-height: 50px;
+        font-size: 10px;
+        line-height: 95px;
+    }
+
+    .child {
+        background: #ffffff;
+        height: 75vh;
+        width: 80vw;
+        margin: 20px;
+        overflow-y: auto;
+        margin: 2% 10%;
+        padding: 2% 5% 2% 5%;
+        border-radius: 15px;
+        transition: all .3s;
+    }
+
+    .pieces {
+        background: #ffffff;
+        height: 15vh;
+        width: 80vw;
+        margin: 1% 10%;
+        padding-top: 2.5%;
+        text-align: center;
+        border-radius: 15px;
+        transition: all .3s;
+    }
+}
+
+@media (min-width: 500px) and (max-width: 700px) {
+    .poem {
+        font-size: 10px;
+        line-height: 95px;
+    }
+
+    .child {
+        background: #ffffff;
+        height: 75vh;
+        width: 80vw;
+        margin: 20px;
+        overflow-y: auto;
+        margin: 2% 10%;
+        padding: 2% 5% 2% 5%;
+        border-radius: 15px;
+        transition: all .3s;
+    }
+
+    .pieces {
+        background: #ffffff;
+        height: 15vh;
+        width: 80vw;
+        margin: 1% 10%;
+        padding-top: 2.5%;
+        text-align: center;
+        border-radius: 15px;
+        transition: all .3s;
+    }
+}
+
+@media (min-width: 700px) and (max-width: 900px) {
+    .poem {
+        font-size: 10.5px;
+        line-height: 95px;
+    }
+
+    .child {
+        background: #ffffff;
+        height: 75vh;
+        width: 80vw;
+        margin: 20px;
+        overflow-y: auto;
+        margin: 2% 10%;
+        padding: 2% 5% 2% 5%;
+        border-radius: 15px;
+        transition: all .3s;
+    }
+
+    .pieces {
+        background: #ffffff;
+        height: 15vh;
+        width: 80vw;
+        margin: 1% 10%;
+        padding-top: 2.5%;
+        text-align: center;
+        border-radius: 15px;
+        transition: all .3s;
     }
 }
 
 @media (min-width: 1100px) {
     .poem {
-        font-size: 14px;
+        font-size: 16px;
         line-height: 70px;
+    }
+
+    .child {
+        background: #ffffff;
+        height: 60vh;
+        width: 80vw;
+        margin: 20px;
+        overflow-y: auto;
+        margin: 2% 10%;
+        padding: 2% 5% 2% 5%;
+        border-radius: 15px;
+        transition: all .3s;
+    }
+
+    .pieces {
+        background: #ffffff;
+        height: 15vh;
+        width: 80vw;
+        margin: 1% 10%;
+        padding-top: 2.5%;
+        text-align: center;
+        border-radius: 15px;
+        transition: all .3s;
     }
 }
 
@@ -30,69 +189,4 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.column {
-    display: inline-block;
-    padding: 20px;
-    text-align: center;
-}
-
-.flex-container {
-    display: flex;
-    background: #8987d1;
-    height: calc(100% - 56px);
-    text-align: left;
-}
-
-@media (min-width: 500px) and (max-width: 900px) {
-    .main {
-        flex: 100%;
-        width: 75vw;
-        background: white;
-        overflow-y: auto;
-        margin: 2% 1%;
-        background: #ffffff;
-        padding: 2% 5% 2% 5%;
-        border-radius: 15px;
-        transition: all .3s;
-    }
-}
-
-@media (min-width: 900px) {
-    .main {
-        flex: 100%;
-        width: 75vw;
-        background: white;
-        overflow-y: auto;
-        margin: 2% 1%;
-        background: #ffffff;
-        padding: 2% 5% 2% 5%;
-        border-radius: 15px;
-        transition: all .3s;
-    }
-}
-
-@media (min-width: 500px) and (max-width: 900px) {
-    .pieces {
-        flex: 0 15vw;
-        background: white;
-        margin: 25% 1%;
-        padding: 5% 5%;
-        background: #ffffff;
-        border-radius: 15px;
-        transition: all .3s;
-    }
-}
-
-@media (min-width: 900px) {
-    .pieces {
-        flex: 0 25vw;
-        background: white;
-        margin: 10% 1%;
-        padding: 10% 10%;
-        background: #ffffff;
-        border-radius: 15px;
-        transition: all .3s;
-    }
 }
