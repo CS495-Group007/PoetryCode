@@ -13,10 +13,8 @@ export default class Home extends Component {
             <div className = "outer">
                 <div className = "inner">
                     <Container>
-                        {/*Row/Col containers to organize the different sections*/}
                         <Row>
                             <Col>
-                                {/*The title & info section */}
                                 <figure class="text-center">
                                     <h1>Simply Scansion</h1>
                                     <h3>What is Scansion?</h3>
@@ -28,7 +26,6 @@ export default class Home extends Component {
                         </Row>
                         <Row className="text-center">
                             <Col>
-                                {/*Navigation section */}
                                 <ButtonGroup vertical size="lg" className="mb-2">
                                     <Button variant="dark" href='/sign-in'>Sign In</Button>
                                     <Button variant="dark" href='/sign-up'>Sign Up</Button>
@@ -38,7 +35,6 @@ export default class Home extends Component {
                         </Row>
                         <Row>
                             <Col>
-                                {/*How to Play section */}
                                 <h3><a id="/how-to">How To Play?</a></h3>
                                 <ol>
                                     <li>Sign In or Proceed as Guest</li>
