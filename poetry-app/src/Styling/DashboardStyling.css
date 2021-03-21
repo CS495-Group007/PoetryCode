@@ -6,10 +6,6 @@
     text-align: center;
 
     font-size: min(4.5vh, 5vw);
-
-    /* font-family: nexa; */
-    font-family: Didot;
-    /* text-transform: uppercase; */
 }
 
 .viewSelector {
@@ -172,7 +168,7 @@
     margin-bottom: 5vh;
 
     border-collapse: separate;
-    border-spacing: .5vh;
+    border-spacing: 1.1vh;
 }
 
 .instructorTableRow {
@@ -180,9 +176,31 @@
     width: 100%;
 }
 
+
 .instructorTableCell {
     display: table-cell;
     width: 100%;
+    column-span: all;
+}
+
+.instructorHead {
+    display: table;
+    width: 100%;
+}
+
+.instructorHeadRow {
+    display: table-row;
+}
+
+.instructorHeadCell {
+    display: table-cell;
+    width: 50%;
+
+    text-align: center;
+
+    font-size: min(2.45vw, 2.45vh);
+
+    text-decoration: underline;
 }
 
 .instructorDetailTable {
@@ -195,17 +213,22 @@
 
     border-radius: min(2vw, 2vh);
 
-    --PaddingFromSide: min(2vw, 2vh);
-    --ExtraPaddingFromSide: min(3vw, 3vh);
+    --PaddingFromSide: min(0.75vw, 0.75vh);
+    --ExtraPaddingFromSide: min(1.25vw, 1.25vh);
 }
 
-.instructorDetailTable .instructorDetailRowDetailCollapsed {
+.instructorDetailCell {
+    display: table-cell;
+
+    padding: var(--PaddingFromSide) 0 var(--PaddingFromSide) 0;
+
+    width: 50%;
+
+    text-align: center;
+}
+
+.instructorDetailTable .instructorDetailRowDetailCollapsed, .instructorDetailRowDetailCollapsed .instructorDetailCell {
     display: none;
-}
-
-.instructorDetailRowPrimary, .instructorDetailRowDetailExpanded{
-    width: 100%;
-    border-radius: 1.2vw;
 }
 
 .instructorDetailRowPrimary {
@@ -213,41 +236,13 @@
     font-size: min(2.05vh, 2.5vw);
 }
 
-.instructorDetailTable:hover :nth-child(1){
-    background-color: #8ac94b;
+.instructorDetailTable:hover{
+    /* background-color: #9dd16a; */
+    background-color: #b9cddf;
     color: #41234d;
 }
 
-.instructorDetailRowDetail {
-    display: none;
-    font-size: min(1.65vh, 2.05vw);
-}
-
-.instructorDetailCell {
-    display: table-cell;
-
-    padding-left: var(--PaddingFromSide);
-}
-
-.instructorDetailRowDetailExpanded:nth-child(1) {
-    padding-left: var(--PaddingFromSide);
-}
-
-.instructorDetailRowDetailExpanded:nth-child(2) {
-    text-align: right;
-    padding-right: var(--ExtraPaddingFromSide);
-}
-
-.classCell {
-    text-align: right;
-    padding-right: var(--PaddingFromSide);
-}
-
-@keyframes expand {
-    from {
-        display: none;
-    }
-    to {
-        display: table-cell;
-    }
+.instructorDetailRowDetailExpanded {
+    display: table-row;
+    font-size: min(1.5vh, 1.5vw);
 }

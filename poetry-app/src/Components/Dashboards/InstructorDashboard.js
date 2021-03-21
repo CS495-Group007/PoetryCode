@@ -34,8 +34,6 @@ class InstructorDashboard extends React.Component {
         }
     }
 
-
-
     render() {
 
         var details = [
@@ -106,44 +104,27 @@ class InstructorDashboard extends React.Component {
         return ( 
             <div id = "studentDashboard" >
                 <div className="DashboardTitle">
-                { instructorTitle }{ instructorName }'s Instructor Dashboard
-                </div>
-    
-                <div className="viewSelector">
-                    Currently Viewing: <span className="currentViewSpan">{ this.viewTranslation(this.currentView) }</span><br/>
-                    &#40;Click to change&#41;
+                    { instructorTitle }{ instructorName }'s Instructor Dashboard
                 </div>
 
                 <div className="instructorTable">
                     <div className="instructorTableRow">
                         <div className="instructorTableCell">
-                            <IDetails primaryName = "Connor" secondaryName = "Shakespeare 210" details = { details[0] }></IDetails>
+                            <div className="instructorHead">
+                                <div className="instructorHeadRow">
+                                    <div className="instructorHeadCell">Student</div>
+                                    <div className="instructorHeadCell">Class</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                    
+                    <IDetails primaryName = "Connor" secondaryName = "Shakespeare 210" details = { details[0] }></IDetails>
+                    <IDetails primaryName = "Nash" secondaryName = "Shakespeare 101" details = { details[1] }></IDetails>
+                    <IDetails primaryName = "Gerome" secondaryName = "Shakespeare 201" details = { details[2] }></IDetails>
+                    <IDetails primaryName = "Maddie" secondaryName = "Shakespeare 10" details = { details[3] }></IDetails>
+                    <IDetails primaryName = "Jeremy" secondaryName = "Shakespeare 401" details = { details[4] }></IDetails>
 
-                    <div className="instructorTableRow">
-                        <div className="instructorTableCell">
-                            <IDetails primaryName = "Nash" secondaryName = "Shakespeare 101" details = { details[1] }></IDetails>
-                        </div>
-                    </div>
-
-                    <div className="instructorTableRow">
-                        <div className="instructorTableCell">
-                            <IDetails primaryName = "Gerome" secondaryName = "Shakespeare 201" details = { details[2] }></IDetails>
-                        </div>
-                    </div>
-
-                    <div className="instructorTableRow">
-                        <div className="instructorTableCell">
-                            <IDetails primaryName = "Maddie" secondaryName = "Shakespeare 10" details = { details[3] }></IDetails>
-                        </div>
-                    </div>
-
-                    <div className="instructorTableRow">
-                        <div className="instructorTableCell">
-                            <IDetails primaryName = "Jeremy" secondaryName = "Shakespeare 401" details = { details[4] }></IDetails>
-                        </div>
-                    </div>
                 </div>
 
             </div>

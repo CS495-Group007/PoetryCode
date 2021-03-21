@@ -30,28 +30,28 @@ export default class IDetails extends React.Component {
                     <div className="instructorDetailCell">
                         { this.props.details[i][detailPrimaryKey] }
                     </div>
-                    <div className="instructorDetailCell">
+                    <div className="instructorDetailCell classCell">
                         { this.props.details[i][detailSecondaryKey] }
                     </div>
                 </div>
             );
         }
-        
-        console.log(detailLines);
 
         return ( 
-            <div className = "instructorDetailTable" onClick = { this.toggleExpansion }>
-                <thead>
-                    <div className="instructorDetailRowPrimary">
-                        <div className="instructorDetailCell">
-                            { this.props.primaryName }
+            <div className="instructorTableRow">
+                <div className="instructorTableCell">
+                    <div className = "instructorDetailTable" onClick = { this.toggleExpansion }>
+                        <div className="instructorDetailRowPrimary">
+                            <div className="instructorDetailCell">
+                                { this.props.primaryName }
+                            </div>
+                            <div className="instructorDetailCell classCell">
+                                { this.props.secondaryName }
+                            </div>
                         </div>
-                        <div className="instructorDetailCell classCell">
-                            { this.props.secondaryName }
-                        </div>
+                        { detailLines }
                     </div>
-                </thead>
-                { detailLines }
+                </div>
             </div>
         );
     }
