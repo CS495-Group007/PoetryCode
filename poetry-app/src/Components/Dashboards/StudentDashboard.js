@@ -43,7 +43,9 @@ var allPoems = {
 
         },
         "Sonnet Four" : {
-
+            "poemText" :['Line 1','Line 2','Line 3'],
+            "key" : [["red", "blue", "red", "blue", "red"],["blue", "red", "blue", "red", "blue"],["red", "blue","red", "blue","red"]],
+            "lines" : 3
         }
     },
     "Catullus" : {

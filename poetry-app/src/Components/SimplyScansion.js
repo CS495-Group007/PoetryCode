@@ -1,6 +1,7 @@
 import React from 'react';
 import PoemSelector from './PoemSelector.js';
 import GameBoard from './GameBoard.js';
+import Boxable from './Boxable.js';
 import '../Styling/SimplyScansion.css';
 import Legend from './Legend.js';
 import Container from 'react-bootstrap/Container';
@@ -70,7 +71,12 @@ class SimplyScansion extends React.Component{
                     </Container>
                 </div>
                 <div class="pieces">
-                    <p>Game pieces here</p>
+                    <Boxable targetKey="box" label="' -" color="yellow"/>
+                    <Boxable targetKey="box" label="- '" color="blue"/>
+                    <Boxable targetKey="box" label="' - -" color="red"/>
+                    <Boxable targetKey="box" label="- - '" color="gray"/>
+                    <Boxable targetKey="box" label="' '" color="black"/>
+                    <Boxable targetKey="box" label="- -" color="green"/>
                 </div>
             </div>
         );
