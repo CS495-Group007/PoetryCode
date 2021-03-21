@@ -66,7 +66,7 @@ class SimplyScansion extends React.Component{
                             /></Col>
                         </Row>
                         <Row className="text-center">
-                            <Button variant="secondary" onClick = {this.checkIfCorrect}>Submit</Button>
+                            <Col><Button variant="secondary" onClick = {this.checkIfCorrect}>Submit</Button></Col>
                         </Row>
                     </Container>
                 </div>

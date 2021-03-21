@@ -32,21 +32,17 @@ function App() {
           </Navbar.Collapse>
         </Navbar>
 
-        {/*Styling the components within the inner & outer containers*/}
-        {/*<div className="outer">
-          <div className="inner">*/}
-            <Switch>
-              <Route exact path='/' component={Home} />
-              <Route path="/sign-in" component={Login} />
-              <Route path="/sign-up" component={SignUp} />
-              <Route path='/simply-scansion' component={SimplyScansion} />
-              <Route path='/student-dashboard' component={StudentDashboard} />
-              <Route path='/instructor-dashboard' component={InstructorDashboard} />
-              <Route path='/add-poem' component={AddPoemInterface} />
-              <Route path='/how-to' component={Home} />
-            </Switch>
-        {/*  </div>
-        </div>*/}
+        {/*Setting up navigation routes*/}
+        <Switch>
+          <Route exact path='/' component={Home} />
+          <Route path="/sign-in" component={Login} />
+          <Route path="/sign-up" component={SignUp} />
+          <Route path='/simply-scansion' component={SimplyScansion} />
+          <Route path='/student-dashboard' component={StudentDashboard} />
+          <Route path='/instructor-dashboard' component={InstructorDashboard} />
+          <Route path='/add-poem' component={AddPoemInterface} />
+          <Route path='/how-to' component={Home} />
+        </Switch>
       </div>
     </Router>
   );
