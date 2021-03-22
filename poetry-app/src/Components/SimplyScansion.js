@@ -1,6 +1,7 @@
 import React from 'react';
 import PoemSelector from './PoemSelector.js';
 import GameBoard from './GameBoard.js';
+import Boxable from './Boxable.js';
 import '../Styling/SimplyScansion.css';
 import Legend from './Legend.js';
 import Container from 'react-bootstrap/Container';
@@ -48,24 +49,35 @@ class SimplyScansion extends React.Component{
             poemLines.push(<div className = "poem">{line}</div>);
         });
         return(
-            <div>
-                <Container>
-                    <Row className="text-center">
-                        <Col md={8} lg={9} xl={10}><h1 class="text-center">{this.props.location.state.poemName}</h1></Col>
-                        <Col><Legend/></Col>
-                    </Row>
-                    <Row>
-                        <Col md={6} lg={6} xl={5}>{poemLines}</Col>
-                        <Col md={5} lg={5} xl={7}><GameBoard 
-                            currentPoemLines = {this.props.location.state.currentPoemLines} 
-                            updateGameBoard = {this.updateGameBoard} 
-                        />
-                        </Col>
-                    </Row>
-                    <Row className="text-center">
-                        <Col><Button variant="secondary" onClick = {this.checkIfCorrect}>Submit</Button></Col>
-                    </Row>
-                </Container>
+            <div class="parent">
+                <div class="child">
+                    <Container>
+                        <Row className="text-center">
+                            <Col md={8} lg={9}>
+                                <h1 class="text-class">{this.props.location.state.poemName}</h1>
+                            </Col>
+                            <Col><Legend/></Col>
+                        </Row>
+                        <Row>
+                            <Col sm={6} lg={5} xl={5}>{poemLines}</Col>
+                            <Col sm={6} lg={7} xl={7}><GameBoard 
+                                currentPoemLines = {this.props.location.state.currentPoemLines} 
+                                updateGameBoard = {this.updateGameBoard} 
+                            /></Col>
+                        </Row>
+                        <Row className="text-center">
+                            <Col><Button variant="secondary" onClick = {this.checkIfCorrect}>Submit</Button></Col>
+                        </Row>
+                    </Container>
+                </div>
+                <div class="pieces">
+                    <Boxable targetKey="box" label="' -" color="yellow"/>
+                    <Boxable targetKey="box" label="- '" color="blue"/>
+                    <Boxable targetKey="box" label="' - -" color="red"/>
+                    <Boxable targetKey="box" label="- - '" color="gray"/>
+                    <Boxable targetKey="box" label="' '" color="black"/>
+                    <Boxable targetKey="box" label="- -" color="green"/>
+                </div>
             </div>
         );
     }

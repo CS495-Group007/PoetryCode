@@ -17,7 +17,7 @@
 	.drag_things_to_boxes .box {
 		border: 2px solid black;
 		border-radius: 4px;
-		width: 80vw;
+		width: 65vw;
 		height: 10vh;
 		margin: 10px 80px 0 0;
 		position: relative;
@@ -28,29 +28,18 @@
 	.drag_things_to_boxes .box {
 		border: 2px solid black;
 		border-radius: 4px;
-		width: 42vw;
+		width: 30vw;
 		height: 60px;
 		margin: 10px 80px 0 0;
 		position: relative;
 	}
 }
 
-@media (min-width: 900px) and (max-width: 1100px){
+@media (min-width: 900px) {
 	.drag_things_to_boxes .box {
 		border: 2px solid black;
 		border-radius: 4px;
 		width: 32vw;
-		height: 60px;
-		margin: 10px 80px 0 0;
-		position: relative;
-	}
-}
-
-@media (min-width: 1100px) {
-	.drag_things_to_boxes .box {
-		border: 2px solid black;
-		border-radius: 4px;
-		width: 37vw;
 		height: 60px;
 		margin: 10px 80px 0 0;
 		position: relative;

@@ -43,7 +43,9 @@ var allPoems = {
 
         },
         "Sonnet Four" : {
-
+            "poemText" :['Line 1','Line 2','Line 3'],
+            "key" : [["red", "blue", "red", "blue", "red"],["blue", "red", "blue", "red", "blue"],["red", "blue","red", "blue","red"]],
+            "lines" : 3
         }
     },
     "Catullus" : {
@@ -81,6 +83,42 @@ var role = studentIndicator;
 
 
 class StudentDashboard extends React.Component {
+
+    convertStringArray(lines){
+        var i;
+        var individualLine = "";
+        var poemLines = [];
+        for(i = 0; i < lines.length; i++){
+            if(lines[i] == '|' && (i+1) < lines.length && lines[i+1] == '~' && (i+2) < lines.length && lines[i+2] == '|'){
+                poemLines.push(individualLine);
+                individualLine = "";
+                i += 2;
+            }
+            else{
+                individualLine += lines[i];
+            }
+        }
+        poemLines.push(individualLine);
+        return poemLines;
+    }
+
+    convertString2D(key){
+        var i;
+        var gameBoard = [];
+        var individualKeyLine = "";
+        for(i = 0; i < key.length; i++){
+            if(key[i] == '|' && (i+1) < key.length && key[i+1] == '*' && (i+2) < key.length && key[i+2] == '|'){
+                gameBoard.push(this.convertStringArray(individualKeyLine));
+                individualKeyLine = "";
+                i += 2;
+            }
+            else{
+                individualKeyLine += key[i];
+            }
+        }
+        gameBoard.push(this.convertStringArray(individualKeyLine));
+        return gameBoard;
+    }
 
     // Translators turn DB information into aesthetic equivalents
     translateStatus(status) {
@@ -208,11 +246,13 @@ class StudentDashboard extends React.Component {
 
         poemsTable.push(incompletePoems, unstartedPoems, completePoems);
 
-        return ( 
-            <div id = "studentDashboard" >
-                <div className="DashboardTitle">
-                    { studentName }'s { this.translateRole(role) } Dashboard
-                </div>
+        return (
+            <div className = "outer">
+                <div className = "inner">
+                    <div id = "studentDashboard" >
+                        <div className="DashboardTitle">
+                            { studentName }'s { this.translateRole(role) } Dashboard
+                        </div>
 
                 <div className="poemTable">
                     <div className="poemTableRow">
@@ -229,6 +269,8 @@ class StudentDashboard extends React.Component {
                     { poemsTable }
                 </div>
 
+                    </div>
+                </div>
             </div>
         );
     }
