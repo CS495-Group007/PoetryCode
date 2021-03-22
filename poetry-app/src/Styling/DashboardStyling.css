@@ -6,10 +6,6 @@
     text-align: center;
 
     font-size: min(4.5vh, 5vw);
-
-    /* font-family: nexa; */
-    font-family: Didot;
-    /* text-transform: uppercase; */
 }
 
 .viewSelector {
@@ -61,12 +57,13 @@
 .poemTableCell {
     display: table-cell;
     width: 100%;
+}
+
+.poemTableCell {
     border-radius: 2vw;
 }
 
 .poemTableCell:hover {
-    /* border-right: .1vh solid black;
-    border-bottom: .1vh solid black; */
     box-shadow: .1vh;
     transform: translate3d(1px, -1px, 0);
 }
@@ -81,18 +78,23 @@
     width: 100%;
 }
 
-.singlePoemTableCell {
+.singlePoemTableCell, .singleStudentTableCell {
     display: table-cell;
-    width: 33%;
-
     /* Top Right Bottom Left */
     padding: min(0.5vh, 0.5vw) min(0.75vh, 0.75vw) min(0.55vh, 0.55vw) min(0.75vh, 0.75vw);
+}
 
+.singlePoemTableCell {
+    width: 33%;
+}
+
+.singleStudentTableCell {
+    width: 50%;
+    padding-left: min(0.75vw, 0.75vh);
 }
 
 .incompletePoem {
     background-color: #bfb3e9;
-    /* background-color: #ccffd7; */
     color: #42347c;
 }
 
@@ -109,6 +111,19 @@
 .listedPoemTitle, .listedPoemStatus, .listedPoemAuthor {
     font-size: min(1.85vh, 2.25vw);
     text-align: center;
+}
+
+.listedStudentName, .listedStudentClass, .listedStudentPoems {
+    font-size: min(1.85vh, 2.25vw);
+}
+
+.listedStudentName {
+    text-align: left;
+    padding-left: min(0.5vw, 0.5vh);
+}
+
+.listedStudentClass, .listedStudentPoems {
+    text-align: right;
 }
 
 .reactLink {
@@ -133,4 +148,101 @@
     font-size: min(2.5vh, 3vw);
 
     text-align: center;
+}
+
+.studentName {
+    font-size: min(2vh, 2.5vw);
+    text-align: left;
+}
+
+/* INSTRUCTOR DASHBOARD STYLINGS */
+
+.instructorTable {
+    display: table;
+    position: relative;
+    left: 0;
+    right: 0;
+    width: 100%;
+    top: min(3vh, 3vw);
+
+    margin-bottom: 5vh;
+
+    border-collapse: separate;
+    border-spacing: 1.1vh;
+}
+
+.instructorTableRow {
+    display: table-row;
+    width: 100%;
+}
+
+
+.instructorTableCell {
+    display: table-cell;
+    width: 100%;
+    column-span: all;
+}
+
+.instructorHead {
+    display: table;
+    width: 100%;
+}
+
+.instructorHeadRow {
+    display: table-row;
+}
+
+.instructorHeadCell {
+    display: table-cell;
+    width: 50%;
+
+    text-align: center;
+
+    font-size: min(2.45vw, 2.45vh);
+
+    text-decoration: underline;
+}
+
+.instructorDetailTable {
+    display: table;
+    width: 100%;
+    background-color: #d1d1d1;
+    color: #41234d;
+
+    border-collapse: collapse;
+
+    border-radius: min(2vw, 2vh);
+
+    --PaddingFromSide: min(0.75vw, 0.75vh);
+    --ExtraPaddingFromSide: min(1.25vw, 1.25vh);
+}
+
+.instructorDetailCell {
+    display: table-cell;
+
+    padding: var(--PaddingFromSide) 0 var(--PaddingFromSide) 0;
+
+    width: 50%;
+
+    text-align: center;
+}
+
+.instructorDetailTable .instructorDetailRowDetailCollapsed, .instructorDetailRowDetailCollapsed .instructorDetailCell {
+    display: none;
+}
+
+.instructorDetailRowPrimary {
+    display: table-row;
+    font-size: min(2.05vh, 2.5vw);
+}
+
+.instructorDetailTable:hover{
+    /* background-color: #9dd16a; */
+    background-color: #b9cddf;
+    color: #41234d;
+}
+
+.instructorDetailRowDetailExpanded {
+    display: table-row;
+    font-size: min(1.5vh, 1.5vw);
 }
