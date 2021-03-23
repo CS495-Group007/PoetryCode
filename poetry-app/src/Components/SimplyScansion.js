@@ -1,5 +1,4 @@
 import React from 'react';
-import PoemSelector from './PoemSelector.js';
 import GameBoard from './GameBoard.js';
 import Boxable from './Boxable.js';
 import '../Styling/SimplyScansion.css';
