@@ -1,6 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import '../../Styling/DashboardStyling.css';
+import IDetails from "./IDetails"
+
+// Constants
+const detailPrimaryKey = "detailPrimary",
+      detailSecondaryKey = "detailSecondary";
 
 // Variable declarations
 var instructorTitle = "";
@@ -31,35 +35,98 @@ class InstructorDashboard extends React.Component {
     }
 
     render() {
-        return (
-            <div className = "outer">
-                <div className = "inner">
-                    <div id = "studentDashboard" >
-                        <div className="DashboardTitle">
-                        { instructorTitle }{ instructorName }'s Instructor Dashboard
-                        </div>
-            
-                        <div className="viewSelector">
-                            Currently Viewing: <span className="currentViewSpan">{ this.viewTranslation(this.currentView) }</span><br/>
-                            &#40;Click to change&#41;
-                        </div>
 
-                        <div className="poemTable">
-                            <div className="poemTableRow">
-                                    <div className="TitleRow">
-                                        <div className="singlePoemTable">
-                                            <div className="singlePoemTableRow">
-                                                <div className="singlePoemTableCell TitleRow"> Title </div>
-                                                <div className="singlePoemTableCell TitleRow"> Author </div>
-                                                <div className="singlePoemTableCell TitleRow"> Status </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                        </div>
-            
-                    </div>
+        var details = [
+            [
+                {
+                    "detailPrimary" : "Sonnet 1",
+                    "detailSecondary" : "In Progress"
+                },
+                {
+                    "detailPrimary" : "Sonnet 5",
+                    "detailSecondary" : "In Progress"
+                },
+                {
+                    "detailPrimary" : "Sonnet 10",
+                    "detailSecondary" : "Complete"
+                }
+            ],
+            [
+                {
+                    "detailPrimary" : "Sonnet 1",
+                    "detailSecondary" : "In Progress"
+                },
+                {
+                    "detailPrimary" : "Sonnet 5",
+                    "detailSecondary" : "In Progress"
+                },
+                {
+                    "detailPrimary" : "Sonnet 10",
+                    "detailSecondary" : "Complete"
+                }
+            ],
+            [
+                {
+                    "detailPrimary" : "Sonnet 5",
+                    "detailSecondary" : "In Progress"
+                },
+                {
+                    "detailPrimary" : "Sonnet 10",
+                    "detailSecondary" : "Complete"
+                }
+            ],
+            [
+                {
+                    "detailPrimary" : "Sonnet 1",
+                    "detailSecondary" : "In Progress"
+                },
+                {
+                    "detailPrimary" : "Sonnet 5",
+                    "detailSecondary" : "In Progress"
+                }
+            ],
+            [
+                {
+                    "detailPrimary" : "Sonnet 10",
+                    "detailSecondary" : "Complete"
+                },
+                {
+                    "detailPrimary" : "Sonnet 15",
+                    "detailSecondary" : "In Progress"
+                },
+                {
+                    "detailPrimary" : "Sonnet 23",
+                    "detailSecondary" : "Complete"
+                }
+            ]
+        ]
+
+        return ( 
+            <div id = "studentDashboard" >
+                <div className="DashboardTitle">
+                    { instructorTitle }{ instructorName }'s Instructor Dashboard
                 </div>
+
+                <div className="instructorTable">
+                    <div className="instructorTableRow">
+                        <div className="instructorTableCell">
+                            <div className="instructorHead">
+                                <div className="instructorHeadRow">
+                                    <div className="instructorHeadCell">Student</div>
+                                    <div className="instructorHeadCell">Class</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <IDetails primaryName = "Connor" secondaryName = "Shakespeare 210" details = { details[0] }></IDetails>
+                    <IDetails primaryName = "Nash" secondaryName = "Shakespeare 101" details = { details[1] }></IDetails>
+                    <IDetails primaryName = "Gerome" secondaryName = "Shakespeare 201" details = { details[2] }></IDetails>
+                    <IDetails primaryName = "Maddie" secondaryName = "Shakespeare 10" details = { details[3] }></IDetails>
+                    <IDetails primaryName = "Jeremy" secondaryName = "Shakespeare 401" details = { details[4] }></IDetails>
+
+                </div>
+
             </div>
         );
     }

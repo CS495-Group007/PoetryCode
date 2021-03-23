@@ -7,8 +7,15 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 var shortid = require('short-id');
-
+/**
+ * Component that represents a line in the interactive gameboard.
+ */
 export default class Box extends React.Component {
+    /**
+     * Sets the initial state for items and colors (both arrays).
+     * @constructor
+     * @param props - contains information such as: updateGameBoard function in GameBoard component, row index, target key, and name.
+     */
     constructor(props) {
       super(props);
       this.state = {
@@ -18,11 +25,18 @@ export default class Box extends React.Component {
       this.deleteRow = this.deleteRow.bind(this);
     }
   
+    /**
+     * Function to delete the contents of the Box component and send that deletion message up through the hierarchy.
+     */
     deleteRow(){
       this.setState({items: [], colors: []});
       this.props.updateGameBoard([], this.props.index);      
     }
 
+    /**
+     * Function to handle the drop of a boxable or box item into the box. If the box is not full, then the new item is added to the item and color array. Then, the gameboard is updated throughout the hierarchy.
+     * @param e - holds information regarding the drop event. this data includes the block label and color.
+     */
     handleDrop = (e) => {
       let items = this.state.items.slice();
       let colors = this.state.colors.slice();
@@ -32,9 +46,14 @@ export default class Box extends React.Component {
         this.setState({items: items, colors: colors});
         this.props.updateGameBoard(colors, this.props.index);
       }
-      //e.containerElem.style.visibility="hidden";
     };
-  
+    
+    /**
+     * Function that handles swapping two elements in a box. Triggers when the box item in one box is dragged on top of another one.
+     * @param {number} fromIndex - starting index of the item
+     * @param {number} toIndex - ending index of the item
+     * @param {number} dragData - contains relevant information for the boxable being dragged.
+     */
     swap = (fromIndex, toIndex, dragData) => {
       let items = this.state.items.slice();
       let colors = this.state.colors.slice();
@@ -47,6 +66,10 @@ export default class Box extends React.Component {
       }
     };
   
+    /**
+     * Function to delete a box item once it has been dragged to a different position in the box or a different box altogether. Prevents duplication.
+     * @param {number} uid - unique id for the box item in question
+     */
     kill = (uid) => {
       let items = this.state.items.slice();
       let colors = this.state.colors.slice();
@@ -60,13 +83,11 @@ export default class Box extends React.Component {
       this.setState({items: items, colors: colors});
       this.props.updateGameBoard(colors, this.props.index);
     };
-  
+
+    /**
+     * Renders the Box row and the box items currently within it. This structure contains two layers of DropTarget to handle dropped items from the outside and items dragged between boxes.
+     */
     render() {
-      /*
-          Note the two layers of DropTarget. 
-          This enables it to handle dropped items from 
-          outside AND items dragged between boxes.
-      */
       return (
         <Container>
           <Row>

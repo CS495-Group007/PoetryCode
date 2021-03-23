@@ -254,20 +254,20 @@ class StudentDashboard extends React.Component {
                             { studentName }'s { this.translateRole(role) } Dashboard
                         </div>
 
-                        <div className="poemTable">
-                            <div className="poemTableRow">
-                                    <div className="TitleRow">
-                                        <div className="singlePoemTable">
-                                            <div className="singlePoemTableRow">
-                                                <div className="singlePoemTableCell TitleRow"> Title </div>
-                                                <div className="singlePoemTableCell TitleRow"> Author </div>
-                                                <div className="singlePoemTableCell TitleRow"> Status </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                <div className="poemTable">
+                    <div className="poemTableRow">
+                        <div className="TitleRow">
+                            <div className="singlePoemTable">
+                                <div className="singlePoemTableRow">
+                                    <div className="singlePoemTableCell TitleRow"> Title </div>
+                                    <div className="singlePoemTableCell TitleRow"> Author </div>
+                                    <div className="singlePoemTableCell TitleRow"> Status </div>
                                 </div>
-                            { poemsTable }
+                            </div>
                         </div>
+                    </div>
+                    { poemsTable }
+                </div>
 
                     </div>
                 </div>
