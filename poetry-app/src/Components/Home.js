@@ -1,4 +1,6 @@
-//This is the Home page, giving information on Scansion & how to play
+/* eslint-disable react/jsx-no-undef */
+/* eslint-disable no-undef */
+
 import React, { Component } from "react";
 import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
@@ -8,6 +10,9 @@ import ButtonGroup from 'react-bootstrap/ButtonGroup'
 import '../Styling/Login.css';
 
 export default class Home extends Component {
+     /**
+     * Function to render the component. Renders the area that includes information about the website.
+     */
     render() {
         return (
             <div className = "outer">
