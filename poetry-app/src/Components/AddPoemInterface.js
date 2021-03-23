@@ -11,10 +11,15 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 
-// Adding a poem is going to look similar to how a student would scan a poem, BUT this is more of a blank canvas
-
-
+/**
+ * Component that implements the functionality to add a poem to the database. Includes setting the poem name, author, text, and key
+ */
 class AddPoemInterface extends React.Component{
+    /**
+     * Sets up the state by giving initial values to lines, numLines, poemName, poet, and gameBoard. Also binds the following functions to this: processLines, textChange, updateGameBoard, handlePoetChange, and handlePoemNameChange.
+     * @constructor
+     * @param props - Contain parent object information
+     */
     constructor(props){
         super(props);
         this.state = {
@@ -31,6 +36,11 @@ class AddPoemInterface extends React.Component{
         this.handlePoemNameChange = this.handlePoemNameChange.bind(this);
     }
 
+    /**
+     * converts an array to a string with the string |~| separating different elements of the array. Serves as an encoder to prepare writes to the DB.
+     * @param {Array} array - represents the Array that is being encoded. Usually either an array of peomLines or an array representing a row of the gameBoard
+     * @return {string} The encoded string.
+     */
     convertArrayToString(array){
         let returnString = "";
         var i;
@@ -41,6 +51,11 @@ class AddPoemInterface extends React.Component{
         return returnString;
     }
 
+    /**
+     * converts the 2D gameBoard to a string. Serves as an encoder before a write to the DB.
+     * @param {Array} array - represents the gameBoard array containing the answer key for a poem.
+     * @return {string} The encoded string.
+     */
     convertGameBoardToString(array){
         let returnString = "";
         var i;
@@ -51,6 +66,10 @@ class AddPoemInterface extends React.Component{
         return returnString;
     }
 
+    /**
+     * Function called when the instructor clicks the submit button on the interface. Will send relevant information to the DB.
+     * @param event
+     */
     processLines(event){
         event.preventDefault();
         alert(this.state.poet);
@@ -60,6 +79,10 @@ class AddPoemInterface extends React.Component{
         //SEND DATA TO DATABASE HERE
     }
 
+    /**
+     * Function called when the instructor types in the poemLines text box. Separates the lines by \n. Updates the lines array and the number of lines.
+     * @param event - contains the value of the poemLines text box.
+     */
     textChange(event) {
         var ls = event.target.value.split('\n');
         var i;
@@ -75,20 +98,36 @@ class AddPoemInterface extends React.Component{
         console.log(this.state.numLines);
     }
 
+    /**
+     * Function to update the value of the poet.
+     * @param event - contains the value representing the current string in the poet text box.
+     */
     handlePoetChange(event){
         this.setState({poet: event.target.value});
     }
 
+    /**
+     * Function to update the value of the poem name.
+     * @param event - contains the value representing the current string in the poem name text box.
+     */
     handlePoemNameChange(event){
         this.setState({poemName: event.target.value});
     }
  
+    /**
+     * Updates the state variable gameBoard to represent changes caused by the boxable and box components.
+     * @param {Object} items - represents an individual row of blocks.
+     * @param {number} index - represents the row in the gameBoard that needs updating.
+     */
     updateGameBoard(items, index){
         let gameBoard = this.state.gameBoard.slice();
         gameBoard[index] = items;
         this.setState({gameBoard: gameBoard});
     }
     
+    /**
+     * Function to render the component. Renders the area to submit poet, poem name, poem text, and gameboard key. Also renders the 6 necessary Boxables
+     */
     render(){
         return(
             <div className = "parent">
