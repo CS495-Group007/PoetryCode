@@ -1,10 +1,15 @@
+/* eslint-disable react/jsx-no-undef */
+/* eslint-disable no-undef */
+
 import React from 'react';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Dropdown from 'react-bootstrap/Dropdown';
 import "bootstrap/dist/css/bootstrap.min.css";
 
 class Legend extends React.Component{
-
+    /**
+     * Function to render the component. Renders the toggle Legend button that offers information.
+     */
     render(){
         return(
             <div class=".container">

@@ -1,15 +1,18 @@
-//Sign Up to create an account
-//Information to be connected to the database, not yet set up
+/* eslint-disable react/jsx-no-undef */
+/* eslint-disable no-undef */
+
 import React, { Component } from "react";
 import '../Styling/Login.css';
 
 export default class SignUp extends Component {
+    /**
+     * Function to render the component. Renders the area to submit information to create an account.
+     */
     render() {
         return (
             <div className = "outer">
                 <div className = "inner">
                     <form>
-                        {/*Submit the required information to create an account, will be stored in the database*/}
                         <h3>Register</h3>
 
                         <div className="mb-3">
