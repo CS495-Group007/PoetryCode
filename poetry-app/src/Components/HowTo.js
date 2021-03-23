@@ -18,13 +18,13 @@ export default class Home extends Component {
                     <Container>
                         <Row>
                             <Col>
-                                <h3><a id="/how-to">How To Play?</a></h3>
+                                <h3>How To Play</h3>
                                 <ol>
-                                    <li>Sign In or Proceed as Guest</li>
-                                    <li>Select the poem you want to scan</li>
+                                    <li><a href="/sign-in">Sign In</a> or <a href="/student-dashboard">Proceed as Guest</a></li>
+                                    <li>Select the poem you want to scan from the dashboard</li>
                                     <li>The gameboard will populate with the number of lines in the poem selected</li>
                                     <li>Use the game pieces at the bottom of the page to assign the five sets of syllables to each line</li>
-                                    <li>If you need to delete any of the pieces, click the trash can item next to the line you need to redo and it'll clear the whole line</li>
+                                    <li>If you need to delete any of the pieces, click the trash can item next to the line and it'll clear the whole line</li>
                                     <li>Once completed, hit submit to check your work!</li>
                                 </ol>
                                 <p>You can complete the poems as many times as necessary to learn the skill of scansion!</p>
