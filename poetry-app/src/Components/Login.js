@@ -1,15 +1,18 @@
-//Login page to access the account
-//Will be connected to the database, not yet set up
+/* eslint-disable react/jsx-no-undef */
+/* eslint-disable no-undef */
+
 import React, { Component } from "react";
 import '../Styling/Login.css';
 
 export default class Login extends Component {
+    /**
+     * Function to render the component. Renders the area to submit login information
+     */
     render() {
         return (
             <div className = "outer">
                 <div className = "inner">
                     <form>
-                        {/*Submit the required information to access your account, will be accessed in the database*/}
                         <h3>Log In</h3>
 
                         <div className="mb-3">

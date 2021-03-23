@@ -2,33 +2,39 @@ import React from 'react';
 import { DragDropContainer, DropTarget } from 'react-drag-drop-container';
 import '../Styling/BoxItem.css';
 
-/*
-    BoxItem - a thing that appears in a box, after you drag something into the box
-*/
-
+/**
+ * This component represents a boxable that is displayed in the box in which it has been drug into.
+ */
 export default class BoxItem extends React.Component {
-    // the things that appear in the boxes
+    /**
+     * Calles on the constructor of the super class.
+     * @constructor
+     */
     constructor(props) {
       super(props);
     }
     
+    /**
+     * Function to handle the drop of a box item. Swaps it with the item that it is dragged to (can be no other item).
+     * @param e - contains information about the drop data such as its index.
+     */
     handleDrop = (e) => {
       e.stopPropagation();
       this.props.swap(e.dragData.index, this.props.index, e.dragData);
       e.containerElem.style.visibility="hidden";
     };
   
+    /**
+     * Function to delete a box item from its original position after it has been swapped to a new position.
+     */
     deleteMe = () => {
       this.props.kill(this.props.uid);
     };
   
+    /**
+     *Renders the BoxItems. The Box items consist of an outer DragDropContainer and an inner Drop Target. This enables the box items to be able to be dragged and rearranged.
+     */
     render() {
-      /*
-        Notice how these are wrapped in a DragDropContainer (so you can drag them) AND
-        in a DropTarget (enabling you to rearrange items in the box by dragging them on
-        top of each other)
-      */
-
       return (
         <div className="box_item_component">
           <DragDropContainer

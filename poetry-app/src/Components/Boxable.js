@@ -2,11 +2,13 @@ import React from 'react';
 //var sortid = require('shortid');
 import { DragDropContainer } from 'react-drag-drop-container';
 
-/*
-    Boxable -- a thing you can drag into a Box
-*/
-
+/**
+ * Component respresenting a colored block on the bottom of the page that can be dragged into a box.
+ */
 export default class Boxable extends React.Component {
+    /**
+     * Renders the individual box, giving it the correct targetKey, dragData, and customDragElement.
+     */
     render() {
       return (
         <div className="box_item_component" style={{display: 'inline-block'}}>
