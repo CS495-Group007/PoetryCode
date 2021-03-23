@@ -1,9 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../../Styling/DashboardStyling.css';
-// import SortChooser from './SortChooser'
 
-// DB Constants so regardless of what we put in the DB I won't have to change these a lot of places
+/** Setting these variables as constants for consistency across the file */
 const completePoem = "complete", 
       incompletePoem = "inProgress",
       studentIndicator = "student",
@@ -76,14 +75,23 @@ var allPoems = {
     }
 }
 
+/** StudentName and role are stored in the session data */
 var studentName = "Connor";
 var role = studentIndicator;
 
 // End of dummy data
 
-
+/**
+ * The StudentDashboard component is the entire StudentDashboard, which lists all poems available for the student to complete organized by "In Progress", 
+ * "Unstarted", and "Incomplete"
+ */
 class StudentDashboard extends React.Component {
 
+    /**
+     * A method to convert what's in the DB to what the gameboard can work with
+     * @param {*} lines would be a string of all lines of the poem's content NOT SPLIT
+     * @returns A list of the lines of the poem
+     */
     convertStringArray(lines){
         var i;
         var individualLine = "";
@@ -102,6 +110,11 @@ class StudentDashboard extends React.Component {
         return poemLines;
     }
 
+    /**
+     * A method to convert what's in the DB to what the gameboard can work with
+     * @param {*} key would be the current solution lines not split
+     * @returns A list of the lines the student has inputted for their answer to the poem so far
+     */
     convertString2D(key){
         var i;
         var gameBoard = [];
@@ -120,7 +133,11 @@ class StudentDashboard extends React.Component {
         return gameBoard;
     }
 
-    // Translators turn DB information into aesthetic equivalents
+    /**
+     * A method to translate DB information into aesthetic status renderings
+     * @param {*} status the item to be translated 
+     * @returns the aesthetic translation
+     */
     translateStatus(status) {
         switch(status) {
             case(incompletePoem):
@@ -132,6 +149,11 @@ class StudentDashboard extends React.Component {
         }
     }
 
+    /**
+     * A method to translate DB information into aesthetic role renderings
+     * @param {*} role the item to be translated 
+     * @returns the aesthetic translation
+     */
     translateRole(role) {
         switch(role){
             case(studentIndicator):
