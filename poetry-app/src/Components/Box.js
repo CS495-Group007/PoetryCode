@@ -10,7 +10,7 @@ var shortid = require('short-id');
 /**
  * Component that represents a line in the interactive gameboard.
  */
-export default class Box extends React.Component {
+class Box extends React.Component {
     /**
      * Sets the initial state for items and colors (both arrays).
      * @constructor
@@ -122,3 +122,5 @@ export default class Box extends React.Component {
       );
     }
   }
+
+export default Box;

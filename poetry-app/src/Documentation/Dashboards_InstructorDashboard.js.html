@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: Dashboards/InstructorDashboard.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: Dashboards/InstructorDashboard.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React from 'react';
+import '../../Styling/DashboardStyling.css';
+import IDetails from "./IDetails"
+
+/** Some constant variables for consistency. Even when not called, these function as a reference within the file. */
+const detailPrimaryKey = "detailPrimary",
+      detailSecondaryKey = "detailSecondary";
+
+/** The instructor Title and Name are part of the session data */
+var instructorTitle = "";
+var instructorName = "";
+
+// Dummy values for testing
+instructorTitle = "Dr.";
+instructorName = "Tavares";
+
+// Production DB hit
+
+
+/**
+ * The complete instructor dashboard that displays student status information
+ * and other pertinent info for instructors to monitor their students' progresses
+ */
+class InstructorDashboard extends React.Component {
+
+    constructor() {
+        super();
+        /** The way the dashboard is currently being viewed / organized */
+        this.currentView = "byStudent";
+        /** Binding the translator method */
+        this.viewTranslation = this.viewTranslation.bind(this);
+    }
+
+    /** The viewTranslation method translates what's stored in the props into something aesthetic for display */
+    viewTranslation(v) {
+        switch(v) {
+            case 'byStudent' :
+                return "By Student";
+            default:
+                return "";
+        }
+    }
+
+    render() {
+
+        /** "details" is just some dummy data for testing and development. In prod it'll be populated by DB info. */
+        var details = [
+            [
+                {
+                    "detailPrimary" : "Sonnet 1",
+                    "detailSecondary" : "In Progress"
+                },
+                {
+                    "detailPrimary" : "Sonnet 5",
+                    "detailSecondary" : "In Progress"
+                },
+                {
+                    "detailPrimary" : "Sonnet 10",
+                    "detailSecondary" : "Complete"
+                }
+            ],
+            [
+                {
+                    "detailPrimary" : "Sonnet 1",
+                    "detailSecondary" : "In Progress"
+                },
+                {
+                    "detailPrimary" : "Sonnet 5",
+                    "detailSecondary" : "In Progress"
+                },
+                {
+                    "detailPrimary" : "Sonnet 10",
+                    "detailSecondary" : "Complete"
+                }
+            ],
+            [
+                {
+                    "detailPrimary" : "Sonnet 5",
+                    "detailSecondary" : "In Progress"
+                },
+                {
+                    "detailPrimary" : "Sonnet 10",
+                    "detailSecondary" : "Complete"
+                }
+            ],
+            [
+                {
+                    "detailPrimary" : "Sonnet 1",
+                    "detailSecondary" : "In Progress"
+                },
+                {
+                    "detailPrimary" : "Sonnet 5",
+                    "detailSecondary" : "In Progress"
+                }
+            ],
+            [
+                {
+                    "detailPrimary" : "Sonnet 10",
+                    "detailSecondary" : "Complete"
+                },
+                {
+                    "detailPrimary" : "Sonnet 15",
+                    "detailSecondary" : "In Progress"
+                },
+                {
+                    "detailPrimary" : "Sonnet 23",
+                    "detailSecondary" : "Complete"
+                }
+            ]
+        ]
+
+        /** 
+         * The Instructor dashboard creates a "IDetails" element for each student / macro organization depending on the view
+         * Each one is its own dropdown to see more detailed information on the high level.
+         */
+        return ( 
+            &lt;div id = "studentDashboard" >
+                &lt;div className="DashboardTitle">
+                    { instructorTitle }{ instructorName }'s Instructor Dashboard
+                &lt;/div>
+
+                &lt;div className="instructorTable">
+                    &lt;div className="instructorTableRow">
+                        &lt;div className="instructorTableCell">
+                            &lt;div className="instructorHead">
+                                &lt;div className="instructorHeadRow">
+                                    &lt;div className="instructorHeadCell">Student&lt;/div>
+                                    &lt;div className="instructorHeadCell">Class&lt;/div>
+                                &lt;/div>
+                            &lt;/div>
+                        &lt;/div>
+                    &lt;/div>
+                    
+                    &lt;IDetails primaryName = "Connor" secondaryName = "Shakespeare 210" details = { details[0] }>&lt;/IDetails>
+                    &lt;IDetails primaryName = "Nash" secondaryName = "Shakespeare 101" details = { details[1] }>&lt;/IDetails>
+                    &lt;IDetails primaryName = "Gerome" secondaryName = "Shakespeare 201" details = { details[2] }>&lt;/IDetails>
+                    &lt;IDetails primaryName = "Maddie" secondaryName = "Shakespeare 10" details = { details[3] }>&lt;/IDetails>
+                    &lt;IDetails primaryName = "Jeremy" secondaryName = "Shakespeare 401" details = { details[4] }>&lt;/IDetails>
+
+                &lt;/div>
+
+            &lt;/div>
+        );
+    }
+    
+}
+
+export default InstructorDashboard;</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="AddPoemInterface.html">AddPoemInterface</a></li><li><a href="Box.html">Box</a></li><li><a href="Boxable.html">Boxable</a></li><li><a href="BoxItem.html">BoxItem</a></li><li><a href="GameBoard.html">GameBoard</a></li><li><a href="Home.html">Home</a></li><li><a href="IDetails.html">IDetails</a></li><li><a href="InstructorDashboard.html">InstructorDashboard</a></li><li><a href="Legend.html">Legend</a></li><li><a href="Login.html">Login</a></li><li><a href="SignUp.html">SignUp</a></li><li><a href="SimplyScansion.html">SimplyScansion</a></li><li><a href="StudentDashboard.html">StudentDashboard</a></li></ul><h3>Global</h3><ul><li><a href="global.html#collapsedClassName">collapsedClassName</a></li><li><a href="global.html#completePoem">completePoem</a></li><li><a href="global.html#detailPrimaryKey">detailPrimaryKey</a></li><li><a href="global.html#instructorTitle">instructorTitle</a></li><li><a href="global.html#studentName">studentName</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Wed Mar 24 2021 13:22:45 GMT-0400 (Eastern Daylight Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
