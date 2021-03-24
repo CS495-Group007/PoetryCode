@@ -12,7 +12,7 @@ const collapsedClassName = "instructorDetailRowDetailCollapsed",
 /**
  * A top level dropdown row of the instructor dashboard. Abstracted into its own component for readability.
  */      
-export default class IDetails extends React.Component {
+class IDetails extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -69,3 +69,5 @@ export default class IDetails extends React.Component {
         );
     }
 }
+
+export default IDetails;

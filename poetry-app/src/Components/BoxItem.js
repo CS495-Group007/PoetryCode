@@ -5,7 +5,7 @@ import '../Styling/BoxItem.css';
 /**
  * This component represents a boxable that is displayed in the box in which it has been drug into.
  */
-export default class BoxItem extends React.Component {
+class BoxItem extends React.Component {
     /**
      * Calles on the constructor of the super class.
      * @constructor
@@ -59,3 +59,5 @@ export default class BoxItem extends React.Component {
       );
     }
   }
+
+export default BoxItem;

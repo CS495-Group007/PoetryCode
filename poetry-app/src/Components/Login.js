@@ -4,7 +4,10 @@
 import React, { Component } from "react";
 import '../Styling/Login.css';
 
-export default class Login extends Component {
+/**
+ * Component responsible for implementing the log in functionality.
+ */
+class Login extends Component {
     /**
      * Function to render the component. Renders the area to submit login information
      */
@@ -32,7 +35,7 @@ export default class Login extends Component {
                             </div>
                         </div>
                         <div class="d-grid gap-2">
-                            <a class="btn btn-dark btn-lg" href="/StudentDashboard" role="button">Sign in</a>
+                            <a class="btn btn-dark btn-lg" href="/student-dashboard" role="button">Sign in</a>
                             <p className="forgot-password text-right">
                                 Forgot <a href="/sign-in">password?</a>
                             </p>
@@ -46,3 +49,5 @@ export default class Login extends Component {
         );
     }
 }
+
+export default Login;
