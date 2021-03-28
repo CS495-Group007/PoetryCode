@@ -113,32 +113,36 @@ class InstructorDashboard extends React.Component {
          * The Instructor dashboard creates a "IDetails" element for each student / macro organization depending on the view
          * Each one is its own dropdown to see more detailed information on the high level.
          */
-        return ( 
-            <div id = "studentDashboard" >
-                <div className="DashboardTitle">
-                    { instructorTitle }{ instructorName }'s Instructor Dashboard
-                </div>
+        return (
+            <div className = "outer">
+                <div className = "inner">
+                    <div id = "studentDashboard" >
+                        <div className="DashboardTitle">
+                            { instructorTitle }{ instructorName }'s Instructor Dashboard
+                        </div>
 
-                <div className="instructorTable">
-                    <div className="instructorTableRow">
-                        <div className="instructorTableCell">
-                            <div className="instructorHead">
-                                <div className="instructorHeadRow">
-                                    <div className="instructorHeadCell">Student</div>
-                                    <div className="instructorHeadCell">Class</div>
+                        <div className="instructorTable">
+                            <div className="instructorTableRow">
+                                <div className="instructorTableCell">
+                                    <div className="instructorHead">
+                                        <div className="instructorHeadRow">
+                                            <div className="instructorHeadCell">Student</div>
+                                            <div className="instructorHeadCell">Class</div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
+                            
+                            <IDetails primaryName = "Connor" secondaryName = "Shakespeare 210" details = { details[0] }></IDetails>
+                            <IDetails primaryName = "Nash" secondaryName = "Shakespeare 101" details = { details[1] }></IDetails>
+                            <IDetails primaryName = "Gerome" secondaryName = "Shakespeare 201" details = { details[2] }></IDetails>
+                            <IDetails primaryName = "Maddie" secondaryName = "Shakespeare 10" details = { details[3] }></IDetails>
+                            <IDetails primaryName = "Jeremy" secondaryName = "Shakespeare 401" details = { details[4] }></IDetails>
+
                         </div>
+
                     </div>
-                    
-                    <IDetails primaryName = "Connor" secondaryName = "Shakespeare 210" details = { details[0] }></IDetails>
-                    <IDetails primaryName = "Nash" secondaryName = "Shakespeare 101" details = { details[1] }></IDetails>
-                    <IDetails primaryName = "Gerome" secondaryName = "Shakespeare 201" details = { details[2] }></IDetails>
-                    <IDetails primaryName = "Maddie" secondaryName = "Shakespeare 10" details = { details[3] }></IDetails>
-                    <IDetails primaryName = "Jeremy" secondaryName = "Shakespeare 401" details = { details[4] }></IDetails>
-
                 </div>
-
             </div>
         );
     }
