@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: Home.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: Home.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/* eslint-disable react/jsx-no-undef */
+/* eslint-disable no-undef */
+
+import React, { Component } from "react";
+import Container from 'react-bootstrap/Container';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+import Button from 'react-bootstrap/Button';
+import ButtonGroup from 'react-bootstrap/ButtonGroup'
+import '../Styling/Login.css';
+
+/**
+ * Component in charge of rendering the Home/How-To page.
+ */
+class Home extends Component {
+     /**
+      * Function to render the component. Renders the area that includes information about the website.
+      */
+    render() {
+        return (
+            &lt;div className = "outer">
+                &lt;div className = "inner">
+                    &lt;Container>
+                        &lt;Row>
+                            &lt;Col>
+                                &lt;figure class="text-center">
+                                    &lt;h1>Simply Scansion&lt;/h1>
+                                    &lt;h3>What is Scansion?&lt;/h3>
+                                    &lt;blockquote class ="blockquote">
+                                        &lt;p>"the action of scanning a line of verse to determine its rhythm"&lt;/p>
+                                    &lt;/blockquote>
+                                &lt;/figure>
+                            &lt;/Col>
+                        &lt;/Row>
+                        &lt;Row className="text-center">
+                            &lt;Col>
+                                &lt;ButtonGroup vertical size="lg" className="mb-2">
+                                    &lt;Button variant="dark" href='/sign-in'>Sign In&lt;/Button>
+                                    &lt;Button variant="dark" href='/sign-up'>Sign Up&lt;/Button>
+                                    &lt;Button variant="dark" href='/simply-scansion'>Proceed as Guest&lt;/Button>
+                                &lt;/ButtonGroup>
+                            &lt;/Col>
+                        &lt;/Row>
+                        &lt;Row>
+                            &lt;Col>
+                                &lt;h3>&lt;a id="/how-to">How To Play?&lt;/a>&lt;/h3>
+                                &lt;ol>
+                                    &lt;li>Sign In or Proceed as Guest&lt;/li>
+                                    &lt;li>Select the poem you want to scan&lt;/li>
+                                    &lt;li>The gameboard will populate with the number of lines in the poem selected&lt;/li>
+                                    &lt;li>Use the game pieces at the bottom of the page to assign the five sets of syllables to each line&lt;/li>
+                                    &lt;li>If you need to delete any of the pieces, click the trash can item next to the line you need to redo and it'll clear the whole line&lt;/li>
+                                    &lt;li>Once completed, hit submit to check your work!&lt;/li>
+                                &lt;/ol>
+                                &lt;p>You can complete the poems as many times as necessary to learn the skill of scansion!&lt;/p>
+                                &lt;h4 class="text-center">What Do All the Colors Mean?&lt;/h4>
+                                &lt;ul>
+                                    &lt;li>Yellow - Iamb&lt;/li>
+                                    &lt;li>Blue - Trochee&lt;/li>
+                                    &lt;li>Red - Dactyl&lt;/li>
+                                    &lt;li>Grey - Anapest&lt;/li>
+                                    &lt;li>Black - Spondee&lt;/li>
+                                    &lt;li>Green - Pyrrhic&lt;/li>
+                                &lt;/ul>
+                            &lt;/Col>
+                        &lt;/Row>
+                    &lt;/Container>
+                &lt;/div>
+            &lt;/div>
+        );
+    }
+}
+
+export default Home;</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="AddPoemInterface.html">AddPoemInterface</a></li><li><a href="Box.html">Box</a></li><li><a href="Boxable.html">Boxable</a></li><li><a href="BoxItem.html">BoxItem</a></li><li><a href="GameBoard.html">GameBoard</a></li><li><a href="Home.html">Home</a></li><li><a href="IDetails.html">IDetails</a></li><li><a href="InstructorDashboard.html">InstructorDashboard</a></li><li><a href="Legend.html">Legend</a></li><li><a href="Login.html">Login</a></li><li><a href="SignUp.html">SignUp</a></li><li><a href="SimplyScansion.html">SimplyScansion</a></li><li><a href="StudentDashboard.html">StudentDashboard</a></li></ul><h3>Global</h3><ul><li><a href="global.html#collapsedClassName">collapsedClassName</a></li><li><a href="global.html#completePoem">completePoem</a></li><li><a href="global.html#detailPrimaryKey">detailPrimaryKey</a></li><li><a href="global.html#instructorTitle">instructorTitle</a></li><li><a href="global.html#studentName">studentName</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Wed Mar 24 2021 13:22:45 GMT-0400 (Eastern Daylight Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

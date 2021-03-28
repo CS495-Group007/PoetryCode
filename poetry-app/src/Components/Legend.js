@@ -6,6 +6,9 @@ import DropdownButton from 'react-bootstrap/DropdownButton';
 import Dropdown from 'react-bootstrap/Dropdown';
 import "bootstrap/dist/css/bootstrap.min.css";
 
+/**
+ * Component in charge of rendering the dropdown for the GameBoard component that tells the student what each colored block represents.
+ */
 class Legend extends React.Component{
     /**
      * Function to render the component. Renders the toggle Legend button that offers information.

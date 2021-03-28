@@ -5,7 +5,7 @@ import { DragDropContainer } from 'react-drag-drop-container';
 /**
  * Component respresenting a colored block on the bottom of the page that can be dragged into a box.
  */
-export default class Boxable extends React.Component {
+class Boxable extends React.Component {
     /**
      * Renders the individual box, giving it the correct targetKey, dragData, and customDragElement.
      */
@@ -32,3 +32,5 @@ export default class Boxable extends React.Component {
       );
     }
   }
+
+export default Boxable;

@@ -4,7 +4,10 @@
 import React, { Component } from "react";
 import '../Styling/Login.css';
 
-export default class SignUp extends Component {
+/**
+ * Component responsible for implementing the sign up functionality.
+ */
+class SignUp extends Component {
     /**
      * Function to render the component. Renders the area to submit information to create an account.
      */
@@ -47,3 +50,5 @@ export default class SignUp extends Component {
         );
     }
 }
+
+export default SignUp;

@@ -9,10 +9,13 @@ import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup'
 import '../Styling/Login.css';
 
-export default class Home extends Component {
+/**
+ * Component in charge of rendering the Home/How-To page.
+ */
+class Home extends Component {
      /**
-     * Function to render the component. Renders the area that includes information about the website.
-     */
+      * Function to render the component. Renders the area that includes information about the website.
+      */
     render() {
         return (
             <div className = "outer">
@@ -44,3 +47,5 @@ export default class Home extends Component {
         );
     }
 }
+
+export default Home;

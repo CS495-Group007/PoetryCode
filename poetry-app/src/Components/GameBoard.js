@@ -6,7 +6,7 @@ import '../Styling/GameBoard.css';
 /**
  * Component representing the interactive simply scansion gameboard.
  */
-export default class GameBoard extends React.Component {
+class GameBoard extends React.Component {
   /**
    * Calls the constructor of the parent component and binds the updateGameBoard function to this.
    * @constructor
@@ -51,3 +51,5 @@ export default class GameBoard extends React.Component {
     );
   }
 }
+
+export default GameBoard;

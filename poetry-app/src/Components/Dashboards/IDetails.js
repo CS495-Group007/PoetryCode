@@ -1,12 +1,18 @@
 import React from 'react';
 import '../../Styling/DashboardStyling.css';
 
+/**
+ * Some constants to keep values consistent and easy to change
+ */
 const collapsedClassName = "instructorDetailRowDetailCollapsed",
       expandedClassName = "instructorDetailRowDetailExpanded",
       detailPrimaryKey = "detailPrimary",
       detailSecondaryKey = "detailSecondary";
 
-export default class IDetails extends React.Component {
+/**
+ * A top level dropdown row of the instructor dashboard. Abstracted into its own component for readability.
+ */      
+class IDetails extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -15,6 +21,9 @@ export default class IDetails extends React.Component {
         this.toggleExpansion = this.toggleExpansion.bind(this);
     }
 
+    /**
+     * Toggles the state variable that indicates whether or not the component is expanded. 
+     */
     toggleExpansion() {
         console.log("Toggling");
         this.setState(state => ({
@@ -22,6 +31,10 @@ export default class IDetails extends React.Component {
         }));
     }
 
+    /**
+     * A method to controct the n number of detail lines for a single component
+     * @returns The detail lines of the subtable
+     */
     render() {
         var detailLines = [];
         for (var i = 0; i < this.props.details.length; i++) {
@@ -56,3 +69,5 @@ export default class IDetails extends React.Component {
         );
     }
 }
+
+export default IDetails;

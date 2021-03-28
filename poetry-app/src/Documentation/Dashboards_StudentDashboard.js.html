@@ -1,4 +1,32 @@
-import React from 'react';
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: Dashboards/StudentDashboard.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: Dashboards/StudentDashboard.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React from 'react';
 import { Link } from 'react-router-dom';
 import '../../Styling/DashboardStyling.css';
 
@@ -96,8 +124,8 @@ class StudentDashboard extends React.Component {
         var i;
         var individualLine = "";
         var poemLines = [];
-        for(i = 0; i < lines.length; i++){
-            if(lines[i] == '|' && (i+1) < lines.length && lines[i+1] == '~' && (i+2) < lines.length && lines[i+2] == '|'){
+        for(i = 0; i &lt; lines.length; i++){
+            if(lines[i] == '|' &amp;&amp; (i+1) &lt; lines.length &amp;&amp; lines[i+1] == '~' &amp;&amp; (i+2) &lt; lines.length &amp;&amp; lines[i+2] == '|'){
                 poemLines.push(individualLine);
                 individualLine = "";
                 i += 2;
@@ -119,8 +147,8 @@ class StudentDashboard extends React.Component {
         var i;
         var gameBoard = [];
         var individualKeyLine = "";
-        for(i = 0; i < key.length; i++){
-            if(key[i] == '|' && (i+1) < key.length && key[i+1] == '*' && (i+2) < key.length && key[i+2] == '|'){
+        for(i = 0; i &lt; key.length; i++){
+            if(key[i] == '|' &amp;&amp; (i+1) &lt; key.length &amp;&amp; key[i+1] == '*' &amp;&amp; (i+2) &lt; key.length &amp;&amp; key[i+2] == '|'){
                 gameBoard.push(this.convertStringArray(individualKeyLine));
                 individualKeyLine = "";
                 i += 2;
@@ -196,9 +224,9 @@ class StudentDashboard extends React.Component {
                 }
 
                 newTableCell = (
-                    <div className="poemTableRow">
-                        <div className={classnameList.join(' ')}>
-                            <Link to={{
+                    &lt;div className="poemTableRow">
+                        &lt;div className={classnameList.join(' ')}>
+                            &lt;Link to={{
                                 pathname: '/simply-scansion',
                                 state: {
                                     poet: poet,
@@ -208,16 +236,16 @@ class StudentDashboard extends React.Component {
                                     currentPoemLines: allPoems[poet][p].lines 
                                 }}}
                             className="reactLink" >
-                                <div className="singlePoemTable">
-                                    <div className="singlePoemTableRow">
-                                        <div className="singlePoemTableCell listedPoemTitle"> {p} </div>
-                                        <div className="singlePoemTableCell listedPoemAuthor">  {poet} </div>
-                                        <div className="singlePoemTableCell listedPoemStatus"> {completionStatus} </div>
-                                    </div>
-                                </div>
-                            </Link>
-                        </div>
-                    </div>
+                                &lt;div className="singlePoemTable">
+                                    &lt;div className="singlePoemTableRow">
+                                        &lt;div className="singlePoemTableCell listedPoemTitle"> {p} &lt;/div>
+                                        &lt;div className="singlePoemTableCell listedPoemAuthor">  {poet} &lt;/div>
+                                        &lt;div className="singlePoemTableCell listedPoemStatus"> {completionStatus} &lt;/div>
+                                    &lt;/div>
+                                &lt;/div>
+                            &lt;/Link>
+                        &lt;/div>
+                    &lt;/div>
                 );
 
                 switch(studentPoems[poet][p]["status"]){
@@ -236,13 +264,13 @@ class StudentDashboard extends React.Component {
 
         for (poet in allPoems) {
             for (p in allPoems[poet]) {
-                if(studentPoems[poet] && studentPoems[poet][p]) {
+                if(studentPoems[poet] &amp;&amp; studentPoems[poet][p]) {
                     continue
                 }
                 unstartedPoems.push(
-                    <div className="poemTableRow">
-                        <div className="poemTableCell unstartedPoem">
-                            <Link to={{
+                    &lt;div className="poemTableRow">
+                        &lt;div className="poemTableCell unstartedPoem">
+                            &lt;Link to={{
                                 pathname: '/simply-scansion',
                                 state: {
                                     poet: poet,
@@ -252,16 +280,16 @@ class StudentDashboard extends React.Component {
                                     currentPoemLines: allPoems[poet][p].lines 
                                 }}}
                             className="reactLink" >
-                                <div className="singlePoemTable">
-                                    <div className="singlePoemTableRow">
-                                        <div className="singlePoemTableCell listedPoemTitle"> {p} </div>
-                                        <div className="singlePoemTableCell listedPoemAuthor"> {poet} </div>
-                                            <div className="singlePoemTableCell listedPoemStatus"> Not Started </div>
-                                    </div>
-                                </div>
-                            </Link>
-                        </div>
-                    </div>
+                                &lt;div className="singlePoemTable">
+                                    &lt;div className="singlePoemTableRow">
+                                        &lt;div className="singlePoemTableCell listedPoemTitle"> {p} &lt;/div>
+                                        &lt;div className="singlePoemTableCell listedPoemAuthor"> {poet} &lt;/div>
+                                            &lt;div className="singlePoemTableCell listedPoemStatus"> Not Started &lt;/div>
+                                    &lt;/div>
+                                &lt;/div>
+                            &lt;/Link>
+                        &lt;/div>
+                    &lt;/div>
                 );
             }
         }
@@ -269,33 +297,55 @@ class StudentDashboard extends React.Component {
         poemsTable.push(incompletePoems, unstartedPoems, completePoems);
 
         return (
-            <div className = "outer">
-                <div className = "inner">
-                    <div id = "studentDashboard" >
-                        <div className="DashboardTitle">
+            &lt;div className = "outer">
+                &lt;div className = "inner">
+                    &lt;div id = "studentDashboard" >
+                        &lt;div className="DashboardTitle">
                             { studentName }'s { this.translateRole(role) } Dashboard
-                        </div>
+                        &lt;/div>
 
-                <div className="poemTable">
-                    <div className="poemTableRow">
-                        <div className="TitleRow">
-                            <div className="singlePoemTable">
-                                <div className="singlePoemTableRow">
-                                    <div className="singlePoemTableCell TitleRow"> Title </div>
-                                    <div className="singlePoemTableCell TitleRow"> Author </div>
-                                    <div className="singlePoemTableCell TitleRow"> Status </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                &lt;div className="poemTable">
+                    &lt;div className="poemTableRow">
+                        &lt;div className="TitleRow">
+                            &lt;div className="singlePoemTable">
+                                &lt;div className="singlePoemTableRow">
+                                    &lt;div className="singlePoemTableCell TitleRow"> Title &lt;/div>
+                                    &lt;div className="singlePoemTableCell TitleRow"> Author &lt;/div>
+                                    &lt;div className="singlePoemTableCell TitleRow"> Status &lt;/div>
+                                &lt;/div>
+                            &lt;/div>
+                        &lt;/div>
+                    &lt;/div>
                     { poemsTable }
-                </div>
+                &lt;/div>
 
-                    </div>
-                </div>
-            </div>
+                    &lt;/div>
+                &lt;/div>
+            &lt;/div>
         );
     }
 }
 
-export default StudentDashboard;
+export default StudentDashboard;</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="AddPoemInterface.html">AddPoemInterface</a></li><li><a href="Box.html">Box</a></li><li><a href="Boxable.html">Boxable</a></li><li><a href="BoxItem.html">BoxItem</a></li><li><a href="GameBoard.html">GameBoard</a></li><li><a href="Home.html">Home</a></li><li><a href="IDetails.html">IDetails</a></li><li><a href="InstructorDashboard.html">InstructorDashboard</a></li><li><a href="Legend.html">Legend</a></li><li><a href="Login.html">Login</a></li><li><a href="SignUp.html">SignUp</a></li><li><a href="SimplyScansion.html">SimplyScansion</a></li><li><a href="StudentDashboard.html">StudentDashboard</a></li></ul><h3>Global</h3><ul><li><a href="global.html#collapsedClassName">collapsedClassName</a></li><li><a href="global.html#completePoem">completePoem</a></li><li><a href="global.html#detailPrimaryKey">detailPrimaryKey</a></li><li><a href="global.html#instructorTitle">instructorTitle</a></li><li><a href="global.html#studentName">studentName</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Wed Mar 24 2021 13:22:45 GMT-0400 (Eastern Daylight Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
