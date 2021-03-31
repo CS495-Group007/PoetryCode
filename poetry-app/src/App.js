@@ -10,6 +10,7 @@ import SignUp from "./Components/SignUp";
 import SimplyScansion from "./Components/SimplyScansion";
 import AddPoemInterface from "./Components/AddPoemInterface";
 import Home from "./Components/Home";
+import HowTo from "./Components/HowTo";
 import StudentDashboard from "./Components/Dashboards/StudentDashboard";
 import InstructorDashboard from "./Components/Dashboards/InstructorDashboard";
 
@@ -41,7 +42,7 @@ function App() {
           <Route path='/student-dashboard' component={StudentDashboard} />
           <Route path='/instructor-dashboard' component={InstructorDashboard} />
           <Route path='/add-poem' component={AddPoemInterface} />
-          <Route path='/how-to' component={Home} />
+          <Route path='/how-to' component={HowTo} />
         </Switch>
       </div>
     </Router>
