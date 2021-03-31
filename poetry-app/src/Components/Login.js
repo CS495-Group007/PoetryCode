@@ -3,47 +3,85 @@
 
 import React, { Component } from "react";
 import '../Styling/Login.css';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import Col from 'react-bootstrap/Col';
 
 /**
  * Component responsible for implementing the log in functionality.
  */
 class Login extends Component {
+
     /**
-     * Function to render the component. Renders the area to submit login information
+     * Sets the initial state for validated.
+     * @constructor
+     */
+    constructor(props) {
+        super(props);
+        this.state = {
+            validated: false
+        };
+    }
+
+    /**
+     * Function to handle the submission of the login form, checks the validity of the form.
+     * @param {Event} event
+     */
+
+    handleSubmit = (event) => {
+        const form = event.currentTarget;
+        if(form.checkValidity() == false) {
+            event.preventDefault();
+            event.stopPropagation();
+        }
+
+        this.setState({validated: true});
+    }
+
+    /**
+     * Renders the area to submit login information
      */
     render() {
         return (
             <div className = "outer">
                 <div className = "inner">
-                    <form>
-                        <h3>Log In</h3>
-
-                        <div className="mb-3">
-                            <label>Email</label>
-                            <input type="email" className="form-control" placeholder="Enter email" />
-                        </div>
-
-                        <div className="mb-3">
-                            <label>Password</label>
-                            <input type="password" className="form-control" placeholder="Enter password" />
-                        </div>
-
-                        <div className="mb-3">
-                            <div className="custom-control custom-checkbox">
-                                <input type="checkbox" className="custom-control-input" id="customCheck1" />
-                                <label className="custom-control-label" htmlFor="customCheck1">Remember me</label>
-                            </div>
-                        </div>
-                        <div class="d-grid gap-2">
-                            <a class="btn btn-dark btn-lg" href="/student-dashboard" role="button">Sign in</a>
-                            <p className="forgot-password text-right">
-                                Forgot <a href="/sign-in">password?</a>
-                            </p>
-                            <p className="forgot-password text-right">
-                                Don't have an account?<a href="/sign-up"> Sign Up</a>
-                            </p>
-                        </div>
-                    </form>
+                    <h3>Log In</h3>
+                    <Form noValidate validated={this.state.validated} onSubmit={this.handleSubmit}>
+                        <Form.Row>
+                            <Form.Group as={Col} controlId="email">
+                                <Form.Label>Email</Form.Label>
+                                <Form.Control
+                                    required
+                                    type="text"
+                                    placeholder="Enter email"
+                                />
+                                <Form.Control.Feedback type="invalid">Please provide the email address associated with your account.</Form.Control.Feedback>
+                            </Form.Group>
+                        </Form.Row>
+                        <Form.Row>
+                            <Form.Group as={Col} controlId="password">
+                                <Form.Label>Password</Form.Label>
+                                <Form.Control
+                                    required
+                                    type="text"
+                                    placeholder="Enter password"
+                                />
+                                <Form.Control.Feedback type="invalid">Please enter a password.</Form.Control.Feedback>
+                            </Form.Group>
+                        </Form.Row>
+                        <Form.Row>
+                            <Form.Group as={Col} controlId="rememberMe">
+                                <Form.Check type="checkbox" label="Remember me" />
+                            </Form.Group>
+                        </Form.Row>
+                        <Button variant="secondary" type="submit">Sign In</Button>
+                    </Form>
+                    <p className="forgot-password text-right">
+                        Forgot <a href="/sign-in">password?</a>
+                    </p>
+                    <p className="forgot-password text-right">
+                        Don't have an account?<a href="/sign-up"> Sign Up</a>
+                    </p>
                 </div>
             </div>
         );
