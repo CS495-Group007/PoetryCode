@@ -1,6 +1,3 @@
-/* eslint-disable react/jsx-no-undef */
-/* eslint-disable no-undef */
-
 import React from 'react';
 import GameBoard from './GameBoard.js';
 import Boxable from './Boxable.js';
@@ -10,13 +7,18 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
+import DropdownButton from 'react-bootstrap/DropdownButton';
+import Dropdown from 'react-bootstrap/Dropdown';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+var poetNames = ['Shakespeare', 'Frost', 'Edgar Allan Poe', 'Emily Dickinson', 'Other'];
 
 /**
  * Component that implements the functionality to add a poem to the database. Includes setting the poem name, author, text, and key
  */
 class AddPoemInterface extends React.Component{
     /**
-     * Sets up the state by giving initial values to lines, numLines, poemName, poet, and gameBoard. Also binds the following functions to this: processLines, textChange, updateGameBoard, handlePoetChange, and handlePoemNameChange.
+     * Sets up the state by giving initial values to lines, numLines, poemName, poet, and gameBoard. Also binds the following functions to this: processPage, textChange, updateGameBoard, handlePoetChange, and handlePoemNameChange.
      * @constructor
      * @param props - Contain parent object information
      */
@@ -27,13 +29,17 @@ class AddPoemInterface extends React.Component{
             numLines: 0,
             poemName: "",
             poet: "",
-            gameBoard: []
+            gameBoard: [],
+            displayPoetInput: false,
+            currentSelection: "Choose a Poet"
         };
-        this.processLines = this.processLines.bind(this);
+        this.processPage = this.processPage.bind(this);
         this.textChange = this.textChange.bind(this);
         this.updateGameBoard = this.updateGameBoard.bind(this);
         this.handlePoetChange = this.handlePoetChange.bind(this);
         this.handlePoemNameChange = this.handlePoemNameChange.bind(this);
+        this.handlePoetTextChange = this.handlePoetTextChange.bind(this);
+        this.filterLines = this.filterLines.bind(this);
     }
 
     /**
@@ -43,6 +49,8 @@ class AddPoemInterface extends React.Component{
      */
     convertArrayToString(array){
         let returnString = "";
+        if(array == null)
+            return returnString;
         var i;
         for(i = 0; i < array.length - 1; i++){
             returnString += array[i] + "|~|";
@@ -58,6 +66,8 @@ class AddPoemInterface extends React.Component{
      */
     convertGameBoardToString(array){
         let returnString = "";
+        if(array == null)
+            return returnString;
         var i;
         for(i = 0; i < array.length - 1; i++){
             returnString += this.convertArrayToString(array[i]) + "|*|";
@@ -66,15 +76,27 @@ class AddPoemInterface extends React.Component{
         return returnString;
     }
 
+    filterLines(lines){
+        var i,j;
+        var returnLines = [];
+        var leadingSpaces = true;
+        
+        if(lines == null) return returnLines;
+        for(i = 0; i < lines.length; i++)
+            if(lines[i].length > 0)
+                returnLines.push(lines[i].replace(/^\s+|\s+$/g, ''));
+        return returnLines;
+    }
+
     /**
      * Function called when the instructor clicks the submit button on the interface. Will send relevant information to the DB.
      * @param event
      */
-    processLines(event){
+    processPage(event){
         event.preventDefault();
         alert(this.state.poet);
         alert(this.state.poemName);
-        alert(this.convertArrayToString(this.state.lines));
+        alert(this.convertArrayToString(this.filterLines(this.state.lines)));
         alert(this.convertGameBoardToString(this.state.gameBoard));
         //SEND DATA TO DATABASE HERE
     }
@@ -95,7 +117,6 @@ class AddPoemInterface extends React.Component{
             lines: ls,
             numLines: numOfLines
         });
-        console.log(this.state.numLines);
     }
 
     /**
@@ -103,9 +124,17 @@ class AddPoemInterface extends React.Component{
      * @param event - contains the value representing the current string in the poet text box.
      */
     handlePoetChange(event){
-        this.setState({poet: event.target.value});
+        if(event === 'Other'){
+            this.setState({displayPoetInput: true, currentSelection: event, poet: ""});
+        }
+        else{
+            this.setState({poet: event, displayPoetInput: false, currentSelection: event});
+        }
     }
 
+    handlePoetTextChange(event){
+        this.setState({poet: event.target.value});
+    }
     /**
      * Function to update the value of the poem name.
      * @param event - contains the value representing the current string in the poem name text box.
@@ -125,22 +154,39 @@ class AddPoemInterface extends React.Component{
         this.setState({gameBoard: gameBoard});
     }
     
+    generatePoetNameButtons(){
+        let poetNameButtons = [];
+        var i;
+        for(i = 0; i < poetNames.length; i++){
+            poetNameButtons.push(<Dropdown.Item eventKey={poetNames[i]}>{poetNames[i]}</Dropdown.Item>);
+        }
+        return poetNameButtons;
+    }
     /**
      * Function to render the component. Renders the area to submit poet, poem name, poem text, and gameboard key. Also renders the 6 necessary Boxables
      */
     render(){
+        const defaultOption = poetNames[0];
+        let poetInput = [];
+        poetInput.push(
+            <DropdownButton alignRight title={this.state.currentSelection} id="dropdown-menu-align-right" variant="secondary" onSelect={this.handlePoetChange}>
+              {this.generatePoetNameButtons()}
+            </DropdownButton>
+        );
+        if(this.state.displayPoetInput === true)
+            poetInput.push(<input type="text" value = {this.state.poet} onChange = {this.handlePoetTextChange} />);
         return(
             <div className = "parent">
                 <div className = "child">
                     <div id="gameInner" itemID="gameInner">
                         <Container>
-                            <form onSubmit={this.processLines}>
+                            <form onSubmit={this.processPage}>
                                 <Row>
                                     <Col>
                                         <label>
                                             Poet:
                                             <br/>
-                                            <input type="text" value = {this.state.poet} onChange = {this.handlePoetChange} />
+                                            {poetInput}
                                         </label><br/>
                                     </Col>
                                     <Col>
