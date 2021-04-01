@@ -37,7 +37,7 @@ class Home extends Component {
                                 <ButtonGroup vertical size="lg" className="mb-2">
                                     <Button variant="dark" href='/sign-in'>Sign In</Button>
                                     <Button variant="dark" href='/sign-up'>Sign Up</Button>
-                                    <Button variant="dark" href='/simply-scansion'>Proceed as Guest</Button>
+                                    <Button variant="dark" href='/how-to'>Proceed as Guest</Button>
                                 </ButtonGroup>
                             </Col>
                         </Row>
