@@ -7,9 +7,6 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
-import DropdownButton from 'react-bootstrap/DropdownButton';
-import Dropdown from 'react-bootstrap/Dropdown';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 var poetNames = ['Shakespeare', 'Frost', 'Edgar Allan Poe', 'Emily Dickinson', 'Other'];
 
@@ -28,7 +25,6 @@ class AddPoemInterface extends React.Component{
             lines: [],
             numLines: 0,
             poemName: "",
-            poet: "",
             gameBoard: [],
             displayPoetInput: false,
             currentSelection: "Choose a Poet"
@@ -36,9 +32,7 @@ class AddPoemInterface extends React.Component{
         this.processPage = this.processPage.bind(this);
         this.textChange = this.textChange.bind(this);
         this.updateGameBoard = this.updateGameBoard.bind(this);
-        this.handlePoetChange = this.handlePoetChange.bind(this);
         this.handlePoemNameChange = this.handlePoemNameChange.bind(this);
-        this.handlePoetTextChange = this.handlePoetTextChange.bind(this);
         this.filterLines = this.filterLines.bind(this);
     }
 
@@ -94,7 +88,6 @@ class AddPoemInterface extends React.Component{
      */
     processPage(event){
         event.preventDefault();
-        alert(this.state.poet);
         alert(this.state.poemName);
         alert(this.convertArrayToString(this.filterLines(this.state.lines)));
         alert(this.convertGameBoardToString(this.state.gameBoard));
@@ -118,23 +111,7 @@ class AddPoemInterface extends React.Component{
             numLines: numOfLines
         });
     }
-
-    /**
-     * Function to update the value of the poet.
-     * @param event - contains the value representing the current string in the poet text box.
-     */
-    handlePoetChange(event){
-        if(event === 'Other'){
-            this.setState({displayPoetInput: true, currentSelection: event, poet: ""});
-        }
-        else{
-            this.setState({poet: event, displayPoetInput: false, currentSelection: event});
-        }
-    }
-
-    handlePoetTextChange(event){
-        this.setState({poet: event.target.value});
-    }
+   
     /**
      * Function to update the value of the poem name.
      * @param event - contains the value representing the current string in the poem name text box.
@@ -154,19 +131,11 @@ class AddPoemInterface extends React.Component{
         this.setState({gameBoard: gameBoard});
     }
     
-    generatePoetNameButtons(){
-        let poetNameButtons = [];
-        var i;
-        for(i = 0; i < poetNames.length; i++){
-            poetNameButtons.push(<Dropdown.Item eventKey={poetNames[i]}>{poetNames[i]}</Dropdown.Item>);
-        }
-        return poetNameButtons;
-    }
     /**
      * Function to render the component. Renders the area to submit poet, poem name, poem text, and gameboard key. Also renders the 6 necessary Boxables
      */
     render(){
-        const defaultOption = poetNames[0];
+        /*const defaultOption = poetNames[0];
         let poetInput = [];
         poetInput.push(
             <DropdownButton alignRight title={this.state.currentSelection} id="dropdown-menu-align-right" variant="secondary" onSelect={this.handlePoetChange}>
@@ -174,7 +143,7 @@ class AddPoemInterface extends React.Component{
             </DropdownButton>
         );
         if(this.state.displayPoetInput === true)
-            poetInput.push(<input type="text" value = {this.state.poet} onChange = {this.handlePoetTextChange} />);
+            poetInput.push(<input type="text" value = {this.state.poet} onChange = {this.handlePoetTextChange} />);*/
         return(
             <div className = "parent">
                 <div className = "child">
@@ -182,13 +151,6 @@ class AddPoemInterface extends React.Component{
                         <Container>
                             <form onSubmit={this.processPage}>
                                 <Row>
-                                    <Col>
-                                        <label>
-                                            Poet:
-                                            <br/>
-                                            {poetInput}
-                                        </label><br/>
-                                    </Col>
                                     <Col>
                                         <label>
                                             Poem Name:
@@ -207,7 +169,11 @@ class AddPoemInterface extends React.Component{
                                         </label><br/>
                                     </Col>
                                     <Col>
-                                        <GameBoard currentPoemLines = {this.state.numLines} updateGameBoard = {this.updateGameBoard}/>
+                                        <GameBoard 
+                                            currentPoemLines = {this.state.numLines} 
+                                            updateGameBoard = {this.updateGameBoard}
+                                            blockLimit = {5}
+                                        />
                                     </Col>
                                 </Row>
                                 <Row className="text-center">
