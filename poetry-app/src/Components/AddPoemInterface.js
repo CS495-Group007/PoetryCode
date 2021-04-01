@@ -150,7 +150,7 @@ class AddPoemInterface extends React.Component{
                     <div id="gameInner" itemID="gameInner">
                         <Container>
                             <form onSubmit={this.processPage}>
-                                <Row>
+                                <Row className="text-center">
                                     <Col>
                                         <label>
                                             Poem Name:
@@ -158,9 +158,9 @@ class AddPoemInterface extends React.Component{
                                             <input type="text" value = {this.state.poemName} onChange = {this.handlePoemNameChange} />
                                         </label><br/>
                                     </Col>
-                                    <Col xl={2}><Legend/></Col>
+                                    <Col><Legend/></Col>
                                 </Row>
-                                <Row>
+                                <Row className="text-center">
                                     <Col>
                                         <label>
                                             Poem Text:
@@ -168,6 +168,9 @@ class AddPoemInterface extends React.Component{
                                             <textarea className="poemInput" id="thePoemText" onChange={this.textChange}/>
                                         </label><br/>
                                     </Col>
+                                </Row>
+                                <Row>
+                                    <Col lg={3}></Col>
                                     <Col>
                                         <GameBoard 
                                             currentPoemLines = {this.state.numLines} 

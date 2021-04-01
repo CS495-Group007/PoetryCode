@@ -11,6 +11,7 @@ import SimplyScansion from "./Components/SimplyScansion";
 import AddPoemInterface from "./Components/AddPoemInterface";
 import Home from "./Components/Home";
 import HowTo from "./Components/HowTo";
+import Credits from "./Components/Credits"
 import StudentDashboard from "./Components/Dashboards/StudentDashboard";
 import InstructorDashboard from "./Components/Dashboards/InstructorDashboard";
 
@@ -23,12 +24,15 @@ function App() {
           <Navbar.Brand href="/">Syllabits</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav>
+            <Nav className="mr-auto">
               <Nav.Link href="/sign-in">Log In</Nav.Link>
               <Nav.Link href="/sign-up">Sign Up</Nav.Link>
               <Nav.Link href="/how-to">How To</Nav.Link>
               <Nav.Link href="/student-dashboard">Dashboard</Nav.Link>
               <Nav.Link href="/add-poem">Add a Poem</Nav.Link>
+            </Nav>
+            <Nav>
+              <Nav.Link href="/credits">Credits</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Navbar>
@@ -43,6 +47,7 @@ function App() {
           <Route path='/instructor-dashboard' component={InstructorDashboard} />
           <Route path='/add-poem' component={AddPoemInterface} />
           <Route path='/how-to' component={HowTo} />
+          <Route path='/credits' component={Credits} />
         </Switch>
       </div>
     </Router>
