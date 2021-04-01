@@ -13,7 +13,7 @@
     }
 }
 
-@media (min-width: 900px) {
+@media (min-width: 900px) and (max-width: 1100px) {
     .box_item_component .outside {
         border-top: none;
         width: 6vw;
@@ -23,6 +23,19 @@
     img {
         margin-top: 3vh;
         margin-left: 15%;
+    }
+}
+
+@media (min-width: 1100px) {
+    .box_item_component .outside {
+        border-top: none;
+        width: 6vw;
+        overflow: hidden;
+    }
+
+    img {
+        margin-top: 3vh;
+        margin-left: 120%;
     }
 }
 

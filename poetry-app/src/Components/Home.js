@@ -24,11 +24,7 @@ class Home extends Component {
                         <Row>
                             <Col>
                                 <figure class="text-center">
-                                    <h1>Syllabits</h1>
-                                    <h3>What is Scansion?</h3>
-                                    <blockquote class ="blockquote">
-                                        <p>"the action of scanning a line of verse to determine its rhythm"</p>
-                                    </blockquote>
+                                    <h1>SyllaBits</h1>
                                 </figure>
                             </Col>
                         </Row>
