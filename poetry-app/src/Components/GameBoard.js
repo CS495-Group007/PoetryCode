@@ -36,6 +36,7 @@ class GameBoard extends React.Component {
                   targetKey="box" 
                   index={i} 
                   updateGameBoard={this.updateGameBoard} 
+                  blockLimit = {this.props.blockLimit}
                 />);
     }
 

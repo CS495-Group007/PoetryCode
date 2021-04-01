@@ -40,7 +40,7 @@ class Box extends React.Component {
     handleDrop = (e) => {
       let items = this.state.items.slice();
       let colors = this.state.colors.slice();
-      if(items.length < 5){
+      if(items.length < this.props.blockLimit){
         items.push({label: e.dragData.label, uid: shortid.generate(), color: e.dragData.color});
         colors.push(e.dragData.color);
         this.setState({items: items, colors: colors});
@@ -60,7 +60,7 @@ class Box extends React.Component {
       const item = {label: dragData.label, uid: shortid.generate(), color: dragData.color};
       items.splice(toIndex, 0, item);
       colors.splice(toIndex, 0, dragData.color);
-      if(items.length <= 5) {
+      if(items.length <= this.props.blockLimit) {
         this.setState({items: items, colors: colors});
         this.props.updateGameBoard(colors, this.props.index);
       }

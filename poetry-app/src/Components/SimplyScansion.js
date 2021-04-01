@@ -77,10 +77,13 @@ class SimplyScansion extends React.Component{
                         </Row>
                         <Row>
                             <Col sm={6} lg={5} xl={5}>{poemLines}</Col>
-                            <Col sm={6} lg={7} xl={7}><GameBoard 
-                                currentPoemLines = {this.props.location.state.currentPoemLines} 
-                                updateGameBoard = {this.updateGameBoard} 
-                            /></Col>
+                            <Col sm={6} lg={7} xl={7}>
+                                <GameBoard 
+                                    currentPoemLines = {this.props.location.state.currentPoemLines} 
+                                    updateGameBoard = {this.updateGameBoard} 
+                                    blockLimit = {5}
+                                />
+                            </Col>
                         </Row>
                         <Row className="text-center">
                             <Col><Button variant="secondary" onClick = {this.checkIfCorrect}>Submit</Button></Col>
