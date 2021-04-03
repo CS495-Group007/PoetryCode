@@ -25,6 +25,28 @@ class Box extends React.Component {
       this.deleteRow = this.deleteRow.bind(this);
     }
   
+    /*componentDidMount(){
+      var i;
+      let items = [];
+      let colors = [];
+      for(i=0; i<this.props.savedAnswer.length; i++){
+        if(this.props.savedAnswer.length === 'yellow')
+          items.push({label: "' -", uid: shortid.generate(), color: this.props.savedAnswer[i]});
+        else if(this.props.savedAnswer.length === 'purple')
+          items.push({label: "- '", uid: shortid.generate(), color: this.props.savedAnswer[i]});
+        else if (this.props.savedAnswer.length === 'blue')
+          items.push({label: "' - -", uid: shortid.generate(), color: this.props.savedAnswer[i]});
+        else if (this.props.savedAnswer.length === 'green')
+          items.push({label: "- - '", uid: shortid.generate(), color: this.props.savedAnswer[i]});
+        else if (this.props.savedAnswer.length === 'gray')
+          items.push({label: "' '", uid: shortid.generate(), color: this.props.savedAnswer[i]});
+        else
+          items.push({label: "- -", uid: shortid.generate(), color: this.props.savedAnswer[i]});
+        colors.push(this.props.savedAnswer[i]);
+      }
+      this.setState({items: items, colors: colors});
+    }*/
+
     /**
      * Function to delete the contents of the Box component and send that deletion message up through the hierarchy.
      */
