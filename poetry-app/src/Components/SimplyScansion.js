@@ -8,6 +8,8 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 
+var pastAnswer = [["purple","blue"],[],["black","gray","green","purple"]];
+
 /**
  * Componenent representing the GameBoard test page. Students interact with this component after they select a poem from the dashboard to complete. This component is responsible for checking the students answer against the answer key, and updating the database after a submit
  */
@@ -27,6 +29,11 @@ class SimplyScansion extends React.Component{
         this.checkIfCorrect = this.checkIfCorrect.bind(this);
         this.saveAnswer = this.saveAnswer.bind(this);
     }
+
+    componentDidMount(){
+        this.setState({gameBoard: pastAnswer});
+    }
+
     /**
      * Updates the state variable gameBoard to represent changes caused by the boxable and box components
      * @param {Object} items - represents an individual row of blocks
@@ -125,6 +132,7 @@ class SimplyScansion extends React.Component{
                                 <GameBoard 
                                     currentPoemLines = {this.props.location.state.currentPoemLines} 
                                     updateGameBoard = {this.updateGameBoard} 
+                                    savedAnswer = {this.state.gameBoard}
                                     blockLimit = {5}
                                 />
                             </Col>
