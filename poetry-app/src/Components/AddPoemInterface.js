@@ -159,6 +159,9 @@ class AddPoemInterface extends React.Component{
                 <div className = "child">
                     <div id="gameInner" itemID="gameInner">
                         <Container>
+                                <Row className="text-center">
+                                    <Col><h1>Add A Poem</h1></Col>
+                                </Row>
                                 <Row>
                                     <Col lg={3}></Col>
                                     <Col lg={3}></Col>
@@ -220,11 +223,11 @@ class AddPoemInterface extends React.Component{
                 </div>
                 <div class = "pieces">
                     <Boxable targetKey="box" label="' -" color="yellow"/>
-                    <Boxable targetKey="box" label="- '" color="blue"/>
-                    <Boxable targetKey="box" label="' - -" color="red"/>
-                    <Boxable targetKey="box" label="- - '" color="gray"/>
-                    <Boxable targetKey="box" label="' '" color="black"/>
-                    <Boxable targetKey="box" label="- -" color="green"/>
+                    <Boxable targetKey="box" label="- '" color="purple"/>
+                    <Boxable targetKey="box" label="' - -" color="blue"/>
+                    <Boxable targetKey="box" label="- - '" color="green"/>
+                    <Boxable targetKey="box" label="' '" color="gray"/>
+                    <Boxable targetKey="box" label="- -" color="black"/>
                 </div>
             </div>
         );
