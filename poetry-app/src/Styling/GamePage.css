@@ -8,7 +8,7 @@
 .poemInput {
     --inputHeight: 60vh;
     height: var(--inputHeight); 
-    width: 20vw;
+    width: 50vw;
 
     font-size: calc(var(--inputHeight) * 0.05);
 
