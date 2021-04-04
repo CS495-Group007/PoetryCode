@@ -3,8 +3,8 @@ import '../../Styling/DashboardStyling.css';
 import IDetails from "./IDetails"
 
 /** Some constant variables for consistency. Even when not called, these function as a reference within the file. */
-const detailPrimaryKey = "detailPrimary",
-      detailSecondaryKey = "detailSecondary";
+const detailLeftKey = "detailLeft",
+      detailRightKey = "detailRight";
 
 /** The instructor Title and Name are part of the session data */
 var instructorTitle = "";
@@ -36,6 +36,10 @@ class InstructorDashboard extends React.Component {
         switch(v) {
             case 'byStudent' :
                 return "By Student";
+            case 'byClass' :
+                return "By Class";
+            case 'byPoem' :
+                return "By Poem";
             default:
                 return "";
         }
@@ -43,71 +47,93 @@ class InstructorDashboard extends React.Component {
 
     render() {
 
-        /** "details" is just some dummy data for testing and development. In prod it'll be populated by DB info. */
-        var details = [
-            [
-                {
-                    "detailPrimary" : "Sonnet 1",
-                    "detailSecondary" : "In Progress"
-                },
-                {
-                    "detailPrimary" : "Sonnet 5",
-                    "detailSecondary" : "In Progress"
-                },
-                {
-                    "detailPrimary" : "Sonnet 10",
-                    "detailSecondary" : "Complete"
-                }
-            ],
-            [
-                {
-                    "detailPrimary" : "Sonnet 1",
-                    "detailSecondary" : "In Progress"
-                },
-                {
-                    "detailPrimary" : "Sonnet 5",
-                    "detailSecondary" : "In Progress"
-                },
-                {
-                    "detailPrimary" : "Sonnet 10",
-                    "detailSecondary" : "Complete"
-                }
-            ],
-            [
-                {
-                    "detailPrimary" : "Sonnet 5",
-                    "detailSecondary" : "In Progress"
-                },
-                {
-                    "detailPrimary" : "Sonnet 10",
-                    "detailSecondary" : "Complete"
-                }
-            ],
-            [
-                {
-                    "detailPrimary" : "Sonnet 1",
-                    "detailSecondary" : "In Progress"
-                },
-                {
-                    "detailPrimary" : "Sonnet 5",
-                    "detailSecondary" : "In Progress"
-                }
-            ],
-            [
-                {
-                    "detailPrimary" : "Sonnet 10",
-                    "detailSecondary" : "Complete"
-                },
-                {
-                    "detailPrimary" : "Sonnet 15",
-                    "detailSecondary" : "In Progress"
-                },
-                {
-                    "detailPrimary" : "Sonnet 23",
-                    "detailSecondary" : "Complete"
-                }
-            ]
-        ]
+        /** "information" is just some dummy data for testing and development. In prod it'll be populated by DB info. */
+        var information = [
+            {
+                "titleLeft" : "Connor Meadows",
+                "titleRight" : "EN101",
+                "details" : [
+                    {
+                        "detailLeft" : "Sonnet 1",
+                        "detailRight" : "In Progress"
+                    },
+                    {
+                        "detailLeft" : "Sonnet 5",
+                        "detailRight" : "In Progress"
+                    },
+                    {
+                        "detailLeft" : "Sonnet 10",
+                        "detailRight" : "Complete"
+                    }
+                ]
+            },
+            {
+                "titleLeft" : "Nash Stokes",
+                "titleRight" : "EN201",
+                "details" : [
+                    {
+                        "detailLeft" : "Sonnet 1",
+                        "detailRight" : "In Progress"
+                    },
+                    {
+                        "detailLeft" : "Sonnet 5",
+                        "detailRight" : "In Progress"
+                    },
+                    {
+                        "detailLeft" : "Sonnet 16",
+                        "detailRight" : "Complete"
+                    },
+                    {
+                        "detailLeft" : "Sonnet 17",
+                        "detailRight" : "In Progress"
+                    },
+                    {
+                        "detailLeft" : "Sonnet 19",
+                        "detailRight" : "Complete"
+                    },
+                    {
+                        "detailLeft" : "Sonnet 28",
+                        "detailRight" : "In Progress"
+                    },
+                    {
+                        "detailLeft" : "Sonnet 37",
+                        "detailRight" : "Complete"
+                    }
+                ]
+            },
+            {
+                "titleLeft" : "Maddie Macaulay",
+                "titleRight" : "EN301",
+                "details" : [
+                    {
+                        "detailLeft" : "Sonnet 3",
+                        "detailRight" : "Complete"
+                    },
+                    {
+                        "detailLeft" : "Sonnet 5",
+                        "detailRight" : "In Progress"
+                    }
+                ]
+            },
+            {
+                "titleLeft" : "Jeremy Tucker",
+                "titleRight" : "EN401",
+                "details" : [
+                    {
+                        "detailLeft" : "Sonnet 12",
+                        "detailRight" : "In Progress"
+                    },
+                    {
+                        "detailLeft" : "Sonnet 15",
+                        "detailRight" : "In Progress"
+                    },
+                    {
+                        "detailLeft" : "Sonnet 18",
+                        "detailRight" : "Complete"
+                    }
+                ]
+            }
+        ];
 
         /** 
          * The Instructor dashboard creates a "IDetails" element for each student / macro organization depending on the view
@@ -133,11 +159,10 @@ class InstructorDashboard extends React.Component {
                                 </div>
                             </div>
                             
-                            <IDetails primaryName = "Connor" secondaryName = "Shakespeare 210" details = { details[0] }></IDetails>
-                            <IDetails primaryName = "Nash" secondaryName = "Shakespeare 101" details = { details[1] }></IDetails>
-                            <IDetails primaryName = "Gerome" secondaryName = "Shakespeare 201" details = { details[2] }></IDetails>
-                            <IDetails primaryName = "Maddie" secondaryName = "Shakespeare 10" details = { details[3] }></IDetails>
-                            <IDetails primaryName = "Jeremy" secondaryName = "Shakespeare 401" details = { details[4] }></IDetails>
+                            <IDetails view = { this.currentView } information = { information[0] }></IDetails>
+                            <IDetails view = { this.currentView } information = { information[1] }></IDetails>
+                            <IDetails view = { this.currentView } information = { information[2] }></IDetails>
+                            <IDetails view = { this.currentView } information = { information[3] }></IDetails>
 
                         </div>
 
