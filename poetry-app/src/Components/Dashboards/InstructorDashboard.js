@@ -115,7 +115,7 @@ class InstructorDashboard extends React.Component {
          */
         return (
             <div className = "outer">
-                <div className = "inner">
+                <div className = "dash-inner">
                     <div id = "studentDashboard" >
                         <div className="DashboardTitle">
                             { instructorTitle }{ instructorName }'s Instructor Dashboard
