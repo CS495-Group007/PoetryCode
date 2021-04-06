@@ -3,6 +3,7 @@ import GameBoard from './GameBoard.js';
 import Boxable from './Boxable.js';
 import '../Styling/GamePage.css'
 import Legend from './Legend.js';
+import BlockNumberDropdown from './BlockNumberDropdown';
 import DynamicDropDown from './DynamicDropDown.js';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -28,7 +29,8 @@ class AddPoemInterface extends React.Component{
             poemName: "",
             gameBoard: [],
             tags: [],
-            newTags: []
+            newTags: [],
+            blockNumber: 5
         };
         this.processPage = this.processPage.bind(this);
         this.textChange = this.textChange.bind(this);
@@ -38,6 +40,7 @@ class AddPoemInterface extends React.Component{
         this.tagSelect = this.tagSelect.bind(this);
         this.tagRemove = this.tagRemove.bind(this);
         this.addTags = this.addTags.bind(this);
+        this.handleBlockNumberChange = this.handleBlockNumberChange.bind(this);
     }
 
     /**
@@ -95,6 +98,7 @@ class AddPoemInterface extends React.Component{
         alert(this.state.poemName);
         alert(this.convertArrayToString(this.state.tags));
         alert(this.convertArrayToString(this.filterLines(this.state.newTags)));
+        alert(this.state.blockNumber);
         alert(this.convertArrayToString(this.filterLines(this.state.lines)));
         alert(this.convertGameBoardToString(this.state.gameBoard));
         //SEND DATA TO DATABASE HERE
@@ -150,6 +154,10 @@ class AddPoemInterface extends React.Component{
         this.setState({newTags: tags});
     }
 
+    handleBlockNumberChange(value){
+        this.setState({blockNumber: value});
+    }
+
     /**
      * Function to render the component. Renders the area to submit poet, poem name, poem text, and gameboard key. Also renders the 6 necessary Boxables
      */
@@ -194,8 +202,16 @@ class AddPoemInterface extends React.Component{
                                             <input type="text" onChange = {this.addTags}/>
                                         </label><br/>
                                     </Col>
+                                    <Col>
+                                        <label>
+                                            Blocks Per Line:
+                                            <br/>
+                                            <BlockNumberDropdown
+                                                handleBlockNumberChange = {this.handleBlockNumberChange}
+                                            />
+                                        </label><br/>
+                                    </Col>
                                 </Row>
-                                
                                 <Row className="text-center">
                                     <Col>
                                         <label>
@@ -212,6 +228,7 @@ class AddPoemInterface extends React.Component{
                                             currentPoemLines = {this.state.numLines} 
                                             updateGameBoard = {this.updateGameBoard}
                                             blockLimit = {5}
+                                            savedAnswer = {[]}
                                         />
                                     </Col>
                                 </Row>
