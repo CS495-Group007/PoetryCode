@@ -24,6 +24,36 @@
         margin-top: 3vh;
         margin-left: 15%;
     }
+
+    .eight {
+        border-top: none;
+        width: 3vw;
+        overflow: hidden;
+    }
+
+    .seven {
+        border-top: none;
+        width: 4vw;
+        overflow: hidden;
+    }
+
+    .six {
+        border-top: none;
+        width: 5vw;
+        overflow: hidden;
+    }
+
+    .four {
+        border-top: none;
+        width: 7vw;
+        overflow: hidden;
+    }
+
+    .three {
+        border-top: none;
+        width: 10vw;
+        overflow: hidden;
+    }
 }
 
 @media (min-width: 1100px) {
@@ -36,6 +66,36 @@
     img {
         margin-top: 3vh;
         margin-left: 70%;
+    }
+
+    .eight {
+        border-top: none;
+        width: 3vw;
+        overflow: hidden;
+    }
+
+    .seven {
+        border-top: none;
+        width: 4vw;
+        overflow: hidden;
+    }
+
+    .six {
+        border-top: none;
+        width: 5vw;
+        overflow: hidden;
+    }
+
+    .four {
+        border-top: none;
+        width: 7vw;
+        overflow: hidden;
+    }
+
+    .three {
+        border-top: none;
+        width: 10vw;
+        overflow: hidden;
     }
 }
 
