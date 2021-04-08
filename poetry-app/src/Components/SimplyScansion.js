@@ -30,8 +30,8 @@ class SimplyScansion extends React.Component{
         this.saveAnswer = this.saveAnswer.bind(this);
     }
 
-    componentDidMount(){
-        this.setState({gameBoard: pastAnswer});
+    componentDidUpdate(){
+        //this.setState({gameBoard: pastAnswer});
     }
 
     /**
@@ -108,12 +108,12 @@ class SimplyScansion extends React.Component{
      */
     render(){
         let poemLines = [];
-        this.props.location.state.poemText.forEach((line) => {
-            poemLines.push(<div className = "poem">{line}</div>);
+        this.props.location.state.poemText.forEach((line, index) => {
+            poemLines.push(<div className = "poem" key = {index}>{line}</div>);
         });
         return(
-            <div class="parent">
-                <div class="child">
+            <div className="parent">
+                <div className="child">
                     <Container>
                         <Row>
                             <Col lg={3}></Col>
@@ -146,7 +146,7 @@ class SimplyScansion extends React.Component{
                         </Row>
                     </Container>
                 </div>
-                <div class="pieces">
+                <div className="pieces">
                     <Boxable targetKey="box" label="' -" color="yellow"/>
                     <Boxable targetKey="box" label="- '" color="purple"/>
                     <Boxable targetKey="box" label="' - -" color="blue"/>

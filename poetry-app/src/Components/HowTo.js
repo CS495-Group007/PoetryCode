@@ -28,7 +28,7 @@ export default class Home extends Component {
                                     <li>Once completed, hit submit to check your work!</li>
                                 </ol>
                                 <p>You can complete the poems as many times as necessary to learn the skill of scansion!</p>
-                                <h4 class="text-center">What Do All the Colors Mean?</h4>
+                                <h4 className="text-center">What Do All the Colors Mean?</h4>
                                 <ul>
                                     <li>Yellow - Iamb</li>
                                     <li>Blue - Trochee</li>

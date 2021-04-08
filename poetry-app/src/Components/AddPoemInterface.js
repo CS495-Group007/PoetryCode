@@ -238,7 +238,7 @@ class AddPoemInterface extends React.Component{
                         </Container>
                     </div>
                 </div>
-                <div class = "pieces">
+                <div className = "pieces">
                     <Boxable targetKey="box" label="' -" color="yellow"/>
                     <Boxable targetKey="box" label="- '" color="purple"/>
                     <Boxable targetKey="box" label="' - -" color="blue"/>
