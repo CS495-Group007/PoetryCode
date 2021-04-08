@@ -119,17 +119,19 @@ class Box extends React.Component {
                   <DropTarget onHit={this.handleDrop} targetKey="boxItem" dropData={{name: this.props.name}}>
                     <div className="box">
                       <table>
-                        <tr>
-                          {this.state.items.map((item, index) => {
-                            return (
-                              <td>
-                                <BoxItem key={item.uid} uid={item.uid} kill={this.kill} index={index} swap={this.swap} color={item.color}>
-                                  {item.label}
-                                </BoxItem>
-                              </td>
-                            )
-                          })}
-                        </tr>
+                        <tbody>
+                          <tr>
+                            {this.state.items.map((item, index) => {
+                              return (
+                                <td>
+                                  <BoxItem key={item.uid} uid={item.uid} kill={this.kill} index={index} swap={this.swap} color={item.color}>
+                                    {item.label}
+                                  </BoxItem>
+                                </td>
+                              )
+                            })}
+                          </tr>
+                        </tbody>
                       </table>
                     </div>
                   </DropTarget>
