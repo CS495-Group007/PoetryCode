@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import { Link } from 'react-router-dom';
 import '../../Styling/DashboardStyling.css';
 
@@ -8,6 +9,16 @@ const completePoem = "complete",
       studentIndicator = "student",
       instructorIndicator = "instructor";
 
+// axios.post('https://syllabits.betatesting.as.ua.edu/api/account/register.php', { "firstname": "germy", "lastname": "stucker",
+// "email": "germystuer@crimson.ua.edu",
+// "instructoremail" : "mike@codeofaninja.com",
+// "password" : "55556"})
+//       .then(function (response) {
+//         console.log(response);
+//       })
+//       .catch(function (error) {
+//         console.log(error);
+//       });
 
 // Dummy data for testing
 var studentPoems = {
