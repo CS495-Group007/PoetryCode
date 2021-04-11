@@ -113,7 +113,7 @@ class Box extends React.Component {
       return (
         <Container>
           <Row>
-            <Col lg={10} xl={11}>
+            <Col lg={10}>
               <div className="component_box">
                 <DropTarget onHit={this.handleDrop} targetKey={this.props.targetKey} dropData={{name: this.props.name}}>
                   <DropTarget onHit={this.handleDrop} targetKey="boxItem" dropData={{name: this.props.name}}>
