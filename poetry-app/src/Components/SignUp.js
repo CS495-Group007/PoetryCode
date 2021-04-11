@@ -21,7 +21,12 @@ class SignUp extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            validated: false
+            validated: false,
+            firstName: "",
+            lastName: "",
+            studentEmail: "",
+            instructorEmail: "",
+            password: ""
         };
     }
 
@@ -31,13 +36,40 @@ class SignUp extends Component {
      */
 
     handleSubmit = (event) => {
+        event.preventDefault();
         const form = event.currentTarget;
         if(form.checkValidity() == false) {
             event.preventDefault();
             event.stopPropagation();
         }
 
-        this.setState({validated: true});
+        this.setState({validated: true})
+        const url = 'https://syllabits.betatesting.as.ua.edu/api/account/register.php'
+        var data = JSON.stringify({
+            "firstname" : this.state.firstName,
+            "lastname" : this.state.lastName,
+            "email" : this.state.studentEmail,
+            "instructoremail" : this.state.instructorEmail,
+            "password" : this.state.password});
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+
+        var requestOptions = {
+            method: 'POST',
+            headers: myHeaders,
+            body: data,
+            redirect: 'follow'
+        };
+
+        fetch(url, requestOptions)
+            .then(response => response.text())
+            .then(result => console.log(result))
+            .catch(error => console.log('error', error));
+        
+    }
+
+    handleChange = (event) => {
+        this.setState({[event.target.name]:event.target.value})
     }
 
     /**
@@ -54,8 +86,10 @@ class SignUp extends Component {
                                 <Form.Label>First name</Form.Label>
                                 <Form.Control
                                     required
+                                    name="firstName"
                                     type="text"
                                     placeholder="First name"
+                                    onChange={this.handleChange}
                                 />
                                 <Form.Control.Feedback type="invalid">Please provide a first name.</Form.Control.Feedback>
                             </Form.Group>
@@ -63,8 +97,10 @@ class SignUp extends Component {
                                 <Form.Label>Last name</Form.Label>
                                 <Form.Control
                                     required
+                                    name="lastName"
                                     type="text"
                                     placeholder="Last name"
+                                    onChange={this.handleChange}
                                 />
                                 <Form.Control.Feedback type="invalid">Please provide a last name.</Form.Control.Feedback>
                             </Form.Group>
@@ -74,16 +110,20 @@ class SignUp extends Component {
                                 <Form.Label>Email</Form.Label>
                                 <Form.Control
                                     required
+                                    name="studentEmail"
                                     type="email"
                                     placeholder="example@email.com"
+                                    onChange={this.handleChange}
                                 />
                                 <Form.Control.Feedback type="invalid">Please provide a valid email address.</Form.Control.Feedback>
                             </Form.Group>
                             <Form.Group as={Col} controlId="instructorEmail">
                                 <Form.Label>Instructor Email</Form.Label>
                                 <Form.Control
+                                    name="instructorEmail"
                                     type="email"
                                     placeholder="instructor@email.com"
+                                    onChange={this.handleChange}
                                 />
                             </Form.Group>
                         </Form.Row>
@@ -92,8 +132,10 @@ class SignUp extends Component {
                                 <Form.Label>Password</Form.Label>
                                 <Form.Control
                                     required
+                                    name="password"
                                     type="text"
                                     placeholder="password"
+                                    onChange={this.handleChange}
                                 />
                                 <Form.Control.Feedback type="invalid">Please provide a password.</Form.Control.Feedback>
                             </Form.Group>

@@ -11,6 +11,13 @@ import Col from 'react-bootstrap/Col';
  * Component responsible for implementing the log in functionality.
  */
 class Credit extends Component {
+    componentDidMount() {
+        const apiUrl = 'https://syllabits.betatesting.as.ua.edu/api/account/register.php';
+        fetch(apiUrl)
+        .then((response) => response.json())
+        .then((data) => console.log('This is your data', data));
+  }
+
     render() {
         return (
             <div className = "outer">
