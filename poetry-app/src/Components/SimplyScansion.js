@@ -3,6 +3,7 @@ import GameBoard from './GameBoard.js';
 import Boxable from './Boxable.js';
 import '../Styling/SimplyScansion.css';
 import Legend from './Legend.js';
+import history from './history.js';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -63,6 +64,10 @@ class SimplyScansion extends React.Component{
             }
         }
         alert("Correct!");
+        //DB WRITE
+        history.push('/student-dashboard');
+        this.forceUpdate();
+        window.location.reload(false);
     }
 
     /**

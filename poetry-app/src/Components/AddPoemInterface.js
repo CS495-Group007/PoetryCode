@@ -102,6 +102,7 @@ class AddPoemInterface extends React.Component{
         alert(this.convertArrayToString(this.filterLines(this.state.lines)));
         alert(this.convertGameBoardToString(this.state.gameBoard));
         //SEND DATA TO DATABASE HERE
+        window.location.reload(false);
     }
 
     /**
