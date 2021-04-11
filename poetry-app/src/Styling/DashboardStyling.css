@@ -246,3 +246,16 @@
     display: table-row;
     font-size: min(1.5vh, 1.5vw);
 }
+
+#viewButton {
+    background-color: #41234d;
+    color: #d1d1d1;
+    width: 30%;
+    text-align: center;
+    font-size: min(3vh, 3vw);
+    margin-left: 35%;
+    margin-right: 35%;
+    margin-top: min(2vh, 2vw);
+
+    border-radius: 0.4vw;
+}

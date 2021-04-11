@@ -108,6 +108,13 @@ function GetData() {
     return data;
 }
 
+/**
+ * The list of views
+ */
+var views = [
+    "byStudent",
+    "byPoem"
+]
 
 /**
  * The complete instructor dashboard that displays student status information
@@ -115,28 +122,62 @@ function GetData() {
  */
 class InstructorDashboard extends React.Component {
 
+   
+
     constructor() {
         super();
-        /** The way the dashboard is currently being viewed / organized */
-        this.state = {
-            currentView: "byStudent"
-        };
+
         /** Binding the translator method and the render methods for each view */
         this.viewTranslation = this.viewTranslation.bind(this);
         this.renderByStudent = this.renderByStudent.bind(this);
         this.renderByPoem = this.renderByPoem.bind(this);
+        this.rotateView = this.rotateView.bind(this);
+        this.renderIDetails = this.renderIDetails.bind(this);
 
+        // this.renderIDetails();
+
+        this.state = {
+            headLeft: "Poem",
+            headRight: " ",
+            CurrentView: "byPoem",
+            CurrentViewIndex: 1,
+            DetailsCells: this.renderIDetails(1)
+        }
+    }
+
+    rotateView() {
+        var newViewIndex = (this.state.CurrentViewIndex + 1) % views.length,
+            newLeft, newRight;
+
+
+        switch(newViewIndex) {
+            case 0 :
+                newLeft = "Student";
+                newRight = "Class";
+                break;
+            case 1 :
+                newLeft = "Poem";
+                newRight = " ";
+                break;
+            default:
+                return "";
+        }
+
+        this.setState(s => ({
+            CurrentViewIndex : newViewIndex,
+            DetailsCells : this.renderIDetails(newViewIndex),
+            headLeft : newLeft,
+            headRight : newRight
+        }));
 
     }
 
     /** The viewTranslation method translates what's stored in the props into something aesthetic for display */
     viewTranslation() {
-        switch(this.state.currentView) {
-            case 'byStudent' :
+        switch(this.state.CurrentViewIndex) {
+            case 0 :
                 return "By Student";
-            case 'byClass' :
-                return "By Class";
-            case 'byPoem' :
+            case 1 :
                 return "By Poem";
             default:
                 return "";
@@ -146,6 +187,9 @@ class InstructorDashboard extends React.Component {
     renderByStudent() {
         var data = GetData();
         var information = data;
+
+        console.log("The data when rendering by student");
+        console.log(data);
 
         return information;
     }
@@ -178,32 +222,37 @@ class InstructorDashboard extends React.Component {
         return information;
     }
 
-    render() {
+    renderIDetails(v) {
 
-        var information, instructorHeadLeft, instructorHeadRight;
-        switch(this.state.currentView) {
-            case 'byStudent' :
+        var newIDetailCells = [], stringView;
+
+        var information = [];
+        switch(v) {
+            case 0:
+                stringView = "byStudent";
                 information = this.renderByStudent();
-                instructorHeadLeft = "Student";
-                instructorHeadRight = "Class";
                 break;
-            case 'byPoem' :
+            case 1:
+                stringView = "byPoem";
                 information = this.renderByPoem();
-                instructorHeadLeft = "Poem";
-                instructorHeadRight = " ";
                 break;
             default:
-                break;
+                stringView = "byStudent";
+                information = this.renderByStudent();
         }
 
         // Make the IDetails cells
-        var IDetailCells = [];
         for(var i = 0; i < information.length; i++){
-            IDetailCells.push(
-                <IDetails view = { this.currentView } information = { information[i] }></IDetails>
+            newIDetailCells.push(
+                <IDetails view = { stringView } information = { information[i] }></IDetails>
             )
         }
 
+        return newIDetailCells;
+
+    }
+
+    render() {
         /** 
          * The Instructor dashboard creates a "IDetails" element for each student / macro organization depending on the view
          * Each one is its own dropdown to see more detailed information on the high level.
@@ -216,19 +265,21 @@ class InstructorDashboard extends React.Component {
                             { instructorTitle }{ instructorName }'s Instructor Dashboard
                         </div>
 
+                        <button id="viewButton" onClick={ this.rotateView }>{ this.viewTranslation() }</button>
+
                         <div className="instructorTable">
                             <div className="instructorTableRow">
                                 <div className="instructorTableCell">
                                     <div className="instructorHead">
                                         <div className="instructorHeadRow">
-                                            <div className="instructorHeadCell">{ instructorHeadLeft }</div>
-                                            <div className="instructorHeadCell"> { instructorHeadRight } </div>
+                                            <div className="instructorHeadCell">{ this.state.headLeft }</div>
+                                            <div className="instructorHeadCell"> { this.state.headRight } </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             
-                            { IDetailCells }
+                            { this.state.DetailsCells }
 
                         </div>
 

@@ -41,7 +41,6 @@ class IDetails extends React.Component {
      * Toggles the state variable that indicates whether or not the component is expanded. 
      */
     toggleExpansion() {
-        console.log("Toggling");
         this.setState(state => ({
             expanded: !state.expanded
         }));
@@ -71,10 +70,10 @@ class IDetails extends React.Component {
                     <div className = "instructorDetailTable" onClick = { this.toggleExpansion }>
                         <div className="instructorDetailRowPrimary">
                             <div className="instructorDetailCell">
-                                { this.state.information[titleLeftKey] }
+                                { this.props.information[titleLeftKey] }
                             </div>
                             <div className="instructorDetailCell classCell">
-                                { this.state.information[titleRightKey] }
+                                { this.props.information[titleRightKey] }
                             </div>
                         </div>
                         { detailLines }
@@ -86,7 +85,7 @@ class IDetails extends React.Component {
 
     renderByClass() {
         var detailLines = [];
-        for (var i = 0; i < this.state.information[detailsKey].length; i++) {
+        for (var i = 0; i < this.props.information[detailsKey].length; i++) {
             detailLines.push(
                 <div className = { this.state.expanded ? expandedClassName : collapsedClassName }>
                     <div className="instructorDetailCell">
@@ -122,18 +121,6 @@ class IDetails extends React.Component {
 
     }
 
-    // changeView(newView) {
-    //     try{
-    //         validViews[newView];
-    //         this.setState(() => {
-    //             view: newView;
-    //         })
-
-    //     } catch(e) {
-    //         console.log("Invalid value for view: " + e);
-    //     }
-    // }
-
     /**
      * A method to controct the n number of detail lines for a single component
      * @returns The detail lines of the subtable
@@ -144,8 +131,6 @@ class IDetails extends React.Component {
         switch(this.state.view) {
             case "byStudent":
                 return this.renderByStudent();
-            case "byClass":
-                return this.renderByClass();
             case "byPoem":
                 return this.renderByPoem();
             default:
