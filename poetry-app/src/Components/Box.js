@@ -25,6 +25,28 @@ class Box extends React.Component {
       this.deleteRow = this.deleteRow.bind(this);
     }
   
+    /*componentDidMount(){
+      var i;
+      let items = [];
+      let colors = [];
+      for(i=0; i<this.props.savedAnswer.length; i++){
+        if(this.props.savedAnswer.length === 'yellow')
+          items.push({label: "' -", uid: shortid.generate(), color: this.props.savedAnswer[i]});
+        else if(this.props.savedAnswer.length === 'purple')
+          items.push({label: "- '", uid: shortid.generate(), color: this.props.savedAnswer[i]});
+        else if (this.props.savedAnswer.length === 'blue')
+          items.push({label: "' - -", uid: shortid.generate(), color: this.props.savedAnswer[i]});
+        else if (this.props.savedAnswer.length === 'green')
+          items.push({label: "- - '", uid: shortid.generate(), color: this.props.savedAnswer[i]});
+        else if (this.props.savedAnswer.length === 'gray')
+          items.push({label: "' '", uid: shortid.generate(), color: this.props.savedAnswer[i]});
+        else
+          items.push({label: "- -", uid: shortid.generate(), color: this.props.savedAnswer[i]});
+        colors.push(this.props.savedAnswer[i]);
+      }
+      this.setState({items: items, colors: colors});
+    }*/
+
     /**
      * Function to delete the contents of the Box component and send that deletion message up through the hierarchy.
      */
@@ -91,23 +113,25 @@ class Box extends React.Component {
       return (
         <Container>
           <Row>
-            <Col lg={10}>
+            <Col lg={10} xl={11}>
               <div className="component_box">
                 <DropTarget onHit={this.handleDrop} targetKey={this.props.targetKey} dropData={{name: this.props.name}}>
                   <DropTarget onHit={this.handleDrop} targetKey="boxItem" dropData={{name: this.props.name}}>
                     <div className="box">
                       <table>
-                        <tr>
-                          {this.state.items.map((item, index) => {
-                            return (
-                              <td>
-                                <BoxItem key={item.uid} uid={item.uid} kill={this.kill} index={index} swap={this.swap} color={item.color}>
-                                  {item.label}
-                                </BoxItem>
-                              </td>
-                            )
-                          })}
-                        </tr>
+                        <tbody>
+                          <tr>
+                            {this.state.items.map((item, index) => {
+                              return (
+                                <td>
+                                  <BoxItem key={item.uid} uid={item.uid} kill={this.kill} index={index} swap={this.swap} color={item.color}>
+                                    {item.label}
+                                  </BoxItem>
+                                </td>
+                              )
+                            })}
+                          </tr>
+                        </tbody>
                       </table>
                     </div>
                   </DropTarget>

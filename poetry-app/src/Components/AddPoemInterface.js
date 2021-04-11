@@ -3,12 +3,14 @@ import GameBoard from './GameBoard.js';
 import Boxable from './Boxable.js';
 import '../Styling/GamePage.css'
 import Legend from './Legend.js';
+import BlockNumberDropdown from './BlockNumberDropdown';
+import DynamicDropDown from './DynamicDropDown.js';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 
-var poetNames = ['Shakespeare', 'Frost', 'Edgar Allan Poe', 'Emily Dickinson', 'Other'];
+var tags = ['Tag 1', 'Tag 2', 'Tag 3'];
 
 /**
  * Component that implements the functionality to add a poem to the database. Includes setting the poem name, author, text, and key
@@ -26,14 +28,19 @@ class AddPoemInterface extends React.Component{
             numLines: 0,
             poemName: "",
             gameBoard: [],
-            displayPoetInput: false,
-            currentSelection: "Choose a Poet"
+            tags: [],
+            newTags: [],
+            blockNumber: 5
         };
         this.processPage = this.processPage.bind(this);
         this.textChange = this.textChange.bind(this);
         this.updateGameBoard = this.updateGameBoard.bind(this);
         this.handlePoemNameChange = this.handlePoemNameChange.bind(this);
         this.filterLines = this.filterLines.bind(this);
+        this.tagSelect = this.tagSelect.bind(this);
+        this.tagRemove = this.tagRemove.bind(this);
+        this.addTags = this.addTags.bind(this);
+        this.handleBlockNumberChange = this.handleBlockNumberChange.bind(this);
     }
 
     /**
@@ -89,6 +96,9 @@ class AddPoemInterface extends React.Component{
     processPage(event){
         event.preventDefault();
         alert(this.state.poemName);
+        alert(this.convertArrayToString(this.state.tags));
+        alert(this.convertArrayToString(this.filterLines(this.state.newTags)));
+        alert(this.state.blockNumber);
         alert(this.convertArrayToString(this.filterLines(this.state.lines)));
         alert(this.convertGameBoardToString(this.state.gameBoard));
         //SEND DATA TO DATABASE HERE
@@ -131,25 +141,41 @@ class AddPoemInterface extends React.Component{
         this.setState({gameBoard: gameBoard});
     }
     
+    tagSelect(selectedList, selectedItem){
+        this.setState({tags: selectedList});
+    }
+
+    tagRemove(selectedList, removedItem){
+        this.setState({tags: selectedList});
+    }
+
+    addTags(event){
+        var tags = event.target.value.split(' ');
+        this.setState({newTags: tags});
+    }
+
+    handleBlockNumberChange(value){
+        this.setState({blockNumber: value});
+    }
+
     /**
      * Function to render the component. Renders the area to submit poet, poem name, poem text, and gameboard key. Also renders the 6 necessary Boxables
      */
     render(){
-        /*const defaultOption = poetNames[0];
-        let poetInput = [];
-        poetInput.push(
-            <DropdownButton alignRight title={this.state.currentSelection} id="dropdown-menu-align-right" variant="secondary" onSelect={this.handlePoetChange}>
-              {this.generatePoetNameButtons()}
-            </DropdownButton>
-        );
-        if(this.state.displayPoetInput === true)
-            poetInput.push(<input type="text" value = {this.state.poet} onChange = {this.handlePoetTextChange} />);*/
         return(
             <div className = "parent">
                 <div className = "child">
                     <div id="gameInner" itemID="gameInner">
                         <Container>
-                            <form onSubmit={this.processPage}>
+                                <Row className="text-center">
+                                    <Col><h1>Add A Poem</h1></Col>
+                                </Row>
+                                <Row>
+                                    <Col lg={3}></Col>
+                                    <Col lg={3}></Col>
+                                    <Col lg={3}></Col>
+                                    <Col><Legend/></Col>
+                                </Row><br/>
                                 <Row className="text-center">
                                     <Col>
                                         <label>
@@ -158,7 +184,33 @@ class AddPoemInterface extends React.Component{
                                             <input type="text" value = {this.state.poemName} onChange = {this.handlePoemNameChange} />
                                         </label><br/>
                                     </Col>
-                                    <Col><Legend/></Col>
+                                    <Col>
+                                        <label>
+                                            Tags (Max 5):
+                                            <br/>
+                                            <DynamicDropDown 
+                                                options={tags} 
+                                                onSelect={this.tagSelect}
+                                                onRemove={this.tagRemove}
+                                            />
+                                        </label><br/>
+                                    </Col>
+                                    <Col>
+                                        <label>
+                                            New Tags (Separate By Space):
+                                            <br/>
+                                            <input type="text" onChange = {this.addTags}/>
+                                        </label><br/>
+                                    </Col>
+                                    <Col>
+                                        <label>
+                                            Blocks Per Line:
+                                            <br/>
+                                            <BlockNumberDropdown
+                                                handleBlockNumberChange = {this.handleBlockNumberChange}
+                                            />
+                                        </label><br/>
+                                    </Col>
                                 </Row>
                                 <Row className="text-center">
                                     <Col>
@@ -176,23 +228,23 @@ class AddPoemInterface extends React.Component{
                                             currentPoemLines = {this.state.numLines} 
                                             updateGameBoard = {this.updateGameBoard}
                                             blockLimit = {5}
+                                            savedAnswer = {[]}
                                         />
                                     </Col>
                                 </Row>
                                 <Row className="text-center">
-                                    <Col><Button variant="secondary" type="submit">Submit</Button></Col>
+                                    <Col><Button variant="secondary" type="button" onClick={this.processPage}>Submit</Button></Col>
                                 </Row>
-                            </form>
                         </Container>
                     </div>
                 </div>
-                <div class = "pieces">
+                <div className = "pieces">
                     <Boxable targetKey="box" label="' -" color="yellow"/>
-                    <Boxable targetKey="box" label="- '" color="blue"/>
-                    <Boxable targetKey="box" label="' - -" color="red"/>
-                    <Boxable targetKey="box" label="- - '" color="gray"/>
-                    <Boxable targetKey="box" label="' '" color="black"/>
-                    <Boxable targetKey="box" label="- -" color="green"/>
+                    <Boxable targetKey="box" label="- '" color="purple"/>
+                    <Boxable targetKey="box" label="' - -" color="blue"/>
+                    <Boxable targetKey="box" label="- - '" color="green"/>
+                    <Boxable targetKey="box" label="' '" color="gray"/>
+                    <Boxable targetKey="box" label="- -" color="black"/>
                 </div>
             </div>
         );

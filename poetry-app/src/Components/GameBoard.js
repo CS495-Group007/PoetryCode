@@ -37,6 +37,8 @@ class GameBoard extends React.Component {
                   index={i} 
                   updateGameBoard={this.updateGameBoard} 
                   blockLimit = {this.props.blockLimit}
+                  savedAnswer = {this.props.savedAnswer[i]}
+                  key = {i}
                 />);
     }
 

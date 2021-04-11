@@ -15,7 +15,7 @@ class Legend extends React.Component{
      */
     render(){
         return(
-            <div class=".container">
+            <div className=".container">
                 <DropdownButton id="dropdown-item-button" variant="secondary" title="Legend">
                     <Dropdown.ItemText>Yellow - Iamb</Dropdown.ItemText>                        
                     <Dropdown.ItemText>Blue - Trochee</Dropdown.ItemText>
