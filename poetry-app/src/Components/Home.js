@@ -6,8 +6,10 @@ import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
-import ButtonGroup from 'react-bootstrap/ButtonGroup'
+import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import '../Styling/Login.css';
+import icon from '../Images/nounproject.png';
+import Image from 'react-bootstrap/Image';
 
 /**
  * Component in charge of rendering the Home/How-To page.
@@ -23,18 +25,20 @@ class Home extends Component {
                     <Container>
                         <Row>
                             <Col>
-                                <figure class="text-center">
-                                    <h1>SyllaBits</h1>
-                                </figure>
+                                <Image src={icon} alt="Noun project icon" className="center"/>
                             </Col>
                         </Row>
                         <Row className="text-center">
                             <Col>
-                                <ButtonGroup vertical size="lg" className="mb-2">
-                                    <Button variant="dark" href='/sign-in'>Sign In</Button>
-                                    <Button variant="dark" href='/sign-up'>Sign Up</Button>
-                                    <Button variant="dark" href='/how-to'>Proceed as Guest</Button>
-                                </ButtonGroup>
+                                <h3>SyllaBits</h3>
+                                <p>With building blocks to practice and refine, your scansion skills will grow with every line.</p>
+                            </Col>
+                        </Row>
+                        <Row className="text-center">
+                            <Col>
+                                <Button variant="secondary" href='/sign-in'>Log In</Button>{' '}
+                                <Button variant="secondary" href='/sign-up'>Sign Up</Button>{' '}
+                                <Button variant="secondary" href='/student-dashboard'>Guest</Button>
                             </Col>
                         </Row>
                     </Container>

@@ -87,3 +87,10 @@ body, html, #root, .outer {
 .forgot-password a {
   color: #167bff;
 }
+
+.center {
+  width: 75px;
+  height: 75px;
+  margin-top: 0;
+  margin-left: 46%;
+}
