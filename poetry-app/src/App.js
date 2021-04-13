@@ -27,12 +27,12 @@ function App() {
             <Nav className="mr-auto">
               <Nav.Link href="/sign-in">Log In</Nav.Link>
               <Nav.Link href="/sign-up">Sign Up</Nav.Link>
-              <Nav.Link href="/how-to">How To</Nav.Link>
+              <Nav.Link href="/how-to">User Guide</Nav.Link>
               <Nav.Link href="/student-dashboard">Dashboard</Nav.Link>
               <Nav.Link href="/add-poem">Add a Poem</Nav.Link>
             </Nav>
             <Nav>
-              <Nav.Link href="/credits">Credits</Nav.Link>
+              <Nav.Link href="/credits">About</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Navbar>
