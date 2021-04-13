@@ -26,3 +26,24 @@ The main project code
 
   - We tested this by logging in with a username and password, and noted that the login button did indeed take us to our student dashboard.
 
+
+# Sprint 3 Test Cases
+1. The interface should be easily navigable by a new user.
+
+  - We clicked around the nav bar to make sure that it navigated to the correct pages.
+
+2. Should be able to click the button at the top of the instructor dashboard to see an alternate view.
+
+  - Verified this by clicking the button and making sure that the view was updated correctly.
+
+3. A link on the student dashboard should take users to a poem to be scanned.
+
+  - Verified this by clicking on a poem and verifying that the poem text and key were the ones in our dummy database.
+
+4. The login form should take the user to their dashboard on submission.
+
+  - Verified this by clicking the log in button and verifying that the page was changed to the correct dashboard.
+
+5. The register form should require all fields except for the instructor email.
+
+  - Verified this by leaving the fields empty and noting that the form would not submit.
