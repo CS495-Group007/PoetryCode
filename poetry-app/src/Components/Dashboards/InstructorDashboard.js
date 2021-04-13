@@ -16,7 +16,11 @@ var instructorName = "";
 instructorTitle = "Dr.";
 instructorName = "Tavares";
 
-// Production DB hit
+/**
+ * A function to retrieve data. When the backend is configured, this function will need to be modified to hit the DB 
+ * and return the actual data.
+ * @returns The data. Unformatted. 
+ */
 function GetData() {
     var data = [
         {
@@ -145,6 +149,10 @@ class InstructorDashboard extends React.Component {
         }
     }
 
+    /**
+     * Rotates the view on button click
+     * @returns No return value, but sets the state which modifies the component
+     */
     rotateView() {
         var newViewIndex = (this.state.CurrentViewIndex + 1) % views.length,
             newLeft, newRight;
@@ -184,6 +192,10 @@ class InstructorDashboard extends React.Component {
         }
     }
 
+    /**
+     * The method that mixes the data to work for the "byStudent" view
+     * @returns the information in a format for the "byStudent" view
+     */
     renderByStudent() {
         var data = GetData();
         var information = data;
@@ -194,6 +206,10 @@ class InstructorDashboard extends React.Component {
         return information;
     }
 
+    /**
+     * Mixes the data for the "byPoem" view
+     * @returns The information in a format for the "byPoem" view
+     */
     renderByPoem() {
         var data = GetData();
 
@@ -222,6 +238,11 @@ class InstructorDashboard extends React.Component {
         return information;
     }
 
+    /**
+     * Makes the IDetails table
+     * @param {*} v is the view
+     * @returns returns the contents of the IDetails Table
+     */
     renderIDetails(v) {
 
         var newIDetailCells = [], stringView;

@@ -23,17 +23,8 @@ const completePoem = "complete",
 // Dummy data for testing
 var studentPoems = {
     "Shakespeare" : {
-        "Sonnet Two": {
-            "status": completePoem
-        },
         "Sonnet Four": {
             "status": incompletePoem,
-            "currentResponse": "dactyl spondee iamb iamb trochee"
-        }
-    },
-    "Catullus" : {
-        "Carmen 1" : {
-            "status" : incompletePoem,
             "currentResponse": "dactyl spondee iamb iamb trochee"
         }
     }
@@ -46,42 +37,10 @@ var allPoems = {
             "key" : [["yellow","purple","yellow","purple","yellow"],["purple", "yellow", "purple", "yellow", "purple"],["yellow", "purple","yellow", "purple","yellow"]],
             "lines" : 14
         },
-        "Sonnet Two" : {
-
-        },
-        "Sonnet Three" : {
-
-        },
         "Sonnet Four" : {
             "poemText" :['Line 1','Line 2','Line 3'],
             "key" : [["yellow","purple","yellow","purple","yellow"],["purple", "yellow", "purple", "yellow", "purple"],["yellow", "purple", "yellow", "purple", "yellow"]],
             "lines" : 3
-        }
-    },
-    "Catullus" : {
-        "Carmen 1" : {
-
-        },
-        "Carmen 2" : {
-
-        },
-        "Carmen 3" : {
-
-        },
-        "Carmen 4" : {
-            
-        },
-        "Carmen 5" : {
-
-        },
-        "Carmen 6" : {
-            
-        },
-        "Carmen 7" : {
-
-        },
-        "Carmen 8" : {
-            
         }
     }
 }
