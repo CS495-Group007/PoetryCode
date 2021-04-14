@@ -9,7 +9,7 @@ import Table from 'react-bootstrap/Table';
 import '../Styling/Login.css';
 import '../Styling/DashboardStyling.css';
 
-export default class Home extends Component {
+export default class HowTo extends Component {
      /**
      * Function to render the component. Renders the area that includes information about the how to play the game.
      */
@@ -721,3 +721,5 @@ export default class Home extends Component {
         );
     }
 }
+
+export default HowTo;
