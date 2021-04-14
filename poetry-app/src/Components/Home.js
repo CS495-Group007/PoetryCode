@@ -12,11 +12,11 @@ import icon from '../Images/nounproject.png';
 import Image from 'react-bootstrap/Image';
 
 /**
- * Component in charge of rendering the Home/How-To page.
+ * Component in charge of rendering the Home Page
  */
 class Home extends Component {
      /**
-      * Function to render the component. Renders the area that includes information about the website.
+      * Function to render the component.
       */
     render() {
         return (

@@ -9,9 +9,12 @@ import Table from 'react-bootstrap/Table';
 import '../Styling/Login.css';
 import '../Styling/DashboardStyling.css';
 
-export default class HowTo extends Component {
+/**
+ * Component responsible for rendering the How-To Page.
+ */
+class HowTo extends Component {
      /**
-     * Function to render the component. Renders the area that includes information about the how to play the game.
+     * Function to render the component. Renders the area that includes information about how to play the game.
      */
     render() {
         return (

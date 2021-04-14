@@ -22,6 +22,9 @@ const validViews = {
  * A top level dropdown row of the instructor dashboard. Abstracted into its own component for readability.
  */      
 class IDetails extends React.Component {
+    /**
+     * @constructor
+     */
     constructor(props) {
         super(props);
         this.state = {
