@@ -10,6 +10,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 
+//Dummy Data
 var tags = ['Tag 1', 'Tag 2', 'Tag 3'];
 
 /**
@@ -17,7 +18,7 @@ var tags = ['Tag 1', 'Tag 2', 'Tag 3'];
  */
 class AddPoemInterface extends React.Component{
     /**
-     * Sets up the state by giving initial values to lines, numLines, poemName, poet, and gameBoard. Also binds the following functions to this: processPage, textChange, updateGameBoard, handlePoetChange, and handlePoemNameChange.
+     * Sets up the state by giving initial values to lines, numLines, poemName, gameBoard, tags, newTags, and blockNumber. Also binds necessary functions to this.
      * @constructor
      * @param props - Contain parent object information
      */
@@ -77,6 +78,11 @@ class AddPoemInterface extends React.Component{
         return returnString;
     }
 
+    /**
+     * Removes leading and trailing white space from the passed in array.
+     * @param {Array} lines - represents an array of strings to be filtered.
+     * @return {Array} returnLines - returns the filtered array
+     */
     filterLines(lines){
         var i,j;
         var returnLines = [];
@@ -142,19 +148,37 @@ class AddPoemInterface extends React.Component{
         this.setState({gameBoard: gameBoard});
     }
     
+    /**
+     * handles the event where a tag is selected from the dropdown. The function takes the selected tag and adds it to the tags state variable.
+     * @param {Array} selectedList - list of selected items in the dropdown.
+     * @param {Object} selectedItem - item being selected.
+     */
     tagSelect(selectedList, selectedItem){
         this.setState({tags: selectedList});
     }
 
+    /**
+     * Handles the event where a tag is deselected from the dropdown. The function removes the selected tag from the tags state variable.
+     * @param {Array} selectedList - list of selected items in the dropdown.
+     * @param {Object} selectedItem - item being selected.
+     */
     tagRemove(selectedList, removedItem){
         this.setState({tags: selectedList});
     }
 
+    /**
+     * Handles the event where a new tag is input into the add a tag field. The function then sets the newTags state variable to equal the tags in the field.
+     * @param event - the specific typing event in the input field.
+     */
     addTags(event){
         var tags = event.target.value.split(' ');
         this.setState({newTags: tags});
     }
 
+    /**
+     * Updates the blockNumber state variable to match the selected block number on the dropdown.
+     * @param value - The newly selected block number.
+     */
     handleBlockNumberChange(value){
         this.setState({blockNumber: value});
     }

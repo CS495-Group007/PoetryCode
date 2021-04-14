@@ -1,6 +1,9 @@
 import { Multiselect } from 'multiselect-react-dropdown';
 import React from 'react';
 
+/**
+ * Component responsible for implementing the dynamic dropdown for selecting tags for a poem.
+ */
 class DynamicDropDown extends React.Component {
     render(){
         return(

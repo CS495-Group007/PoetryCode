@@ -9,7 +9,7 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
 /**
- * Component responsible for implementing the log in functionality.
+ * Component responsible for displaying the credits page.
  */
 class Credit extends Component {
     render() {
