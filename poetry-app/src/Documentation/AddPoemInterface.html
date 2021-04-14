@@ -53,7 +53,7 @@
 
 
 <div class="description">
-    Sets up the state by giving initial values to lines, numLines, poemName, poet, and gameBoard. Also binds the following functions to this: processLines, textChange, updateGameBoard, handlePoetChange, and handlePoemNameChange.
+    Sets up the state by giving initial values to lines, numLines, poemName, gameBoard, tags, newTags, and blockNumber. Also binds necessary functions to this.
 </div>
 
 
@@ -141,7 +141,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="AddPoemInterface.js.html">AddPoemInterface.js</a>, <a href="AddPoemInterface.js.html#line17">line 17</a>
+        <a href="AddPoemInterface.js.html">AddPoemInterface.js</a>, <a href="AddPoemInterface.js.html#line19">line 19</a>
     </li></ul></dd>
     
 
@@ -190,6 +190,138 @@
 
     
         <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="addTags"><span class="type-signature"></span>addTags<span class="signature">(event)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Handles the event where a new tag is input into the add a tag field. The function then sets the newTags state variable to equal the tags in the field.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>event</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">the specific typing event in the input field.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AddPoemInterface.js.html">AddPoemInterface.js</a>, <a href="AddPoemInterface.js.html#line173">line 173</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         
             
@@ -298,7 +430,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="AddPoemInterface.js.html">AddPoemInterface.js</a>, <a href="AddPoemInterface.js.html#line44">line 44</a>
+        <a href="AddPoemInterface.js.html">AddPoemInterface.js</a>, <a href="AddPoemInterface.js.html#line52">line 52</a>
     </li></ul></dd>
     
 
@@ -457,7 +589,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="AddPoemInterface.js.html">AddPoemInterface.js</a>, <a href="AddPoemInterface.js.html#line59">line 59</a>
+        <a href="AddPoemInterface.js.html">AddPoemInterface.js</a>, <a href="AddPoemInterface.js.html#line69">line 69</a>
     </li></ul></dd>
     
 
@@ -504,6 +636,297 @@
 </dl>
 
     
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="filterLines"><span class="type-signature"></span>filterLines<span class="signature">(lines)</span><span class="type-signature"> &rarr; {Array}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Removes leading and trailing white space from the passed in array.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>lines</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">represents an array of strings to be filtered.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AddPoemInterface.js.html">AddPoemInterface.js</a>, <a href="AddPoemInterface.js.html#line86">line 86</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    returnLines - returns the filtered array
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="handleBlockNumberChange"><span class="type-signature"></span>handleBlockNumberChange<span class="signature">(value)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Updates the blockNumber state variable to match the selected block number on the dropdown.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>value</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The newly selected block number.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AddPoemInterface.js.html">AddPoemInterface.js</a>, <a href="AddPoemInterface.js.html#line182">line 182</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -611,7 +1034,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="AddPoemInterface.js.html">AddPoemInterface.js</a>, <a href="AddPoemInterface.js.html#line113">line 113</a>
+        <a href="AddPoemInterface.js.html">AddPoemInterface.js</a>, <a href="AddPoemInterface.js.html#line136">line 136</a>
     </li></ul></dd>
     
 
@@ -647,139 +1070,7 @@
     
 
     
-    <h4 class="name" id="handlePoetChange"><span class="type-signature"></span>handlePoetChange<span class="signature">(event)</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Function to update the value of the poet.
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>event</code></td>
-            
-
-            <td class="type">
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">contains the value representing the current string in the poet text box.</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="AddPoemInterface.js.html">AddPoemInterface.js</a>, <a href="AddPoemInterface.js.html#line105">line 105</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="processLines"><span class="type-signature"></span>processLines<span class="signature">(event)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="processPage"><span class="type-signature"></span>processPage<span class="signature">(event)</span><span class="type-signature"></span></h4>
     
 
     
@@ -875,7 +1166,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="AddPoemInterface.js.html">AddPoemInterface.js</a>, <a href="AddPoemInterface.js.html#line73">line 73</a>
+        <a href="AddPoemInterface.js.html">AddPoemInterface.js</a>, <a href="AddPoemInterface.js.html#line102">line 102</a>
     </li></ul></dd>
     
 
@@ -963,7 +1254,327 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="AddPoemInterface.js.html">AddPoemInterface.js</a>, <a href="AddPoemInterface.js.html#line131">line 131</a>
+        <a href="AddPoemInterface.js.html">AddPoemInterface.js</a>, <a href="AddPoemInterface.js.html#line189">line 189</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="tagRemove"><span class="type-signature"></span>tagRemove<span class="signature">(selectedList, selectedItem)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Handles the event where a tag is deselected from the dropdown. The function removes the selected tag from the tags state variable.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>selectedList</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">list of selected items in the dropdown.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>selectedItem</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">item being selected.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AddPoemInterface.js.html">AddPoemInterface.js</a>, <a href="AddPoemInterface.js.html#line165">line 165</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="tagSelect"><span class="type-signature"></span>tagSelect<span class="signature">(selectedList, selectedItem)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    handles the event where a tag is selected from the dropdown. The function takes the selected tag and adds it to the tags state variable.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>selectedList</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">list of selected items in the dropdown.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>selectedItem</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">item being selected.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AddPoemInterface.js.html">AddPoemInterface.js</a>, <a href="AddPoemInterface.js.html#line156">line 156</a>
     </li></ul></dd>
     
 
@@ -1095,7 +1706,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="AddPoemInterface.js.html">AddPoemInterface.js</a>, <a href="AddPoemInterface.js.html#line86">line 86</a>
+        <a href="AddPoemInterface.js.html">AddPoemInterface.js</a>, <a href="AddPoemInterface.js.html#line118">line 118</a>
     </li></ul></dd>
     
 
@@ -1255,7 +1866,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="AddPoemInterface.js.html">AddPoemInterface.js</a>, <a href="AddPoemInterface.js.html#line122">line 122</a>
+        <a href="AddPoemInterface.js.html">AddPoemInterface.js</a>, <a href="AddPoemInterface.js.html#line145">line 145</a>
     </li></ul></dd>
     
 
@@ -1301,13 +1912,13 @@
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="AddPoemInterface.html">AddPoemInterface</a></li><li><a href="Box.html">Box</a></li><li><a href="Boxable.html">Boxable</a></li><li><a href="BoxItem.html">BoxItem</a></li><li><a href="GameBoard.html">GameBoard</a></li><li><a href="Home.html">Home</a></li><li><a href="IDetails.html">IDetails</a></li><li><a href="InstructorDashboard.html">InstructorDashboard</a></li><li><a href="Legend.html">Legend</a></li><li><a href="Login.html">Login</a></li><li><a href="SignUp.html">SignUp</a></li><li><a href="SimplyScansion.html">SimplyScansion</a></li><li><a href="StudentDashboard.html">StudentDashboard</a></li></ul><h3>Global</h3><ul><li><a href="global.html#collapsedClassName">collapsedClassName</a></li><li><a href="global.html#completePoem">completePoem</a></li><li><a href="global.html#detailPrimaryKey">detailPrimaryKey</a></li><li><a href="global.html#instructorTitle">instructorTitle</a></li><li><a href="global.html#studentName">studentName</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="AddPoemInterface.html">AddPoemInterface</a></li><li><a href="BlockNumberDropdown.html">BlockNumberDropdown</a></li><li><a href="Box.html">Box</a></li><li><a href="Boxable.html">Boxable</a></li><li><a href="BoxItem.html">BoxItem</a></li><li><a href="Credit.html">Credit</a></li><li><a href="DynamicDropDown.html">DynamicDropDown</a></li><li><a href="GameBoard.html">GameBoard</a></li><li><a href="Home.html">Home</a></li><li><a href="HowTo.html">HowTo</a></li><li><a href="IDetails.html">IDetails</a></li><li><a href="InstructorDashboard.html">InstructorDashboard</a></li><li><a href="Legend.html">Legend</a></li><li><a href="Login.html">Login</a></li><li><a href="SignUp.html">SignUp</a></li><li><a href="SimplyScansion.html">SimplyScansion</a></li><li><a href="StudentDashboard.html">StudentDashboard</a></li></ul><h3>Global</h3><ul><li><a href="global.html#collapsedClassName">collapsedClassName</a></li><li><a href="global.html#completePoem">completePoem</a></li><li><a href="global.html#detailLeftKey">detailLeftKey</a></li><li><a href="global.html#GetData">GetData</a></li><li><a href="global.html#instructorTitle">instructorTitle</a></li><li><a href="global.html#studentName">studentName</a></li><li><a href="global.html#views">views</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Wed Mar 24 2021 13:22:45 GMT-0400 (Eastern Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Tue Apr 13 2021 20:43:09 GMT-0500 (Central Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Class: Legend</title>
+    <title>JSDoc: Source: BlockNumberDropdown.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,229 +17,71 @@
 
 <div id="main">
 
-    <h1 class="page-title">Class: Legend</h1>
+    <h1 class="page-title">Source: BlockNumberDropdown.js</h1>
 
     
 
 
 
-
-<section>
-
-<header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>Legend<span class="signature">()</span><span class="type-signature"></span></h2>
-        
-            <div class="class-description">Component in charge of rendering the dropdown for the GameBoard component that tells the student what each colored block represents.</div>
-        
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React from 'react';
+import Select from 'react-select';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+//dummy data
+const blockNumbers = [
+  { label: "3", value: 3 },
+  { label: "4", value: 4 },
+  { label: "5", value: 5 },
+  { label: "6", value: 6 },
+  { label: "7", value: 7 },
+  { label: "8", value: 8 },
+];
+
+/**
+ * Component responsible for implementing the block number dropdown menu
+ */
+class BlockNumberDropdown extends React.Component{
+    /**
+     * @constructor
+     * @param props - properties passed down from the AddAPoemInterface Component.
+     */
+    constructor(props){
+        super(props);
+        this.handleChange = this.handleChange.bind(this);
+    }
     
-</header>
-
-<article>
-    <div class="container-overview">
-    
-        
-
-    
-    <h2>Constructor</h2>
-    
-
-    
-    <h4 class="name" id="Legend"><span class="type-signature"></span>new Legend<span class="signature">()</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Legend.js.html">Legend.js</a>, <a href="Legend.js.html#line12">line 12</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-    </div>
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <h3 class="subsection-title">Methods</h3>
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="render"><span class="type-signature"></span>render<span class="signature">()</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Function to render the component. Renders the toggle Legend button that offers information.
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Legend.js.html">Legend.js</a>, <a href="Legend.js.html#line16">line 16</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-    
-
-    
-
-    
-</article>
-
-</section>
+    /**
+     * Function responsible for catching a block number change in the drop down. The function catches the change event and notifies the parent component of the new value.
+     * @param event
+     */
+    handleChange(event){
+        this.props.handleBlockNumberChange(event.value);
+    }
+
+    /**
+     * Function responsible for rendering the dropdown menu.
+     */
+    render(){
+        return(
+            &lt;div className="container">
+                &lt;div className="row">
+                    &lt;div className="col-md-12">&lt;/div>
+                        &lt;div className="col-md-12">
+                            &lt;Select options={blockNumbers} onChange={this.handleChange}/>
+                        &lt;/div>  
+                    &lt;div className="col-md-12">&lt;/div>
+                &lt;/div>
+            &lt;/div>
+        );
+    }
+}
+
+export default BlockNumberDropdown;</code></pre>
+        </article>
+    </section>
 
 
 

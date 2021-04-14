@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: HowTo.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: HowTo.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/* eslint-disable react/jsx-no-undef */
+/* eslint-disable no-undef */
+
+import React, { Component } from "react";
+import Container from 'react-bootstrap/Container';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+import Table from 'react-bootstrap/Table';
+import '../Styling/Login.css';
+import '../Styling/DashboardStyling.css';
+
+/**
+ * Component responsible for rendering the How-To Page.
+ */
+class HowTo extends Component {
+     /**
+     * Function to render the component. Renders the area that includes information about how to play the game.
+     */
+    render() {
+        return (
+            &lt;div className = "outer">
+                &lt;div className = "dash-inner">
+                    &lt;Container>
+                        &lt;Row>
+                            &lt;Col>
+                                &lt;h3>USER GUIDE&lt;/h3>
+                                &lt;p>&lt;i>Scansion&lt;/i> is an analytic skill for mapping the metrical structure of a line of verse. All poems can be broken into two categories: closed, with a strict structure in which the poet is working, such as a haiku, ghazal, or a sonnet; and open, where no predetermined form is employed.&lt;/p>
+                                &lt;h4>&amp;#10087; How do I scan?&lt;/h4>
+                                &lt;p>A closed-form poem is scanned by marking its stressed and slack syllables, dividing them into metrical &lt;i>feet&lt;/i>. Over the years, many different systems have been established to mark the scansion of a poem; at its most basic, however, one notates long syllables with a &lt;i>breve&lt;/i> ( — ) and short syllables with an &lt;i>ictus&lt;/i> ( / ). Scanning a line is a lot like solving a puzzle, as there are only 6 kinds of metrical feet one can find and use in English, each comprising either 2 or 3 syllables.&lt;/p>
+                                &lt;Table bordered hover size="sm">
+                                    &lt;thead>
+                                        &lt;tr className="text-center">
+                                            &lt;th>Type&lt;/th>
+                                            &lt;th>Pattern&lt;/th>
+                                            &lt;th>Example&lt;/th>
+                                        &lt;/tr>
+                                    &lt;/thead>
+                                    &lt;tbody>
+                                        &lt;tr>
+                                            &lt;td>&lt;i>Iamb&lt;/i>&lt;/td>
+                                            &lt;td>
+                                                &lt;Table className="text-center">
+                                                    &lt;thead>
+                                                        &lt;tr>
+                                                            &lt;th>—&lt;/th>
+                                                            &lt;th>/&lt;/th>
+                                                        &lt;/tr>
+                                                    &lt;/thead>
+                                                    &lt;tbody>
+                                                        &lt;tr>
+                                                            &lt;td>long&lt;/td>
+                                                            &lt;td>short&lt;/td>
+                                                        &lt;/tr>
+                                                    &lt;/tbody>
+                                                &lt;/Table>
+                                            &lt;/td>
+                                            &lt;td>
+                                                &lt;Table className="text-center">
+                                                    &lt;thead>
+                                                        &lt;tr>
+                                                            &lt;th>—&lt;/th>
+                                                            &lt;th>/&lt;/th>
+                                                        &lt;/tr>
+                                                    &lt;/thead>
+                                                    &lt;tbody>
+                                                        &lt;tr>
+                                                            &lt;td>be&lt;/td>
+                                                            &lt;td>hold&lt;/td>
+                                                        &lt;/tr>
+                                                    &lt;/tbody>
+                                                &lt;/Table>
+                                            &lt;/td>
+                                        &lt;/tr>
+                                        &lt;tr>
+                                            &lt;td>&lt;i>Trochee&lt;/i>&lt;/td>
+                                            &lt;td>
+                                                &lt;Table className="text-center">
+                                                    &lt;thead>
+                                                        &lt;tr>
+                                                            &lt;th>/&lt;/th>
+                                                            &lt;th>—&lt;/th>
+                                                        &lt;/tr>
+                                                    &lt;/thead>
+                                                    &lt;tbody>
+                                                        &lt;tr>
+                                                            &lt;td>short&lt;/td>
+                                                            &lt;td>long&lt;/td>
+                                                        &lt;/tr>
+                                                    &lt;/tbody>
+                                                &lt;/Table>
+                                            &lt;/td>
+                                            &lt;td>
+                                                &lt;Table className="text-center">
+                                                    &lt;thead>
+                                                        &lt;tr>
+                                                            &lt;th>/&lt;/th>
+                                                            &lt;th>—&lt;/th>
+                                                        &lt;/tr>
+                                                    &lt;/thead>
+                                                    &lt;tbody>
+                                                        &lt;tr>
+                                                            &lt;td>ti&lt;/td>
+                                                            &lt;td>ger&lt;/td>
+                                                        &lt;/tr>
+                                                    &lt;/tbody>
+                                                &lt;/Table>
+                                            &lt;/td>
+                                        &lt;/tr>
+                                        &lt;tr>
+                                            &lt;td>&lt;i>Dactyl&lt;/i>&lt;/td>
+                                            &lt;td>
+                                                &lt;Table className="text-center">
+                                                    &lt;thead>
+                                                        &lt;tr>
+                                                            &lt;th>/&lt;/th>
+                                                            &lt;th>—&lt;/th>
+                                                            &lt;th>—&lt;/th>
+                                                        &lt;/tr>
+                                                    &lt;/thead>
+                                                    &lt;tbody>
+                                                        &lt;tr>
+                                                            &lt;td>short&lt;/td>
+                                                            &lt;td>long&lt;/td>
+                                                            &lt;td>long&lt;/td>
+                                                        &lt;/tr>
+                                                    &lt;/tbody>
+                                                &lt;/Table>
+                                            &lt;/td>
+                                            &lt;td>
+                                                &lt;Table className="text-center">
+                                                    &lt;thead>
+                                                        &lt;tr>
+                                                            &lt;th>/&lt;/th>
+                                                            &lt;th>—&lt;/th>
+                                                            &lt;th>—&lt;/th>
+                                                        &lt;/tr>
+                                                    &lt;/thead>
+                                                    &lt;tbody>
+                                                        &lt;tr>
+                                                            &lt;td>des&lt;/td>
+                                                            &lt;td>per&lt;/td>
+                                                            &lt;td>ate&lt;/td>
+                                                        &lt;/tr>
+                                                    &lt;/tbody>
+                                                &lt;/Table>
+                                            &lt;/td>
+                                        &lt;/tr>
+                                        &lt;tr>
+                                            &lt;td>&lt;i>Anapest&lt;/i>&lt;/td>
+                                            &lt;td>
+                                                &lt;Table className="text-center">
+                                                    &lt;thead>
+                                                        &lt;tr>
+                                                            &lt;th>—&lt;/th>
+                                                            &lt;th>—&lt;/th>
+                                                            &lt;th>/&lt;/th>
+                                                        &lt;/tr>
+                                                    &lt;/thead>
+                                                    &lt;tbody>
+                                                        &lt;tr>
+                                                            &lt;td>long&lt;/td>
+                                                            &lt;td>long&lt;/td>
+                                                            &lt;td>short&lt;/td>
+                                                        &lt;/tr>
+                                                    &lt;/tbody>
+                                                &lt;/Table>
+                                            &lt;/td>
+                                            &lt;td>
+                                                &lt;Table className="text-center">
+                                                    &lt;thead>
+                                                        &lt;tr>
+                                                            &lt;th>—&lt;/th>
+                                                            &lt;th>—&lt;/th>
+                                                            &lt;th>/&lt;/th>
+                                                        &lt;/tr>
+                                                    &lt;/thead>
+                                                    &lt;tbody>
+                                                        &lt;tr>
+                                                            &lt;td>un&lt;/td>
+                                                            &lt;td>der&lt;/td>
+                                                            &lt;td>stand&lt;/td>
+                                                        &lt;/tr>
+                                                    &lt;/tbody>
+                                                &lt;/Table>
+                                            &lt;/td>
+                                        &lt;/tr>
+                                        &lt;tr>
+                                            &lt;td>&lt;i>Spondee&lt;/i>&lt;/td>
+                                            &lt;td>
+                                                &lt;Table className="text-center">
+                                                    &lt;thead>
+                                                        &lt;tr>
+                                                            &lt;th>/&lt;/th>
+                                                            &lt;th>/&lt;/th>
+                                                        &lt;/tr>
+                                                    &lt;/thead>
+                                                    &lt;tbody>
+                                                        &lt;tr>
+                                                            &lt;td>short&lt;/td>
+                                                            &lt;td>short&lt;/td>
+                                                        &lt;/tr>
+                                                    &lt;/tbody>
+                                                &lt;/Table>
+                                            &lt;/td>
+                                            &lt;td>
+                                                &lt;Table className="text-center">
+                                                    &lt;thead>
+                                                        &lt;tr>
+                                                            &lt;th>/&lt;/th>
+                                                            &lt;th>/&lt;/th>
+                                                        &lt;/tr>
+                                                    &lt;/thead>
+                                                    &lt;tbody>
+                                                        &lt;tr>
+                                                            &lt;td>down&lt;/td>
+                                                            &lt;td>town&lt;/td>
+                                                        &lt;/tr>
+                                                    &lt;/tbody>
+                                                &lt;/Table>
+                                            &lt;/td>
+                                        &lt;/tr>
+                                        &lt;tr>
+                                            &lt;td>&lt;i>Pyrrhic&lt;/i>&lt;/td>
+                                            &lt;td>
+                                                &lt;Table className="text-center">
+                                                    &lt;thead>
+                                                        &lt;tr>
+                                                            &lt;th>—&lt;/th>
+                                                            &lt;th>—&lt;/th>
+                                                        &lt;/tr>
+                                                    &lt;/thead>
+                                                    &lt;tbody>
+                                                        &lt;tr>
+                                                            &lt;td>long&lt;/td>
+                                                            &lt;td>long&lt;/td>
+                                                        &lt;/tr>
+                                                    &lt;/tbody>
+                                                &lt;/Table>
+                                            &lt;/td>
+                                            &lt;td>
+                                                &lt;Table className="text-center">
+                                                    &lt;thead>
+                                                        &lt;tr>
+                                                            &lt;th>—&lt;/th>
+                                                            &lt;th>—&lt;/th>
+                                                        &lt;/tr>
+                                                    &lt;/thead>
+                                                    &lt;tbody>
+                                                        &lt;tr>
+                                                            &lt;td>with&lt;/td>
+                                                            &lt;td>the&lt;/td>
+                                                        &lt;/tr>
+                                                    &lt;/tbody>
+                                                &lt;/Table>
+                                            &lt;/td>
+                                        &lt;/tr>
+                                        &lt;tr>
+                                            &lt;td>&lt;/td>
+                                            &lt;td className="text-center" colSpan="2">Something's not quite right if you get one of these:&lt;/td>
+                                        &lt;/tr>
+                                        &lt;tr>
+                                            &lt;td>&lt;/td>
+                                            &lt;td>
+                                                &lt;Table className="text-center">
+                                                    &lt;thead>
+                                                        &lt;tr>
+                                                            &lt;th>—&lt;/th>
+                                                            &lt;th>/&lt;/th>
+                                                            &lt;th>—&lt;/th>
+                                                        &lt;/tr>
+                                                    &lt;/thead>
+                                                    &lt;tbody>
+                                                        &lt;tr>
+                                                            &lt;td>long&lt;/td>
+                                                            &lt;td>short&lt;/td>
+                                                            &lt;td>long&lt;/td>
+                                                        &lt;/tr>
+                                                    &lt;/tbody>
+                                                &lt;/Table>
+                                            &lt;/td>
+                                            &lt;td>
+                                                &lt;Table className="text-center">
+                                                    &lt;thead>
+                                                        &lt;tr>
+                                                            &lt;th>/&lt;/th>
+                                                            &lt;th>—&lt;/th>
+                                                            &lt;th>/&lt;/th>
+                                                        &lt;/tr>
+                                                    &lt;/thead>
+                                                    &lt;tbody>
+                                                        &lt;tr>
+                                                            &lt;td>short&lt;/td>
+                                                            &lt;td>long&lt;/td>
+                                                            &lt;td>short&lt;/td>
+                                                        &lt;/tr>
+                                                    &lt;/tbody>
+                                                &lt;/Table>
+                                            &lt;/td>
+                                        &lt;/tr>
+                                    &lt;/tbody>
+                                &lt;/Table>
+                                &lt;p>Great! Now that you know the six types of metrical feet, the Game Pieces, you can begin to solve poems. A line of poetry in iambic pentametre will always have 5 feet. If each foot is either 2 or 3 syllables, then a line of poetry will range anywhere from 10 to 15 syllables—no more, no less.&lt;/p>
+                                &lt;p>Start by counting the total numbers of syllables for each line of poetry. Those lines in the poem with only 10 syllables will be highly regular, with each of the 5 feet only comprising 2 syllables apiece. You then know those lines definitely won’t have any dactyls or anapests, but only include iamb, trochee, spondee, and/or pyrrhic feet in some combination. Try to solve for these 10-syllable lines first, dropping the corresponding Game Piece onto the Game Board that corresponds with the right type of foot.&lt;/p>
+                                &lt;p>Once you have those regular lines solved, move next to those with more than 10 syllables. Start with the lines that have 11 syllables, as it means that only 1 of the 5 feet in that line will be either a dactyl or anapest. Once you solve those, move on to the lines with 12 syllables, as 2 of the 5 feet in that line will be dactyls or anapests. Continue, following this order, for lines with 13 or more syllables.&lt;/p>
+                                &lt;p>And yes, there are typically multiples of the same kind of foot in a line, and usually many iambs, as they are the most common for English. &lt;a href="https://youtu.be/t-5alamjWms">Hear an example&lt;/a>, from William Shakespeare’s sonnet 29:&lt;/p>
+                                &lt;Table bordered hover size="sm">
+                                    &lt;thead className="text-center">
+                                        &lt;tr>
+                                            &lt;th>1&lt;/th>
+                                            &lt;th>2&lt;/th>
+                                            &lt;th>3&lt;/th>
+                                            &lt;th>4&lt;/th>
+                                            &lt;th>5&lt;/th>
+                                        &lt;/tr>
+                                    &lt;/thead>
+                                    &lt;tbody>
+                                        &lt;tr>
+                                            &lt;td>
+                                                &lt;Table className="text-center">
+                                                    &lt;thead>
+                                                        &lt;tr>
+                                                            &lt;th>—&lt;/th>
+                                                            &lt;th>/&lt;/th>
+                                                        &lt;/tr>
+                                                    &lt;/thead>
+                                                    &lt;tbody>
+                                                        &lt;tr>
+                                                            &lt;td>&lt;b>When&lt;/b>&lt;/td>
+                                                            &lt;td>&lt;b>in&lt;/b>&lt;/td>
+                                                        &lt;/tr>
+                                                        &lt;tr>
+                                                            &lt;td colSpan="2">&amp;#123; &lt;i>iamb&lt;/i> &amp;#125;&lt;/td>
+                                                        &lt;/tr>
+                                                    &lt;/tbody>
+                                                &lt;/Table>
+                                            &lt;/td>
+                                            &lt;td>
+                                                &lt;Table className="text-center">
+                                                    &lt;thead>
+                                                        &lt;tr>
+                                                            &lt;th>—&lt;/th>
+                                                            &lt;th>/&lt;/th>
+                                                        &lt;/tr>
+                                                    &lt;/thead>
+                                                    &lt;tbody>
+                                                        &lt;tr>
+                                                            &lt;td>&lt;b>dis&lt;/b>&lt;/td>
+                                                            &lt;td>&lt;b>grace&lt;/b>&lt;/td>
+                                                        &lt;/tr>
+                                                        &lt;tr>
+                                                            &lt;td colSpan="2">&amp;#123; &lt;i>iamb&lt;/i> &amp;#125;&lt;/td>
+                                                        &lt;/tr>
+                                                    &lt;/tbody>
+                                                &lt;/Table>
+                                            &lt;/td>
+                                            &lt;td>
+                                                &lt;Table className="text-center">
+                                                    &lt;thead>
+                                                        &lt;tr>
+                                                            &lt;th>—&lt;/th>
+                                                            &lt;th>/&lt;/th>
+                                                        &lt;/tr>
+                                                    &lt;/thead>
+                                                    &lt;tbody>
+                                                        &lt;tr>
+                                                            &lt;td>&lt;b>with&lt;/b>&lt;/td>
+                                                            &lt;td>&lt;b>For&lt;/b>&lt;/td>
+                                                        &lt;/tr>
+                                                        &lt;tr>
+                                                            &lt;td colSpan="2">&amp;#123; &lt;i>iamb&lt;/i> &amp;#125;&lt;/td>
+                                                        &lt;/tr>
+                                                    &lt;/tbody>
+                                                &lt;/Table>
+                                            &lt;/td>
+                                            &lt;td>
+                                                &lt;Table className="text-center">
+                                                    &lt;thead>
+                                                        &lt;tr>
+                                                            &lt;th>/&lt;/th>
+                                                            &lt;th>—&lt;/th>
+                                                        &lt;/tr>
+                                                    &lt;/thead>
+                                                    &lt;tbody>
+                                                        &lt;tr>
+                                                            &lt;td>&lt;b>tune&lt;/b>&lt;/td>
+                                                            &lt;td>&lt;b>and&lt;/b>&lt;/td>
+                                                        &lt;/tr>
+                                                        &lt;tr>
+                                                            &lt;td colSpan="2">&amp;#123; &lt;i>trochee&lt;/i> &amp;#125;&lt;/td>
+                                                        &lt;/tr>
+                                                    &lt;/tbody>
+                                                &lt;/Table>
+                                            &lt;/td>
+                                            &lt;td>
+                                                &lt;Table className="text-center">
+                                                    &lt;thead>
+                                                        &lt;tr>
+                                                            &lt;th>—&lt;/th>
+                                                            &lt;th>—&lt;/th>
+                                                        &lt;/tr>
+                                                    &lt;/thead>
+                                                    &lt;tbody>
+                                                        &lt;tr>
+                                                            &lt;td>&lt;b>men's&lt;/b>&lt;/td>
+                                                            &lt;td>&lt;b>eyes,&lt;/b>&lt;/td>
+                                                        &lt;/tr>
+                                                        &lt;tr>
+                                                            &lt;td colSpan="2">&amp;#123; &lt;i>pyrrhic&lt;/i> &amp;#125;&lt;/td>
+                                                        &lt;/tr>
+                                                    &lt;/tbody>
+                                                &lt;/Table>
+                                            &lt;/td>
+                                        &lt;/tr>
+                                        &lt;tr>
+                                            &lt;td>
+                                                &lt;Table className="text-center">
+                                                    &lt;thead>
+                                                        &lt;tr>
+                                                            &lt;th>—&lt;/th>
+                                                            &lt;th>/&lt;/th>
+                                                        &lt;/tr>
+                                                    &lt;/thead>
+                                                    &lt;tbody>
+                                                        &lt;tr>
+                                                            &lt;td>&lt;b>I&lt;/b>&lt;/td>
+                                                            &lt;td>&lt;b>all&lt;/b>&lt;/td>
+                                                        &lt;/tr>
+                                                        &lt;tr>
+                                                            &lt;td colSpan="2">&amp;#123; &lt;i>iamb&lt;/i> &amp;#125;&lt;/td>
+                                                        &lt;/tr>
+                                                    &lt;/tbody>
+                                                &lt;/Table>
+                                            &lt;/td>
+                                            &lt;td>
+                                                &lt;Table className="text-center">
+                                                    &lt;thead>
+                                                        &lt;tr>
+                                                            &lt;th>—&lt;/th>
+                                                            &lt;th>/&lt;/th>
+                                                        &lt;/tr>
+                                                    &lt;/thead>
+                                                    &lt;tbody>
+                                                        &lt;tr>
+                                                            &lt;td>&lt;b>a&lt;/b>&lt;/td>
+                                                            &lt;td>&lt;b>lone&lt;/b>&lt;/td>
+                                                        &lt;/tr>
+                                                        &lt;tr>
+                                                            &lt;td colSpan="2">&amp;#123; &lt;i>iamb&lt;/i> &amp;#125;&lt;/td>
+                                                        &lt;/tr>
+                                                    &lt;/tbody>
+                                                &lt;/Table>
+                                            &lt;/td>
+                                            &lt;td>
+                                                &lt;Table className="text-center">
+                                                    &lt;thead>
+                                                        &lt;tr>
+                                                            &lt;th>—&lt;/th>
+                                                            &lt;th>/&lt;/th>
+                                                        &lt;/tr>
+                                                    &lt;/thead>
+                                                    &lt;tbody>
+                                                        &lt;tr>
+                                                            &lt;td>&lt;b>be&lt;/b>&lt;/td>
+                                                            &lt;td>&lt;b>weep&lt;/b>&lt;/td>
+                                                        &lt;/tr>
+                                                        &lt;tr>
+                                                            &lt;td colSpan="2">&amp;#123; &lt;i>iamb&lt;/i> &amp;#125;&lt;/td>
+                                                        &lt;/tr>
+                                                    &lt;/tbody>
+                                                &lt;/Table>
+                                            &lt;/td>
+                                            &lt;td>
+                                                &lt;Table className="text-center">
+                                                    &lt;thead>
+                                                        &lt;tr>
+                                                            &lt;th>—&lt;/th>
+                                                            &lt;th>/&lt;/th>
+                                                        &lt;/tr>
+                                                    &lt;/thead>
+                                                    &lt;tbody>
+                                                        &lt;tr>
+                                                            &lt;td>&lt;b>my&lt;/b>&lt;/td>
+                                                            &lt;td>&lt;b>out&lt;/b>&lt;/td>
+                                                        &lt;/tr>
+                                                        &lt;tr>
+                                                            &lt;td colSpan="2">&amp;#123; &lt;i>iamb&lt;/i> &amp;#125;&lt;/td>
+                                                        &lt;/tr>
+                                                    &lt;/tbody>
+                                                &lt;/Table>
+                                            &lt;/td>
+                                            &lt;td>
+                                                &lt;Table className="text-center">
+                                                    &lt;thead>
+                                                        &lt;tr>
+                                                            &lt;th>—&lt;/th>
+                                                            &lt;th>/&lt;/th>
+                                                        &lt;/tr>
+                                                    &lt;/thead>
+                                                    &lt;tbody>
+                                                        &lt;tr>
+                                                            &lt;td>&lt;b>cast&lt;/b>&lt;/td>
+                                                            &lt;td>&lt;b>state&lt;/b>&lt;/td>
+                                                        &lt;/tr>
+                                                        &lt;tr>
+                                                            &lt;td colSpan="2">&amp;#123; &lt;i>iamb&lt;/i> &amp;#125;&lt;/td>
+                                                        &lt;/tr>
+                                                    &lt;/tbody>
+                                                &lt;/Table>
+                                            &lt;/td>
+                                        &lt;/tr>
+                                        &lt;tr>
+                                            &lt;td>
+                                                &lt;Table className="text-center">
+                                                    &lt;thead>
+                                                        &lt;tr>
+                                                            &lt;th>—&lt;/th>
+                                                            &lt;th>/&lt;/th>
+                                                        &lt;/tr>
+                                                    &lt;/thead>
+                                                    &lt;tbody>
+                                                        &lt;tr>
+                                                            &lt;td>&lt;b>And&lt;/b>&lt;/td>
+                                                            &lt;td>&lt;b>trou&lt;/b>&lt;/td>
+                                                        &lt;/tr>
+                                                        &lt;tr>
+                                                            &lt;td colSpan="2">&amp;#123; &lt;i>iamb&lt;/i> &amp;#125;&lt;/td>
+                                                        &lt;/tr>
+                                                    &lt;/tbody>
+                                                &lt;/Table>
+                                            &lt;/td>
+                                            &lt;td>
+                                                &lt;Table className="text-center">
+                                                    &lt;thead>
+                                                        &lt;tr>
+                                                            &lt;th>—&lt;/th>
+                                                            &lt;th>/&lt;/th>
+                                                        &lt;/tr>
+                                                    &lt;/thead>
+                                                    &lt;tbody>
+                                                        &lt;tr>
+                                                            &lt;td>&lt;b>ble&lt;/b>&lt;/td>
+                                                            &lt;td>&lt;b>deaf&lt;/b>&lt;/td>
+                                                        &lt;/tr>
+                                                        &lt;tr>
+                                                            &lt;td colSpan="2">&amp;#123; &lt;i>iamb&lt;/i> &amp;#125;&lt;/td>
+                                                        &lt;/tr>
+                                                    &lt;/tbody>
+                                                &lt;/Table>
+                                            &lt;/td>
+                                            &lt;td>
+                                                &lt;Table className="text-center">
+                                                    &lt;thead>
+                                                        &lt;tr>
+                                                            &lt;th>—&lt;/th>
+                                                            &lt;th>/&lt;/th>
+                                                        &lt;/tr>
+                                                    &lt;/thead>
+                                                    &lt;tbody>
+                                                        &lt;tr>
+                                                            &lt;td>&lt;b>heav'n&lt;/b>&lt;/td>
+                                                            &lt;td>&lt;b>with&lt;/b>&lt;/td>
+                                                        &lt;/tr>
+                                                        &lt;tr>
+                                                            &lt;td colSpan="2">&amp;#123; &lt;i>iamb&lt;/i> &amp;#125;&lt;/td>
+                                                        &lt;/tr>
+                                                    &lt;/tbody>
+                                                &lt;/Table>
+                                            &lt;/td>
+                                            &lt;td>
+                                                &lt;Table className="text-center">
+                                                    &lt;thead>
+                                                        &lt;tr>
+                                                            &lt;th>—&lt;/th>
+                                                            &lt;th>/&lt;/th>
+                                                        &lt;/tr>
+                                                    &lt;/thead>
+                                                    &lt;tbody>
+                                                        &lt;tr>
+                                                            &lt;td>&lt;b>my&lt;/b>&lt;/td>
+                                                            &lt;td>&lt;b>boot&lt;/b>&lt;/td>
+                                                        &lt;/tr>
+                                                        &lt;tr>
+                                                            &lt;td colSpan="2">&amp;#123; &lt;i>iamb&lt;/i> &amp;#125;&lt;/td>
+                                                        &lt;/tr>
+                                                    &lt;/tbody>
+                                                &lt;/Table>
+                                            &lt;/td>
+                                            &lt;td>
+                                                &lt;Table className="text-center">
+                                                    &lt;thead>
+                                                        &lt;tr>
+                                                            &lt;th>—&lt;/th>
+                                                            &lt;th>/&lt;/th>
+                                                        &lt;/tr>
+                                                    &lt;/thead>
+                                                    &lt;tbody>
+                                                        &lt;tr>
+                                                            &lt;td>&lt;b>less&lt;/b>&lt;/td>
+                                                            &lt;td>&lt;b>cries,&lt;/b>&lt;/td>
+                                                        &lt;/tr>
+                                                        &lt;tr>
+                                                            &lt;td colSpan="2">&amp;#123; &lt;i>iamb&lt;/i> &amp;#125;&lt;/td>
+                                                        &lt;/tr>
+                                                    &lt;/tbody>
+                                                &lt;/Table>
+                                            &lt;/td>
+                                        &lt;/tr>
+                                        &lt;tr>
+                                            &lt;td>
+                                                &lt;Table className="text-center">
+                                                    &lt;thead>
+                                                        &lt;tr>
+                                                            &lt;th>—&lt;/th>
+                                                            &lt;th>/&lt;/th>
+                                                        &lt;/tr>
+                                                    &lt;/thead>
+                                                    &lt;tbody>
+                                                        &lt;tr>
+                                                            &lt;td>&lt;b>And&lt;/b>&lt;/td>
+                                                            &lt;td>&lt;b>look&lt;/b>&lt;/td>
+                                                        &lt;/tr>
+                                                        &lt;tr>
+                                                            &lt;td colSpan="2">&amp;#123; &lt;i>iamb&lt;/i> &amp;#125;&lt;/td>
+                                                        &lt;/tr>
+                                                    &lt;/tbody>
+                                                &lt;/Table>
+                                            &lt;/td>
+                                            &lt;td>
+                                                &lt;Table className="text-center">
+                                                    &lt;thead>
+                                                        &lt;tr>
+                                                            &lt;th>—&lt;/th>
+                                                            &lt;th>/&lt;/th>
+                                                        &lt;/tr>
+                                                    &lt;/thead>
+                                                    &lt;tbody>
+                                                        &lt;tr>
+                                                            &lt;td>&lt;b>up&lt;/b>&lt;/td>
+                                                            &lt;td>&lt;b>on&lt;/b>&lt;/td>
+                                                        &lt;/tr>
+                                                        &lt;tr>
+                                                            &lt;td colSpan="2">&amp;#123; &lt;i>iamb&lt;/i> &amp;#125;&lt;/td>
+                                                        &lt;/tr>
+                                                    &lt;/tbody>
+                                                &lt;/Table>
+                                            &lt;/td>
+                                            &lt;td>
+                                                &lt;Table className="text-center">
+                                                    &lt;thead>
+                                                        &lt;tr>
+                                                            &lt;th>—&lt;/th>
+                                                            &lt;th>/&lt;/th>
+                                                        &lt;/tr>
+                                                    &lt;/thead>
+                                                    &lt;tbody>
+                                                        &lt;tr>
+                                                            &lt;td>&lt;b>my&lt;/b>&lt;/td>
+                                                            &lt;td>&lt;b>self&lt;/b>&lt;/td>
+                                                        &lt;/tr>
+                                                        &lt;tr>
+                                                            &lt;td colSpan="2">&amp;#123; &lt;i>iamb&lt;/i> &amp;#125;&lt;/td>
+                                                        &lt;/tr>
+                                                    &lt;/tbody>
+                                                &lt;/Table>
+                                            &lt;/td>
+                                            &lt;td>
+                                                &lt;Table className="text-center">
+                                                    &lt;thead>
+                                                        &lt;tr>
+                                                            &lt;th>—&lt;/th>
+                                                            &lt;th>/&lt;/th>
+                                                        &lt;/tr>
+                                                    &lt;/thead>
+                                                    &lt;tbody>
+                                                        &lt;tr>
+                                                            &lt;td>&lt;b>and&lt;/b>&lt;/td>
+                                                            &lt;td>&lt;b>curse&lt;/b>&lt;/td>
+                                                        &lt;/tr>
+                                                        &lt;tr>
+                                                            &lt;td colSpan="2">&amp;#123; &lt;i>iamb&lt;/i> &amp;#125;&lt;/td>
+                                                        &lt;/tr>
+                                                    &lt;/tbody>
+                                                &lt;/Table>
+                                            &lt;/td>
+                                            &lt;td>
+                                                &lt;Table className="text-center">
+                                                    &lt;thead>
+                                                        &lt;tr>
+                                                            &lt;th>—&lt;/th>
+                                                            &lt;th>/&lt;/th>
+                                                        &lt;/tr>
+                                                    &lt;/thead>
+                                                    &lt;tbody>
+                                                        &lt;tr>
+                                                            &lt;td>&lt;b>my&lt;/b>&lt;/td>
+                                                            &lt;td>&lt;b>fate.&lt;/b>&lt;/td>
+                                                        &lt;/tr>
+                                                        &lt;tr>
+                                                            &lt;td colSpan="2">&amp;#123; &lt;i>iamb&lt;/i> &amp;#125;&lt;/td>
+                                                        &lt;/tr>
+                                                    &lt;/tbody>
+                                                &lt;/Table>
+                                            &lt;/td>
+                                        &lt;/tr>
+                                    &lt;/tbody>
+                                &lt;/Table>
+                                &lt;p>Are you feeling unsure of the number of syllables in a word or line? Read aloud, or listen to a recording. Unsure of your own regional accent? Search for words in the &lt;a href="https://www.oed.com/">Oxford English Dictionary&lt;/a> online, which, at the top of each entry, provides multiple recordings of the word, typically providing a British and U.S. pronunciation at the least.&lt;/p>
+                                &lt;h4>&amp;#10087; How do I play?&lt;/h4>
+                                &lt;p>Think you’ve got it? Now play the game!&lt;/p>
+                                &lt;ol>
+                                    &lt;li>If you are a new user, or you like to create an account in order to save your progress, sign in. You can also simply play as a guest.&lt;/li>
+                                    &lt;li>Once you are logged-in, select a poem from the Dashboard. This will take you to the Game Board, including the lines of the poem as well as empty slots marking the scansion.&lt;/li>
+                                    &lt;li>Draw Game Pieces from the bottom of the page that correspond to the right metrical feet in each line. You can use as many Pieces of the same type for each line, but each line can only contain up to five Pieces total, or five metrical feet—the &lt;i>penta&lt;/i> in pentametre.&lt;/li>
+                                    &lt;li>Click the Bin icon next to a line if you need to clear the Pieces and start over.&lt;/li>
+                                    &lt;li>Feeling ready? Click Submit to see how you did.&lt;/li>
+                                &lt;/ol>
+                                &lt;h4>&amp;#10087; What if something's gone awry?&lt;/h4>
+                                &lt;p>If you are having trouble with something in the game, think the solution we’ve provided might not be correct, or just have other comments and queries, do &lt;a href="mailto:eetavares@ua.edu?subject=SyllaBits%20Query">get in touch&lt;/a>!&lt;/p>
+                            &lt;/Col>
+                        &lt;/Row>
+                    &lt;/Container>
+                &lt;/div>
+            &lt;/div>
+        );
+    }
+}
+
+export default HowTo;</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="AddPoemInterface.html">AddPoemInterface</a></li><li><a href="BlockNumberDropdown.html">BlockNumberDropdown</a></li><li><a href="Box.html">Box</a></li><li><a href="Boxable.html">Boxable</a></li><li><a href="BoxItem.html">BoxItem</a></li><li><a href="Credit.html">Credit</a></li><li><a href="DynamicDropDown.html">DynamicDropDown</a></li><li><a href="GameBoard.html">GameBoard</a></li><li><a href="Home.html">Home</a></li><li><a href="HowTo.html">HowTo</a></li><li><a href="IDetails.html">IDetails</a></li><li><a href="InstructorDashboard.html">InstructorDashboard</a></li><li><a href="Legend.html">Legend</a></li><li><a href="Login.html">Login</a></li><li><a href="SignUp.html">SignUp</a></li><li><a href="SimplyScansion.html">SimplyScansion</a></li><li><a href="StudentDashboard.html">StudentDashboard</a></li></ul><h3>Global</h3><ul><li><a href="global.html#collapsedClassName">collapsedClassName</a></li><li><a href="global.html#completePoem">completePoem</a></li><li><a href="global.html#detailLeftKey">detailLeftKey</a></li><li><a href="global.html#GetData">GetData</a></li><li><a href="global.html#instructorTitle">instructorTitle</a></li><li><a href="global.html#studentName">studentName</a></li><li><a href="global.html#views">views</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Tue Apr 13 2021 20:43:09 GMT-0500 (Central Daylight Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

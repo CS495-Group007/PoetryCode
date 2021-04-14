@@ -27,6 +27,7 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>import React from 'react';
+// import axios from 'axios';
 import { Link } from 'react-router-dom';
 import '../../Styling/DashboardStyling.css';
 
@@ -36,21 +37,22 @@ const completePoem = "complete",
       studentIndicator = "student",
       instructorIndicator = "instructor";
 
+// axios.post('https://syllabits.betatesting.as.ua.edu/api/account/register.php', { "firstname": "germy", "lastname": "stucker",
+// "email": "germystuer@crimson.ua.edu",
+// "instructoremail" : "mike@codeofaninja.com",
+// "password" : "55556"})
+//       .then(function (response) {
+//         console.log(response);
+//       })
+//       .catch(function (error) {
+//         console.log(error);
+//       });
 
 // Dummy data for testing
 var studentPoems = {
     "Shakespeare" : {
-        "Sonnet Two": {
-            "status": completePoem
-        },
         "Sonnet Four": {
             "status": incompletePoem,
-            "currentResponse": "dactyl spondee iamb iamb trochee"
-        }
-    },
-    "Catullus" : {
-        "Carmen 1" : {
-            "status" : incompletePoem,
             "currentResponse": "dactyl spondee iamb iamb trochee"
         }
     }
@@ -60,45 +62,13 @@ var allPoems = {
     "Shakespeare" : {
         "Sonnet One" : {
             "poemText" : ['When, in disgrace with fortune and men’s eyes,','I all alone beweep my outcast state,','And trouble deaf heaven with my bootless cries,','And look upon myself and curse my fate,','Wishing me like to one more rich in hope,','Featured like him, like him with friends possessed,','Desiring this man’s art and that man’s scope,','With what I most enjoy contented least;','Yet in these thoughts myself almost despising,','Haply I think on thee, and then my state,','(Like to the lark at break of day arising','From sullen earth) sings hymns at heaven’s gate;','For thy sweet love remembered such wealth brings','That then I scorn to change my state with kings.'],
-            "key" : [["red", "blue", "red", "blue", "red"],["blue", "red", "blue", "red", "blue"],["red", "blue","red", "blue","red"]],
+            "key" : [["yellow","purple","yellow","purple","yellow"],["purple", "yellow", "purple", "yellow", "purple"],["yellow", "purple","yellow", "purple","yellow"]],
             "lines" : 14
-        },
-        "Sonnet Two" : {
-
-        },
-        "Sonnet Three" : {
-
         },
         "Sonnet Four" : {
             "poemText" :['Line 1','Line 2','Line 3'],
-            "key" : [["red", "blue", "red", "blue", "red"],["blue", "red", "blue", "red", "blue"],["red", "blue","red", "blue","red"]],
+            "key" : [["yellow","purple","yellow","purple","yellow"],["purple", "yellow", "purple", "yellow", "purple"],["yellow", "purple", "yellow", "purple", "yellow"]],
             "lines" : 3
-        }
-    },
-    "Catullus" : {
-        "Carmen 1" : {
-
-        },
-        "Carmen 2" : {
-
-        },
-        "Carmen 3" : {
-
-        },
-        "Carmen 4" : {
-            
-        },
-        "Carmen 5" : {
-
-        },
-        "Carmen 6" : {
-            
-        },
-        "Carmen 7" : {
-
-        },
-        "Carmen 8" : {
-            
         }
     }
 }
@@ -336,13 +306,13 @@ export default StudentDashboard;</code></pre>
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="AddPoemInterface.html">AddPoemInterface</a></li><li><a href="Box.html">Box</a></li><li><a href="Boxable.html">Boxable</a></li><li><a href="BoxItem.html">BoxItem</a></li><li><a href="GameBoard.html">GameBoard</a></li><li><a href="Home.html">Home</a></li><li><a href="IDetails.html">IDetails</a></li><li><a href="InstructorDashboard.html">InstructorDashboard</a></li><li><a href="Legend.html">Legend</a></li><li><a href="Login.html">Login</a></li><li><a href="SignUp.html">SignUp</a></li><li><a href="SimplyScansion.html">SimplyScansion</a></li><li><a href="StudentDashboard.html">StudentDashboard</a></li></ul><h3>Global</h3><ul><li><a href="global.html#collapsedClassName">collapsedClassName</a></li><li><a href="global.html#completePoem">completePoem</a></li><li><a href="global.html#detailPrimaryKey">detailPrimaryKey</a></li><li><a href="global.html#instructorTitle">instructorTitle</a></li><li><a href="global.html#studentName">studentName</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="AddPoemInterface.html">AddPoemInterface</a></li><li><a href="BlockNumberDropdown.html">BlockNumberDropdown</a></li><li><a href="Box.html">Box</a></li><li><a href="Boxable.html">Boxable</a></li><li><a href="BoxItem.html">BoxItem</a></li><li><a href="Credit.html">Credit</a></li><li><a href="DynamicDropDown.html">DynamicDropDown</a></li><li><a href="GameBoard.html">GameBoard</a></li><li><a href="Home.html">Home</a></li><li><a href="HowTo.html">HowTo</a></li><li><a href="IDetails.html">IDetails</a></li><li><a href="InstructorDashboard.html">InstructorDashboard</a></li><li><a href="Legend.html">Legend</a></li><li><a href="Login.html">Login</a></li><li><a href="SignUp.html">SignUp</a></li><li><a href="SimplyScansion.html">SimplyScansion</a></li><li><a href="StudentDashboard.html">StudentDashboard</a></li></ul><h3>Global</h3><ul><li><a href="global.html#collapsedClassName">collapsedClassName</a></li><li><a href="global.html#completePoem">completePoem</a></li><li><a href="global.html#detailLeftKey">detailLeftKey</a></li><li><a href="global.html#GetData">GetData</a></li><li><a href="global.html#instructorTitle">instructorTitle</a></li><li><a href="global.html#studentName">studentName</a></li><li><a href="global.html#views">views</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Wed Mar 24 2021 13:22:45 GMT-0400 (Eastern Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Tue Apr 13 2021 20:43:09 GMT-0500 (Central Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>

@@ -31,10 +31,13 @@ import GameBoard from './GameBoard.js';
 import Boxable from './Boxable.js';
 import '../Styling/SimplyScansion.css';
 import Legend from './Legend.js';
+import history from './history.js';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
+
+var pastAnswer = [["purple","blue"],[],["black","gray","green","purple"]];
 
 /**
  * Componenent representing the GameBoard test page. Students interact with this component after they select a poem from the dashboard to complete. This component is responsible for checking the students answer against the answer key, and updating the database after a submit
@@ -53,7 +56,13 @@ class SimplyScansion extends React.Component{
         };
         this.updateGameBoard = this.updateGameBoard.bind(this);
         this.checkIfCorrect = this.checkIfCorrect.bind(this);
+        this.saveAnswer = this.saveAnswer.bind(this);
     }
+
+    componentDidUpdate(){
+        //this.setState({gameBoard: pastAnswer});
+    }
+
     /**
      * Updates the state variable gameBoard to represent changes caused by the boxable and box components
      * @param {Object} items - represents an individual row of blocks
@@ -83,6 +92,48 @@ class SimplyScansion extends React.Component{
             }
         }
         alert("Correct!");
+        //DB WRITE
+        history.push('/student-dashboard');
+        this.forceUpdate();
+        window.location.reload(false);
+    }
+
+    /**
+     * converts an array to a string with the string |~| separating different elements of the array. Serves as an encoder to prepare writes to the DB.
+     * @param {Array} array - represents the Array that is being encoded. Usually either an array of peomLines or an array representing a row of the gameBoard
+     * @return {string} The encoded string.
+     */
+    convertArrayToString(array){
+        let returnString = "";
+        if(array == null)
+            return returnString;
+        var i;
+        for(i = 0; i &lt; array.length - 1; i++){
+            returnString += array[i] + "|~|";
+        }
+        returnString += array[array.length - 1];
+        return returnString;
+    }
+
+    /**
+     * converts the 2D gameBoard to a string. Serves as an encoder before a write to the DB.
+     * @param {Array} array - represents the gameBoard array containing the answer key for a poem.
+     * @return {string} The encoded string.
+     */
+    convertGameBoardToString(array){
+        let returnString = "";
+        if(array == null)
+            return returnString;
+        var i;
+        for(i = 0; i &lt; array.length - 1; i++){
+            returnString += this.convertArrayToString(array[i]) + "|*|";
+        }
+        returnString += this.convertArrayToString(array[array.length - 1]);
+        return returnString;
+    }
+
+    saveAnswer(){
+        alert(this.convertGameBoardToString(this.state.gameBoard));
     }
 
     /**
@@ -90,38 +141,51 @@ class SimplyScansion extends React.Component{
      */
     render(){
         let poemLines = [];
-        this.props.location.state.poemText.forEach((line) => {
-            poemLines.push(&lt;div className = "poem">{line}&lt;/div>);
+        this.props.location.state.poemText.forEach((line, index) => {
+            poemLines.push(&lt;div className = "poem" key = {index}>{line}&lt;/div>);
         });
         return(
-            &lt;div class="parent">
-                &lt;div class="child">
+            &lt;div className="parent">
+                &lt;div className="child">
                     &lt;Container>
-                        &lt;Row className="text-center">
-                            &lt;Col md={8} lg={9}>
-                                &lt;h1 class="text-class">{this.props.location.state.poemName}&lt;/h1>
-                            &lt;/Col>
+                        &lt;Row>
+                            &lt;Col lg={3}>&lt;/Col>
+                            &lt;Col lg={3}>&lt;/Col>
+                            &lt;Col lg={3}>&lt;/Col>
                             &lt;Col>&lt;Legend/>&lt;/Col>
+                        &lt;/Row>&lt;br/>
+                        &lt;Row className="text-center">
+                            &lt;Col>
+                                &lt;h1>{this.props.location.state.poemName}&lt;/h1>
+                            &lt;/Col>
                         &lt;/Row>
                         &lt;Row>
                             &lt;Col sm={6} lg={5} xl={5}>{poemLines}&lt;/Col>
-                            &lt;Col sm={6} lg={7} xl={7}>&lt;GameBoard 
-                                currentPoemLines = {this.props.location.state.currentPoemLines} 
-                                updateGameBoard = {this.updateGameBoard} 
-                            />&lt;/Col>
+                            &lt;Col sm={6} lg={7} xl={7}>
+                                &lt;GameBoard 
+                                    currentPoemLines = {this.props.location.state.currentPoemLines} 
+                                    updateGameBoard = {this.updateGameBoard} 
+                                    savedAnswer = {this.state.gameBoard}
+                                    blockLimit = {5}
+                                />
+                            &lt;/Col>
                         &lt;/Row>
                         &lt;Row className="text-center">
-                            &lt;Col>&lt;Button variant="secondary" onClick = {this.checkIfCorrect}>Submit&lt;/Button>&lt;/Col>
+                            &lt;Col>
+                                &lt;Button variant="secondary" onClick = {this.saveAnswer}>Save&lt;/Button>
+                                &lt;a>  &lt;/a>
+                                &lt;Button variant="secondary" onClick = {this.checkIfCorrect}>Submit&lt;/Button>
+                            &lt;/Col>
                         &lt;/Row>
                     &lt;/Container>
                 &lt;/div>
-                &lt;div class="pieces">
+                &lt;div className="pieces">
                     &lt;Boxable targetKey="box" label="' -" color="yellow"/>
-                    &lt;Boxable targetKey="box" label="- '" color="blue"/>
-                    &lt;Boxable targetKey="box" label="' - -" color="red"/>
-                    &lt;Boxable targetKey="box" label="- - '" color="gray"/>
-                    &lt;Boxable targetKey="box" label="' '" color="black"/>
-                    &lt;Boxable targetKey="box" label="- -" color="green"/>
+                    &lt;Boxable targetKey="box" label="- '" color="purple"/>
+                    &lt;Boxable targetKey="box" label="' - -" color="blue"/>
+                    &lt;Boxable targetKey="box" label="- - '" color="green"/>
+                    &lt;Boxable targetKey="box" label="' '" color="gray"/>
+                    &lt;Boxable targetKey="box" label="- -" color="black"/>
                 &lt;/div>
             &lt;/div>
         );
@@ -138,13 +202,13 @@ export default SimplyScansion;</code></pre>
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="AddPoemInterface.html">AddPoemInterface</a></li><li><a href="Box.html">Box</a></li><li><a href="Boxable.html">Boxable</a></li><li><a href="BoxItem.html">BoxItem</a></li><li><a href="GameBoard.html">GameBoard</a></li><li><a href="Home.html">Home</a></li><li><a href="IDetails.html">IDetails</a></li><li><a href="InstructorDashboard.html">InstructorDashboard</a></li><li><a href="Legend.html">Legend</a></li><li><a href="Login.html">Login</a></li><li><a href="SignUp.html">SignUp</a></li><li><a href="SimplyScansion.html">SimplyScansion</a></li><li><a href="StudentDashboard.html">StudentDashboard</a></li></ul><h3>Global</h3><ul><li><a href="global.html#collapsedClassName">collapsedClassName</a></li><li><a href="global.html#completePoem">completePoem</a></li><li><a href="global.html#detailPrimaryKey">detailPrimaryKey</a></li><li><a href="global.html#instructorTitle">instructorTitle</a></li><li><a href="global.html#studentName">studentName</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="AddPoemInterface.html">AddPoemInterface</a></li><li><a href="BlockNumberDropdown.html">BlockNumberDropdown</a></li><li><a href="Box.html">Box</a></li><li><a href="Boxable.html">Boxable</a></li><li><a href="BoxItem.html">BoxItem</a></li><li><a href="Credit.html">Credit</a></li><li><a href="DynamicDropDown.html">DynamicDropDown</a></li><li><a href="GameBoard.html">GameBoard</a></li><li><a href="Home.html">Home</a></li><li><a href="HowTo.html">HowTo</a></li><li><a href="IDetails.html">IDetails</a></li><li><a href="InstructorDashboard.html">InstructorDashboard</a></li><li><a href="Legend.html">Legend</a></li><li><a href="Login.html">Login</a></li><li><a href="SignUp.html">SignUp</a></li><li><a href="SimplyScansion.html">SimplyScansion</a></li><li><a href="StudentDashboard.html">StudentDashboard</a></li></ul><h3>Global</h3><ul><li><a href="global.html#collapsedClassName">collapsedClassName</a></li><li><a href="global.html#completePoem">completePoem</a></li><li><a href="global.html#detailLeftKey">detailLeftKey</a></li><li><a href="global.html#GetData">GetData</a></li><li><a href="global.html#instructorTitle">instructorTitle</a></li><li><a href="global.html#studentName">studentName</a></li><li><a href="global.html#views">views</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Wed Mar 24 2021 13:22:45 GMT-0400 (Eastern Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Tue Apr 13 2021 20:43:09 GMT-0500 (Central Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>

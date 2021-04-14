@@ -31,48 +31,106 @@
 
 import React, { Component } from "react";
 import '../Styling/Login.css';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import Col from 'react-bootstrap/Col';
+
 
 /**
  * Component responsible for implementing the sign up functionality.
  */
+
 class SignUp extends Component {
+    
     /**
-     * Function to render the component. Renders the area to submit information to create an account.
+     * Sets the initial state for validated.
+     * @constructor
+     */
+    constructor(props) {
+        super(props);
+        this.state = {
+            validated: false
+        };
+    }
+
+    /**
+     * Function to handle the submission of the registration form, checks the validity of the form.
+     * @param {Event} event
+     */
+
+    handleSubmit = (event) => {
+        const form = event.currentTarget;
+        if(form.checkValidity() == false) {
+            event.preventDefault();
+            event.stopPropagation();
+        }
+
+        this.setState({validated: true});
+    }
+
+    /**
+     * Renders the area to submit registration information
      */
     render() {
         return (
             &lt;div className = "outer">
                 &lt;div className = "inner">
-                    &lt;form>
-                        &lt;h3>Register&lt;/h3>
-
-                        &lt;div className="mb-3">
-                            &lt;label>First name&lt;/label>
-                            &lt;input type="text" className="form-control" placeholder="First name" />
-                        &lt;/div>
-
-                        &lt;div className="mb-3">
-                            &lt;label>Last name&lt;/label>
-                            &lt;input type="text" className="form-control" placeholder="Last name" />
-                        &lt;/div>
-
-                        &lt;div className="mb-3">
-                            &lt;label>Email&lt;/label>
-                            &lt;input type="email" className="form-control" placeholder="Enter email" />
-                        &lt;/div>
-
-                        &lt;div className="mb-3">
-                            &lt;label>Password&lt;/label>
-                            &lt;input type="password" className="form-control" placeholder="Enter password" />
-                        &lt;/div>
-                        
-                        &lt;div class="d-grid gap-2">
-                            &lt;button type="submit" className="btn btn-dark btn-lg">Register&lt;/button>
-                            &lt;p className="forgot-password text-right">
-                                Already registered? &lt;a href="sign-in">Log in&lt;/a>
-                            &lt;/p>
-                        &lt;/div>
-                    &lt;/form>
+                    &lt;h3>Register&lt;/h3>
+                    &lt;Form noValidate validated={this.state.validated} onSubmit={this.handleSubmit}>
+                        &lt;Form.Row>
+                            &lt;Form.Group as={Col} controlId="firstName">
+                                &lt;Form.Label>First name&lt;/Form.Label>
+                                &lt;Form.Control
+                                    required
+                                    type="text"
+                                    placeholder="First name"
+                                />
+                                &lt;Form.Control.Feedback type="invalid">Please provide a first name.&lt;/Form.Control.Feedback>
+                            &lt;/Form.Group>
+                            &lt;Form.Group as={Col} controlId="lastName">
+                                &lt;Form.Label>Last name&lt;/Form.Label>
+                                &lt;Form.Control
+                                    required
+                                    type="text"
+                                    placeholder="Last name"
+                                />
+                                &lt;Form.Control.Feedback type="invalid">Please provide a last name.&lt;/Form.Control.Feedback>
+                            &lt;/Form.Group>
+                        &lt;/Form.Row>
+                        &lt;Form.Row>
+                            &lt;Form.Group as={Col} controlId="studentEmail">
+                                &lt;Form.Label>Email&lt;/Form.Label>
+                                &lt;Form.Control
+                                    required
+                                    type="email"
+                                    placeholder="example@email.com"
+                                />
+                                &lt;Form.Control.Feedback type="invalid">Please provide a valid email address.&lt;/Form.Control.Feedback>
+                            &lt;/Form.Group>
+                            &lt;Form.Group as={Col} controlId="instructorEmail">
+                                &lt;Form.Label>Instructor Email&lt;/Form.Label>
+                                &lt;Form.Control
+                                    type="email"
+                                    placeholder="instructor@email.com"
+                                />
+                            &lt;/Form.Group>
+                        &lt;/Form.Row>
+                        &lt;Form.Row>
+                            &lt;Form.Group as={Col} controlId="password">
+                                &lt;Form.Label>Password&lt;/Form.Label>
+                                &lt;Form.Control
+                                    required
+                                    type="text"
+                                    placeholder="password"
+                                />
+                                &lt;Form.Control.Feedback type="invalid">Please provide a password.&lt;/Form.Control.Feedback>
+                            &lt;/Form.Group>
+                        &lt;/Form.Row>                        
+                        &lt;Button variant="secondary" type="submit">Submit&lt;/Button>
+                        &lt;p className="forgot-password text-right">
+                            Already registered? &lt;a href="sign-in">Log in&lt;/a>
+                        &lt;/p>
+                    &lt;/Form>
                 &lt;/div>
             &lt;/div>
         );
@@ -89,13 +147,13 @@ export default SignUp;</code></pre>
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="AddPoemInterface.html">AddPoemInterface</a></li><li><a href="Box.html">Box</a></li><li><a href="Boxable.html">Boxable</a></li><li><a href="BoxItem.html">BoxItem</a></li><li><a href="GameBoard.html">GameBoard</a></li><li><a href="Home.html">Home</a></li><li><a href="IDetails.html">IDetails</a></li><li><a href="InstructorDashboard.html">InstructorDashboard</a></li><li><a href="Legend.html">Legend</a></li><li><a href="Login.html">Login</a></li><li><a href="SignUp.html">SignUp</a></li><li><a href="SimplyScansion.html">SimplyScansion</a></li><li><a href="StudentDashboard.html">StudentDashboard</a></li></ul><h3>Global</h3><ul><li><a href="global.html#collapsedClassName">collapsedClassName</a></li><li><a href="global.html#completePoem">completePoem</a></li><li><a href="global.html#detailPrimaryKey">detailPrimaryKey</a></li><li><a href="global.html#instructorTitle">instructorTitle</a></li><li><a href="global.html#studentName">studentName</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="AddPoemInterface.html">AddPoemInterface</a></li><li><a href="BlockNumberDropdown.html">BlockNumberDropdown</a></li><li><a href="Box.html">Box</a></li><li><a href="Boxable.html">Boxable</a></li><li><a href="BoxItem.html">BoxItem</a></li><li><a href="Credit.html">Credit</a></li><li><a href="DynamicDropDown.html">DynamicDropDown</a></li><li><a href="GameBoard.html">GameBoard</a></li><li><a href="Home.html">Home</a></li><li><a href="HowTo.html">HowTo</a></li><li><a href="IDetails.html">IDetails</a></li><li><a href="InstructorDashboard.html">InstructorDashboard</a></li><li><a href="Legend.html">Legend</a></li><li><a href="Login.html">Login</a></li><li><a href="SignUp.html">SignUp</a></li><li><a href="SimplyScansion.html">SimplyScansion</a></li><li><a href="StudentDashboard.html">StudentDashboard</a></li></ul><h3>Global</h3><ul><li><a href="global.html#collapsedClassName">collapsedClassName</a></li><li><a href="global.html#completePoem">completePoem</a></li><li><a href="global.html#detailLeftKey">detailLeftKey</a></li><li><a href="global.html#GetData">GetData</a></li><li><a href="global.html#instructorTitle">instructorTitle</a></li><li><a href="global.html#studentName">studentName</a></li><li><a href="global.html#views">views</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Wed Mar 24 2021 13:22:45 GMT-0400 (Eastern Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Tue Apr 13 2021 20:43:09 GMT-0500 (Central Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>
