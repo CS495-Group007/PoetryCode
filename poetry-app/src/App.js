@@ -21,7 +21,7 @@ function App() {
       <div className="App">
         {/*Navigation Bar*/}
         <Navbar bg="light" expand="lg">
-          <Navbar.Brand href="/">Syllabits</Navbar.Brand>
+          <Navbar.Brand href="/">SyllaBits</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mr-auto">
