@@ -10,32 +10,46 @@
 ### Gameplay    
 *Code contained in the "SimplyScansion" component file.*  
 #### Related Components / Styling Files  
-Replace this text with your content  
+Box.js
+BoxItem.js
+Boxable.js
+GameBoard.js
+Legend.js
+SimplyScansion.js
+history.js
+BoxItem.css
+GameBoard.css
+SimplyScansion.css
 </br>  
 #### Related Libraries / Packages / Tools  
-*The gameboard is pretty wild. Probably a good idea to talk about that here.*  
-Replace this text with your content  
+DragDropContainer for the draggable blocks and DropTarget for the locations that the blocks can be placed.
 </br>  
 #### What has been done  
-Replace this text with your content  
+Functionality to drag blocks into the gameboard, check if the answer is correct, and save the game board state.
 </br>  
 #### What needs to be done  
-Replace this text with your content  
+Add styling to support different block capacities for each line (right now the styling just supports 5 blocks per line).
+Add in backend functionality
+- Pull in the current poem information on page load.
+- Write the current answer to the database when the student clicks the save button.
+- Update the poem's state in the database when the user submits a correct answer.
 </br>  
 ### Adding a Poem    
-*Primary Code contained in the "FILENAME" component file.*  
+*Primary Code contained in the AddPoemInterface.js component file.*  
 #### Related Components / Styling Files  
-Replace this text with your content  
+AddPoemInterface.js
+BlockNumberDropdown.js
+DynamicDropDown.js
+GameBoard.js
+GamePage.css
 </br>
 #### Related Libraries / Packages / Tools  
-*The gameboard is pretty wild. Probably a good idea to talk about that here.*  
-Replace this text with your content  
+Container, Row, Col, and Button from react bootstrap
+Multiselect
 </br>  
-#### What has been done  
-Replace this text with your content  
+Added in functionality to capture necessary data for the poem.
 </br>  
-#### What needs to be done  
-Replace this text with your content  
+Make it so that when the user clicks the submit button, the data is written to the database.
 </br>   
 ### Login  
 *Primary Code contained in the "Login.js" component file.*  
@@ -50,21 +64,6 @@ Form is complete with validation
 </br>  
 #### What needs to be done  
 Set up for and connect to backend
-</br>   
-### Adding a Poem Page  
-*Primary Code contained in the "FILENAME" component file.*  
-#### Related Components / Styling Files  
-Replace this text with your content  
-</br>
-#### Related Libraries / Packages / Tools  
-*The gameboard is pretty wild. Probably a good idea to talk about that here.*  
-Replace this text with your content  
-</br>  
-#### What has been done  
-Replace this text with your content  
-</br>  
-#### What needs to be done  
-Replace this text with your content  
 </br>   
 ### Create Account  
 *Primary Code contained in the "SignUp.js" component file.*  
