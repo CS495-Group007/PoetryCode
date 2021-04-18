@@ -4,7 +4,7 @@ class Database{
  
 private $servername = "localhost";
 private $username = "syllabits";
-private $password = "1#FkfyD3T~@R";
+private $password = "";
 private $dbname = "syllabit_SiteStorage";
 
   // get the database connection

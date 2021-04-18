@@ -166,22 +166,37 @@ Replace this text with your content
 </br>  
 </br>
 ## Backend  
-*Backend code is all contained in the "poetry-backend" folder of the repository.*  
+*Backend code is all contained in the "poetry-api" folder of the repository.*  
 ### Tools and Technologies  
-Replace this text with your content  
+Languages: PHP, SQL
+</br>
+Tools: MySQL, MySQL Workbench, VSCode Remote SSH Extension, Apache/Nginx, Postman
+### Helpful Links  
+- Building the API: https://codeofaninja.com/2018/09/rest-api-authentication-example-php-jwt-tutorial.html
+- Modifying the .htaccess file: https://gist.github.com/alexsasharegan/173878f9d67055bfef63449fa7136042
 </br>
 ### Contacts  
-Replace this text with your content  
+John Hawkins: john.hawkins@ua.edu, Web Director with eTech
 </br>
 ### What has been done  
-Replace this text with your content  
+- eTech has been chosen as the hosting solution for the site
+- We made sure that the server could serve the React application. This required modifying the .htaccess file to enable React routing.
+- The MySQL database and tables for the application have been built out.
+- OOP PHP has been chosen to build out the API
+- The registration URI has been built and tested with Postman
 </br>
 ### What to avoid  
 *Some mistakes we made / problem areas we encountered along the way.*  
-Replace this text with your content  
+- Node likely will not work with the eTech server due to the way it serves requests with Nginx.
+- We first attempted to host the React app and an Express backend on Google Cloud Platform. The school currently offers no cloud-hosting solutions for these colleges, but may in Fall 2021. We contacted OIT, the College of Engineering, and the Alabama Digital Humanities Center, but none of them offered solutions that would fit the project's needs.
+- We attempted developing the PHP code locally, but the eTech server would not let us connect to and query its MySQL server instance. The simplest solution was to develop on the server using the remote SSH extension. This also prevented the other developers from having to host the PHP code and database on their local machine for testing.
 </br>
 ### What needs to be done  
-Replace this text with your content  
+- The first thing to do is figure out why the React developers are unable to perform requests to the registration URI through their code, even though they can do it with Postman.
+- The other API endpoints need to built out.
+- Security measures (likely JWT) need to be integrated into the API.
+- Once the code is complete and functioning, a long-term hosting solution will need to be determined with Dr. Tavares and potentially John as well.
+- Add password back to poetry-api/config/database.php
 </br>  
 </br>
 

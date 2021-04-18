@@ -1,5 +1,8 @@
 <?php
 
+//LNS 4/18/21
+//This is an example taken from the tutorial website and has not been modified to fit the project.
+
 // files needed to connect to database
 // required headers
 header("Access-Control-Allow-Origin: *");
