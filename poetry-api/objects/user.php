@@ -92,10 +92,10 @@ class User{
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
     
             // assign values to object properties
-            $this->id = $row['id'];
-            $this->firstname = $row['firstname'];
-            $this->lastname = $row['lastname'];
-            $this->password = $row['password'];
+            $this->id = $row['idStudents'];
+            $this->firstname = $row['FirstName'];
+            $this->lastname = $row['LastName'];
+            $this->password = $row['Password'];
     
             // return true because email exists in the database
             return true;
