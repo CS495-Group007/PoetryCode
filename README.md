@@ -28,11 +28,11 @@ DragDropContainer for the draggable blocks and DropTarget for the locations that
 Functionality to drag blocks into the gameboard, check if the answer is correct, and save the game board state.
 </br>  
 #### What needs to be done  
-Add styling to support different block capacities for each line (right now the styling just supports 5 blocks per line).
-Add in backend functionality
-- Pull in the current poem information on page load.
-- Write the current answer to the database when the student clicks the save button.
-- Update the poem's state in the database when the user submits a correct answer.
+Add styling to support different block capacities for each line (right now the styling just supports 5 blocks per line). <br/>
+Add in backend functionality <br/>
+-> Pull in the current poem information on page load. <br/>
+-> Write the current answer to the database when the student clicks the save button. <br/>
+-> Update the poem's state in the database when the user submits a correct answer.
 </br>  
 ### Adding a Poem    
 *Primary Code contained in the AddPoemInterface.js component file.*  
