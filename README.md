@@ -38,19 +38,18 @@ Replace this text with your content
 Replace this text with your content  
 </br>   
 ### Login  
-*Primary Code contained in the "FILENAME" component file.*  
+*Primary Code contained in the "Login.js" component file.*  
 #### Related Components / Styling Files  
-Replace this text with your content  
+Login.css
 </br>
 #### Related Libraries / Packages / Tools  
-*The gameboard is pretty wild. Probably a good idea to talk about that here.*  
-Replace this text with your content  
+React-Bootstrap: Form, Button, and Col
 </br>  
 #### What has been done  
-Replace this text with your content  
+Form is complete with validation
 </br>  
 #### What needs to be done  
-Replace this text with your content  
+Set up for and connect to backend
 </br>   
 ### Adding a Poem Page  
 *Primary Code contained in the "FILENAME" component file.*  
@@ -68,64 +67,71 @@ Replace this text with your content
 Replace this text with your content  
 </br>   
 ### Create Account  
-*Primary Code contained in the "FILENAME" component file.*  
+*Primary Code contained in the "SignUp.js" component file.*  
 #### Related Components / Styling Files  
-Replace this text with your content  
+Login.css
 </br>
 #### Related Libraries / Packages / Tools  
-*The gameboard is pretty wild. Probably a good idea to talk about that here.*  
-Replace this text with your content  
+React-Bootstrap: Form, Button, Col
 </br>  
 #### What has been done  
-Replace this text with your content  
+Form is complete with validation
 </br>  
 #### What needs to be done  
-Replace this text with your content  
+Set up for and connect to backend
 </br>  
 ### HowTo  
-*Primary Code contained in the "FILENAME" component file.*  
+*Primary Code contained in the "HowTo.js" component file.*  
 #### Related Components / Styling Files  
-Replace this text with your content  
+Login.css
+</br>
+DashboardStyling.css
 </br>
 #### Related Libraries / Packages / Tools  
-*The gameboard is pretty wild. Probably a good idea to talk about that here.*  
-Replace this text with your content  
+React-Bootstrap: Container, Col, Row, Table
 </br>  
 #### What has been done  
-Replace this text with your content  
+Set up per Dr. Taveres' request
 </br>  
 #### What needs to be done  
-Replace this text with your content  
+Nothing more needs to be done 
 </br>  
-### Credits  
-*Primary Code contained in the "FILENAME" component file.*  
+### About  
+*Primary Code contained in the "Credits.js" component file.*  
 #### Related Components / Styling Files  
-Replace this text with your content  
+Login.css
+</br>
+DashboardStyling.css 
 </br>
 #### Related Libraries / Packages / Tools  
-*The gameboard is pretty wild. Probably a good idea to talk about that here.*  
-Replace this text with your content  
+React-Bootstrap: Container, Col, and Row
 </br>  
 #### What has been done  
-Replace this text with your content  
+Set up per Dr. Tavares' request
 </br>  
 #### What needs to be done  
-Replace this text with your content  
+Nothing more needs to be done
 </br>  
 ### Navigation Bar  
-*Primary Code contained in the "FILENAME" component file.*  
+*Primary Code contained in the "App.js" component file.*  
 #### Related Components / Styling Files  
-Replace this text with your content  
+App.css
 </br>
 #### Related Libraries / Packages / Tools  
-*The gameboard is pretty wild. Probably a good idea to talk about that here.*  
-Replace this text with your content  
+React-Bootstrap: Nav, Navbar
+React-Router-Dom: Router, Switch, Route
 </br>  
 #### What has been done  
-Replace this text with your content  
+Collapsable navbar has been set up with links to all components (except the instructor dashboard) 
 </br>  
 #### What needs to be done  
-Replace this text with your content  
+Set up to change based on user type:
+</br>
+->Get rid of Login/SignUp pages if the user is logged in </br>
+->Change student dashboard to instructor dashboard if an instructor is logged in </br>
+To add a new link:
+1. Add new link to the first group of Nav.Link with the href set to what you want it to be and the display name of the link
+2. Set up the Route Path with the correct href and component to render
 </br>  
 ### Student Dashboard  
 *Primary Code contained in the "FILENAME" component file.*  
