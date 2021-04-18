@@ -130,9 +130,9 @@ Set up to change based on user type:
 </br>
 ->Get rid of Login/SignUp pages if the user is logged in </br>
 ->Change student dashboard to instructor dashboard if an instructor is logged in </br>
-To add a new link:
-1. Add new link to the first group of Nav.Link with the href set to what you want it to be and the display name of the link
-2. Set up the Route Path with the correct href and component to render
+To add a new link: </br>
+1.Add new link to the first group of Nav.Link with the href set to what you want it to be and the display name of the link </br>
+2.Set up the Route Path with the correct href and component to render
 </br>  
 ### Student Dashboard  
 *Primary Code contained in the "FILENAME" component file.*  
