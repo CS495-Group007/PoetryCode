@@ -25,6 +25,7 @@
     }
 }
 
+/*The numbered components are to allow for the game pieces to change size based on the number of syllables in the poem the intructor is inputting on Add A Poem*/
 @media (min-width: 900px) and (max-width: 1100px) {
     .box_item_component .outside {
         border-top: none;

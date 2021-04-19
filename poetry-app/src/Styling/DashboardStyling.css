@@ -259,7 +259,8 @@
 
     border-radius: 0.4vw;
 }
-  
+
+/*Dash-Inner is the same as Inner from Login.css but allows for scrolling with the increased content*/
 @media (max-width: 500px) {
   .dash-inner {
     width: 95vw;

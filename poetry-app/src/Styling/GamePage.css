@@ -15,6 +15,7 @@
 
 }
 
+/*Parent is the same as Outer from Login.css*/
 .parent {
     background: #8987d1;
     height: calc(100% - 56px);
@@ -22,6 +23,8 @@
     padding: 10px;
 }
 
+
+/*Child is the same as inner but smaller as to allow for the pieces container at the bottom of the page to hold the game pieces and allow for scrolling*/
 @media (max-width: 400px) {
     .child {
         background: #ffffff;

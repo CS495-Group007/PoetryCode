@@ -1,3 +1,4 @@
+/*Parent is the same as Outer in Login.css*/
 .parent {
     background: #8987d1;
     height: calc(100% - 56px);
@@ -5,6 +6,7 @@
     padding: 10px;
 }
 
+/*Child is the same as Inner from Login.css, but smaller & allows for the pieces container at the bottom to hold the game pieces and allow for scrolling*/
 @media (max-width: 400px) {
     .poem {
         font-size: 10px;
