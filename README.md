@@ -245,3 +245,15 @@ John Hawkins: john.hawkins@ua.edu, Web Director with eTech
 5. The register form should require all fields except for the instructor email.
 
   - Verified this by leaving the fields empty and noting that the form would not submit.
+
+6. Blocks can be dragged between lines
+
+7. Blocks can be reordered within lines
+
+8. A line of blocks can be cleared by clicking the trash icon.
+
+9. When a correct answer is entered the user is taken back to the dashboard
+
+10. Can register a new user by calling the register.php URI via postman.
+
+11. The navbar should change appearances to accomodate various screen sizes.
