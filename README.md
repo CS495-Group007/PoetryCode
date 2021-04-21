@@ -134,34 +134,38 @@ To add a new link: </br>
 2 Set up the Route Path with the correct href and component to render
 </br>  
 ### Student Dashboard  
-*Primary Code contained in the "FILENAME" component file.*  
+*Primary Code contained in the "StudentDashboard.js" component file.*  
 #### Related Components / Styling Files  
-Replace this text with your content  
-</br>
-#### Related Libraries / Packages / Tools  
-*The gameboard is pretty wild. Probably a good idea to talk about that here.*  
-Replace this text with your content  
+Dashboards folder  
+DashboardStyling.css  
+StudentDashboard.js  
 </br>  
 #### What has been done  
-Replace this text with your content  
+The styling and design  
+The links to new poems  
+The organization for students who are signed in    
 </br>  
 #### What needs to be done  
-Replace this text with your content  
+Needs to be connected to the DB.  
+Poems need to be pulled and iterated over  
+The student's poem progresses need to be pulled and iterated over  
+Sessions need to be implemented so that students AND guests will be taken to this one when clicking the dashboard link in the navbar
 </br>  
 ### Instructor Dashboard  
-*Primary Code contained in the "FILENAME" component file.*  
+*Primary Code contained in the "StudentDashboard.js" component file.*  
 #### Related Components / Styling Files  
-Replace this text with your content  
-</br>
-#### Related Libraries / Packages / Tools  
-*The gameboard is pretty wild. Probably a good idea to talk about that here.*  
-Replace this text with your content  
+Dashboards folder  
+DashboardStyling.css  
+InstructorDashboard.js
+IDetails.js  
 </br>  
 #### What has been done  
-Replace this text with your content  
+The frontend styling and design as well as 2 views 
 </br>  
 #### What needs to be done  
-Replace this text with your content  
+Connect the dashboard to the db  
+Adjust the data retrieval function to work with the new data  
+Implement sessions so that instructors will be taken to the instructor dashboard when they click that link in the navbar    
 </br>  
 </br>
 ## Backend  
